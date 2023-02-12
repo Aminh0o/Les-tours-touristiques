@@ -1,0 +1,8 @@
+.header
+{
+    position: absolute;
+    background-color: plum;
+    height: 75px;
+    top: 0px;
+    display: inline-flex;
+}
