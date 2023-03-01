@@ -7,19 +7,59 @@
     <title>Gestion Des Tours</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="images">
-        
-    </div>
 
-    <header class="header">
+<body>
+	<img id="dynamicImageCover" src="C:\Users\GIGABYTE\Desktop\MiniProject\Programmation\images\Sahara.png">
+    <header id="header">
         <img src="activia.png" id="activia" width="70px" height="70px">
-        <p id="name"><b>Discover</b><br><i>Algeria !</i></p>
         <input type="search" placeholder="Rechercher..." id="search">
-        <button id="menu">menu</button>
+        <nav class="navBar">
+			<a href="pack.html" id="navPack"><p>Packs</p></a>
+			<a href="" id="navAboutAlgeria"><p>About Algeria</p></a>
+			<a href="login.html" id="navLogin"><p>Login</p></a>
+			<button>Menu</button>
+		</nav>
     </header>
 
+	<main>
+		<div class="welcome">
+			<h1>WELCOME</h1>
+			<h3>To Algeria !</h3>
+			<p>
+				L'Algérie est un pays riche en histoire et en culture, avec de nombreux sites 
+				touristiques intéressants et importants à découvrir.
+			</p>
+		</div>
 
+	</main>
+
+
+	<script>
+		window.onscroll = function() 
+		{
+			var header = document.getElementById("header");
+			if (window.pageYOffset > 0) 
+			{ header.classList.add("scrolled"); }
+			else 
+			{ header.classList.remove("scrolled");}
+		};
+	</script>
+	    <script>
+			var images = [
+			  "C://Users/GIGABYTE/Desktop/MiniProject/Programmation/images/Sahara.png",
+			  "C://Users/GIGABYTE/Desktop/MiniProject/Programmation/images/Sahara2.png",
+			  "C://Users/GIGABYTE/Desktop/MiniProject/Programmation/images/Sahara3.png",
+			  "C://Users/GIGABYTE/Desktop/MiniProject/Programmation/images/Sahara4.png",
+			];
+			var dynamicImages = document.getElementById("dynamicImageCover");
+			var compteur = 0;
+			function changeImage() 
+			{
+				dynamicImages.src = images[compteur];
+				compteur = (compteur + 1) % images.length;
+			}
+			setInterval(changeImage, 5000);
+		  </script>
 
 
 </body>
