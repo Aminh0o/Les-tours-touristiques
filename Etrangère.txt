@@ -1,0 +1,140 @@
+alter table ACCOMPAGNER add constraint FK_ACCOMPAGNER foreign key (ID_UTILISATEUR)
+      references UTILISATEUR (ID_UTILISATEUR) on delete restrict on update restrict;
+
+alter table ACCOMPAGNER add constraint FK_ACCOMPAGNER2 foreign key (ID_PASSAGER)
+      references PASSAGER (ID_PASSAGER) on delete restrict on update restrict;
+
+alter table ADMINISTRATEUR add constraint FK_GERER foreign key (ID_RESERVATION)
+      references RESERVATION (ID_RESERVATION) on delete restrict on update restrict;
+
+alter table ADMINISTRATEUR add constraint FK_GERER1 foreign key (ID_RECRUTEMENT)
+      references RECRUTEMENT (ID_RECRUTEMENT) on delete restrict on update restrict;
+
+alter table ADMINISTRATEUR add constraint FK_GERER2 foreign key (ID_AVIS)
+      references AVIS (ID_AVIS) on delete restrict on update restrict;
+
+alter table ADMINISTRATEUR add constraint FK_GERER3 foreign key (NUMEROPACK)
+      references PACK (NUMEROPACK) on delete restrict on update restrict;
+
+alter table ADMINISTRATEUR add constraint FK_GERER4 foreign key (ID_COMPTE)
+      references COMPTE (ID_COMPTE) on delete restrict on update restrict;
+
+alter table ADMINISTRATEUR add constraint FK_RECEVER1 foreign key (ID_EMETTEUR)
+      references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict;
+
+alter table ADMIN_HEBERGEMENT add constraint FK_GERER7 foreign key (ID_HEBERGEMENT)
+      references HEBEGEMENT (ID_HEBERGEMENT) on delete restrict on update restrict;
+
+alter table ADMIN_HEBERGEMENT add constraint FK_POSSEDE4 foreign key (ID_COMPTE)
+      references COMPTE (ID_COMPTE) on delete restrict on update restrict;
+
+alter table ADMIN_HEBERGEMENT add constraint FK_RECEVER5 foreign key (ID_EMETTEUR)
+      references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict;
+
+alter table ADMIN_RESTAURATION add constraint FK_GERER5 foreign key (ID_RESTAURATION)
+      references RESTAURATION (ID_RESTAURATION) on delete restrict on update restrict;
+
+alter table ADMIN_RESTAURATION add constraint FK_POSSEDE9 foreign key (ID_COMPTE)
+      references COMPTE (ID_COMPTE) on delete restrict on update restrict;
+
+alter table ADMIN_RESTAURATION add constraint FK_RECEVER4 foreign key (ID_EMETTEUR)
+      references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict;
+
+alter table ADMIN_TRANSPORT add constraint FK_GERER6 foreign key (ID_TRANSPORT)
+      references TRANSPORT (ID_TRANSPORT) on delete restrict on update restrict;
+
+alter table ADMIN_TRANSPORT add constraint FK_POSSEDE7 foreign key (ID_COMPTE)
+      references COMPTE (ID_COMPTE) on delete restrict on update restrict;
+
+alter table ADMIN_TRANSPORT add constraint FK_RECEVER2 foreign key (ID_EMETTEUR)
+      references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict;
+
+alter table COMPTE add constraint FK_POSSEDE12 foreign key (ID_GUIDE)
+      references GUIDE (ID_GUIDE) on delete restrict on update restrict;
+
+alter table COMPTE add constraint FK_POSSEDE5 foreign key (ID_ADMIN_HEBERG)
+      references ADMIN_HEBERGEMENT (ID_ADMIN_HEBERG) on delete restrict on update restrict;
+
+alter table COMPTE add constraint FK_POSSEDE6 foreign key (ID_ADMIN_TRANSP)
+      references ADMIN_TRANSPORT (ID_ADMIN_TRANSP) on delete restrict on update restrict;
+
+alter table COMPTE add constraint FK_POSSEDE8 foreign key (ID_ADMIN_REST)
+      references ADMIN_RESTAURATION (ID_ADMIN_REST) on delete restrict on update restrict;
+
+alter table CONTENIR add constraint FK_CONTENIR foreign key (ID_GUIDE)
+      references GUIDE (ID_GUIDE) on delete restrict on update restrict;
+
+alter table CONTENIR add constraint FK_CONTENIR2 foreign key (ID_TOUR)
+      references TOUR (ID_TOUR) on delete restrict on update restrict;
+
+alter table CONTENIR add constraint FK_CONTENIR3 foreign key (NUMEROPACK)
+      references PACK (NUMEROPACK) on delete restrict on update restrict;
+
+alter table CONTENIR add constraint FK_CONTENIR4 foreign key (ID_RESTAURATION)
+      references RESTAURATION (ID_RESTAURATION) on delete restrict on update restrict;
+
+alter table CONTENIR add constraint FK_CONTENIR5 foreign key (ID_TRANSPORT)
+      references TRANSPORT (ID_TRANSPORT) on delete restrict on update restrict;
+
+alter table CONTENIR add constraint FK_CONTENIR6 foreign key (ID_HEBERGEMENT)
+      references HEBEGEMENT (ID_HEBERGEMENT) on delete restrict on update restrict;
+
+alter table FAIRE add constraint FK_FAIRE foreign key (ID_RESERVATION)
+      references RESERVATION (ID_RESERVATION) on delete restrict on update restrict;
+
+alter table FAIRE add constraint FK_FAIRE2 foreign key (ID_UTILISATEUR)
+      references UTILISATEUR (ID_UTILISATEUR) on delete restrict on update restrict;
+
+alter table GUIDE add constraint FK_POSSEDE13 foreign key (ID_COMPTE)
+      references COMPTE (ID_COMPTE) on delete restrict on update restrict;
+
+alter table GUIDE add constraint FK_RECEVER3 foreign key (ID_EMETTEUR)
+      references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict;
+
+alter table LAISSER add constraint FK_LAISSER foreign key (ID_AVIS)
+      references AVIS (ID_AVIS) on delete restrict on update restrict;
+
+alter table LAISSER add constraint FK_LAISSER2 foreign key (ID_UTILISATEUR)
+      references UTILISATEUR (ID_UTILISATEUR) on delete restrict on update restrict;
+
+alter table PACK add constraint FK_CONCERNER2 foreign key (ID_RESERVATION)
+      references RESERVATION (ID_RESERVATION) on delete restrict on update restrict;
+
+alter table RECRUTEMENT add constraint FK_DEMANDER2 foreign key (ID_UTILISATEUR)
+      references UTILISATEUR (ID_UTILISATEUR) on delete restrict on update restrict;
+
+alter table RESERVATION add constraint FK_CONCERNER3 foreign key (NUMEROPACK)
+      references PACK (NUMEROPACK) on delete restrict on update restrict;
+
+alter table UTILISATEUR add constraint FK_DEMANDER3 foreign key (ID_RECRUTEMENT)
+      references RECRUTEMENT (ID_RECRUTEMENT) on delete restrict on update restrict;
+
+alter table UTILISATEUR add constraint FK_RECEVER foreign key (ID_EMETTEUR)
+      references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict;
+
+alter table POSSEDE add constraint FK_POSSEDE foreign key (ID_ADMIN_HEBERG)
+      references ADMIN_HEBERGEMENT (ID_ADMIN_HEBERG) on delete restrict on update restrict;
+
+alter table POSSEDE add constraint FK_POSSEDE1 foreign key (ID_ADMIN_REST)
+      references ADMIN_RESTAURATION (ID_ADMIN_REST) on delete restrict on update restrict;
+
+alter table POSSEDE add constraint FK_POSSEDE2 foreign key (ID_ADMIN_TRANSP)
+      references ADMIN_TRANSPORT (ID_ADMIN_TRANSP) on delete restrict on update restrict;
+
+alter table POSSEDE add constraint FK_POSSEDE3 foreign key (ID_GUIDE)
+      references GUIDE (ID_GUIDE) on delete restrict on update restrict;
+
+alter table POSSEDE add constraint FK_POSSEDE4 foreign key (ID_COMPTE)
+      references COMPTE (ID_COMPTE) on delete restrict on update restrict;
+
+alter table DEMANDER add constraint FK_DEMANDER foreign key (ID_UTILISATEUR)
+      references UTILISATEUR (ID_UTILISATEUR) on delete restrict on update restrict;
+
+alter table DEMANDER add constraint FK_DEMANDER1 foreign key (ID_RECRUTEMENT)
+      references RECRUTEMENT (ID_RECRUTEMENT) on delete restrict on update restrict;
+
+alter table CONCERNER add constraint FK_CONCERNER foreign key (NUMEROPACK)
+      references PACK (NUMEROPACK) on delete restrict on update restrict;
+
+alter table CONCERNER add constraint FK_CONCERNER1 foreign key (ID_RESERVATION)
+      references RESERVATION (ID_RESERVATION) on delete restrict on update restrict;
