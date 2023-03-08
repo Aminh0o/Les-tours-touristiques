@@ -378,19 +378,19 @@ alter table ADMIN_HEBERGEMENT add constraint FK_GERER7 foreign key (ID_HEBERGEME
       references HEBEGEMENT (ID_HEBERGEMENT) on delete restrict on update restrict;
 
 alter table ADMIN_HEBERGEMENT add constraint FK_RECEVER5 foreign key (ID_EMETTEUR)
-      references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict;
+      references NOTIF (ID_EMETTEUR) on delete restrict on update restrict;
 
 alter table ADMIN_RESTAURATION add constraint FK_GERER5 foreign key (ID_RESTAURATION)
       references RESTAURATION (ID_RESTAURATION) on delete restrict on update restrict;
 
 alter table ADMIN_RESTAURATION add constraint FK_RECEVER4 foreign key (ID_EMETTEUR)
-      references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict;
+      references NOTIF (ID_EMETTEUR) on delete restrict on update restrict;
 
 alter table ADMIN_TRANSPORT add constraint FK_GERER6 foreign key (ID_TRANSPORT)
       references TRANSPORT (ID_TRANSPORT) on delete restrict on update restrict;
 
 alter table ADMIN_TRANSPORT add constraint FK_RECEVER2 foreign key (ID_EMETTEUR)
-      references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict;
+      references NOTIF (ID_EMETTEUR) on delete restrict on update restrict;
 
 alter table CONTENIR add constraint FK_CONTENIR foreign key (ID_GUIDE)
       references GUIDE (ID_GUIDE) on delete restrict on update restrict;
@@ -417,7 +417,7 @@ alter table FAIRE add constraint FK_FAIRE2 foreign key (ID_UTILISATEUR)
       references UTILISATEUR (ID_UTILISATEUR) on delete restrict on update restrict;
 
 alter table GUIDE add constraint FK_RECEVER3 foreign key (ID_EMETTEUR)
-      references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict;
+      references NOTIF (ID_EMETTEUR) on delete restrict on update restrict;
 
 alter table LAISSER add constraint FK_LAISSER foreign key (ID_AVIS)
       references AVIS (ID_AVIS) on delete restrict on update restrict;
@@ -426,7 +426,7 @@ alter table LAISSER add constraint FK_LAISSER2 foreign key (ID_UTILISATEUR)
       references UTILISATEUR (ID_UTILISATEUR) on delete restrict on update restrict;
 
 alter table UTILISATEUR add constraint FK_RECEVER foreign key (ID_EMETTEUR)
-      references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict;
+      references NOTIF (ID_EMETTEUR) on delete restrict on update restrict;
 
 alter table POSSEDE add constraint FK_POSSEDE foreign key (ID_ADMIN_HEBERG)
       references ADMIN_HEBERGEMENT (ID_ADMIN_HEBERG) on delete restrict on update restrict;
