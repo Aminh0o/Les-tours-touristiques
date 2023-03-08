@@ -372,7 +372,7 @@ alter table ADMINISTRATEUR add constraint FK_GERER4 foreign key (ID_COMPTE)
       references COMPTE (ID_COMPTE) on delete restrict on update restrict;
 
 alter table ADMINISTRATEUR add constraint FK_RECEVER1 foreign key (ID_EMETTEUR)
-      references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict;
+      references NOTIF (ID_EMETTEUR) on delete restrict on update restrict;
 
 alter table ADMIN_HEBERGEMENT add constraint FK_GERER7 foreign key (ID_HEBERGEMENT)
       references HEBEGEMENT (ID_HEBERGEMENT) on delete restrict on update restrict;
