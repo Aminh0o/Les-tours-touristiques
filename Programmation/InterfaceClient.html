@@ -9,31 +9,64 @@
 </head>
 
 <body>
-	<img id="dynamicImageCover" src="C:\Users\GIGABYTE\Desktop\MiniProject\Programmation\images\Sahara.png">
-    <header id="header">
-        <img src="activia.png" id="activia" width="70px" height="70px">
-        <input type="search" placeholder="Rechercher..." id="search">
-        <nav class="navBar">
-			<a href="pack.html" id="navPack"><p>Packs</p></a>
-			<a href="" id="navAboutAlgeria"><p>About Algeria</p></a>
-			<a href="login.html" id="navLogin"><p>Login</p></a>
-			<button>Menu</button>
-		</nav>
-    </header>
-
-	<main>
-		<div class="welcome">
-			<h1>WELCOME</h1>
-			<h3>To Algeria !</h3>
-			<p>
-				L'Algérie est un pays riche en histoire et en culture, avec de nombreux sites 
-				touristiques intéressants et importants à découvrir.
-			</p>
+	<div>
+	<img id="dynamicImageCover" src="images/Sahara.png">
+	<header id="header">
+		<div class="sectionGauche">
+			<button id="menuButton">Menu</button>
+			<form>
+				<input type="text" placeholder="Rechercher...">
+				<button type="submit">Search</button>
+			</form>
 		</div>
+		<div class="sectionMilieu">
+			<img src="images/logo.png" id="logo">
+		</div>
+		<nav class="sectionDroite">
+		  <a href="pack.html" id="navPack"><p>Packs</p></a>
+		  <a href="" id="navAboutAlgeria"><p>About Algeria</p></a>
+		  <a href="signup.html" id="navSignUp"><p>Sign Up</p></a>
+		  <a href="" id="contactUs"><p>Contact Us</p></a>
+		</nav>
+	</header>
+	  
+	<div class="paragraphWelcome">
+		<h1>WELCOME</h1>
+		<h3>To Algeria !</h3>
+		<p>
+			L'Algérie est un pays riche en histoire et en culture, avec de nombreux sites 
+			touristiques intéressants et importants à découvrir.
+		</p>
+	</div>
 
-	</main>
-
-
+	<div class="packs">
+		<div class="pack">
+			<img src="images/Constantine 🇩🇿 vue de Ciel 🇩🇿.jfif">
+			<div class="pack-info">
+				<h3>PACK 1</h3>
+				<p>ROYAL</p>
+				<a href="#" class="btn">View Details</a>
+			</div>
+		</div>
+		<div class="pack">
+			<img src="images/téléchargé.jfif">
+			<div class="pack-info">
+				<h3>PACK 2</h3>
+				<p>SPECIAL</p>
+				<a href="#" class="btn">View Details</a>
+			</div>
+		</div>
+		<div class="pack">
+			<img src="images/Algeria.jfif">
+			<div class="pack-info">
+				<h3>PACK 3</h3>
+				<p>NORMALE</p>
+				<a href="#" class="btn">View Details</a>
+			</div>
+		</div>
+	</div>
+	</div>
+	  
 	<script>
 		window.onscroll = function() 
 		{
@@ -44,22 +77,22 @@
 			{ header.classList.remove("scrolled");}
 		};
 	</script>
-	    <script>
-			var images = [
-			  "C://Users/GIGABYTE/Desktop/MiniProject/Programmation/images/Sahara.png",
-			  "C://Users/GIGABYTE/Desktop/MiniProject/Programmation/images/Sahara2.png",
-			  "C://Users/GIGABYTE/Desktop/MiniProject/Programmation/images/Sahara3.png",
-			  "C://Users/GIGABYTE/Desktop/MiniProject/Programmation/images/Sahara4.png",
-			];
-			var dynamicImages = document.getElementById("dynamicImageCover");
-			var compteur = 0;
-			function changeImage() 
-			{
-				dynamicImages.src = images[compteur];
-				compteur = (compteur + 1) % images.length;
-			}
-			setInterval(changeImage, 5000);
-		  </script>
+	<script>
+	var images = [
+		"images/Sahara.png",
+		"images/Sahara2.png",
+		"images/Sahara3.png",
+		"images/Sahara4.png",
+	];
+	var dynamicImages = document.getElementById("dynamicImageCover");
+	var compteur = 0;
+	function changeImage() 
+		{
+			dynamicImages.src = images[compteur];
+			compteur = (compteur + 1) % images.length;
+		}
+		setInterval(changeImage, 5000);
+	</script>
 
 
 </body>
