@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interface Login-Admin</title>
+    <link rel="stylesheet" href="loginAdmin.css">
+</head>
+<body>
+    <header>
+        <h1>LoginAdmin</h1>
+    </header>
+    <form method="POST" action="loginAdmin.php" class="form" >
+        <label for="login">Login :</label>
+        <input type="text" id="login" name="login" required><br><br>
+        
+        <label for="password">Password :</label>
+        <input type="password" id="password" name="password" required><br><br>
+        
+        <input type="submit" value="Authentification" id="submit">
+      </form>
+      <script>
+        var login = document.getElementById('login');
+        var password= document.getElementById('password');
+        var submitButton = document.getElementById('submit');
+
+            submitButton.disabled = true;
+
+        function checkInputs() {
+    if (login.value.trim() !== '' && password.value.trim() !== '') {
+             submitButton.disabled = false;
+  }
+   else {
+        submitButton.disabled = true;
+  }
+}
+
+
+login.addEventListener('input', checkInputs);
+password.addEventListener('input', checkInputs);
+      </script>
+</body>
+</html>

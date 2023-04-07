@@ -1,0 +1,135 @@
+ <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="AdminPrincipal.css" />
+    <link href="img/icons/css/icons.css" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      
+      <div class="sectionGauche">
+        <form>
+          <input type="text" placeholder="Rechercher...">
+          <button type="submit">Search</button>
+        </form>
+      </div>
+      <div class="sectionMilieu">
+        <a href="InterfaceClient."><img src="img/logoo.png" id="logo"></a>
+      </div>
+
+      <div class="sectionDroite">
+        <a href="" id="notification-paragraph">
+          <span class="fi fi-sr-bell-ring" id="notification-img"></span>
+          <p>Notifications</p>
+        </a>
+      </div>
+
+
+    <nav id="navBar">
+      <ul>
+        <li class="nav-logo" >
+          <a href="#NavGestion1" onclick="ScrollNav(this)">
+            <img src="img/icones-d-administration-vert.png" id="img-item-admin">
+            <span class="nav-item">ADMIN</span></a>
+          </li>
+
+        <li>
+          <a href="#NavGestion2" onclick="ScrollNav(this)">
+            <span class="fi fi-sr-home" class="img-item">
+            <span class="nav-item">HOME</span>
+          </a>
+        </li>
+        <li>
+          <a href="#message" onclick="ScrollNav(this)">
+            <span class="fi fi-sr-envelope" class="img-item">
+            <span class="nav-item">MESSAGE</span>
+          </a>
+        </li>
+        <li>
+          <a href="#report" onclick="ScrollNav(this)">
+            <span class="fi fi-sr-clipboard-list-check" class="img-item">
+            <span class="nav-item">REPORT</span>
+          </a>
+        </li>
+        <li class="gestionButton" id="gestionButton">
+          <a href="#NavGestion3" onclick="ScrollNav(this)">
+            <span class="fi fi-sr-settings" class="img-item">
+            <span class="nav-item">GESTIONS</span>
+          </a>
+        </li>
+        <li class="nav-logout">
+          <a href="logoutAdmin.php">
+            <span class="fi fi-sr-sign-out-alt" class="img-item">
+            <span class="nav-item">LOGOUT</span>
+          </a>
+        </li>
+
+      </ul>
+    </nav>
+
+    <section  id="NavGestion1">
+ 
+    </section>
+    
+    <section  id="NavGestion2">
+      
+    
+    </section>
+
+     <section  class="gestion" id="NavGestion3">
+        <div class="PackGestion">
+        <h3>GESTION DES PACKS</h3>
+        <p > gérer tous les packs  </p>
+        <a href="gestionPack.php"><button >View Détails</button></a>
+       </div>
+
+       <div class="PackGestion">
+        <h3>GESTION DES AVIS</h3>
+        <p>gérer tous les avis des utilisateurs </p>
+        <a href="#"><button>View Détails</button></a>
+       </div>
+
+       <div class="PackGestion">
+        <h3>GESTION DES COMPTES</h3>
+        <p>gérer tous les comptes   </p>
+        <a href="#"><button>View Details</button></a>
+       </div>
+
+       <div class="PackGestion">
+        <h3>GESTION DES RECRUTEMENT</h3>
+        <p>gérer tous les demandes de recrutement  </p>
+        <a href="#"><button>View Détails</button></a>
+       </div>
+
+       <div class="PackGestion">
+        <h3>GESTION DES RESERVATION</h3>
+        <p>gérer tous les réservations  </p>
+        <a href="#"> <button>View Détails</button></a> 
+       </div>
+     </section>
+     <footer>
+
+     </footer>
+     
+     <script>
+      function ScrollNav(link)
+      {
+        var NavGestion = [document.getElementById("NavGestion1"),
+        document.getElementById("NavGestion2"),
+        document.getElementById("NavGestion3")];
+        for(var i = 0 ; i<NavGestion.length ; i++ )
+        {
+          if(NavGestion[i].id === link.getAttribute("href").substring(1))
+          {
+            NavGestion[i].style.visibility = 'visible';
+            }
+          else
+          NavGestion[i].style.visibility = 'hidden';  
+        }
+      }
+     </script>
+
+  </body>
+</html>

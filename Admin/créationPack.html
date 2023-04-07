@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="créationPack.css">
+    <title>PACK - Création</title>
+</head>
+<body>
+  <header>
+    <h1>Création du PACK</h1>
+  </header>
+    <div>
+        <form id="form" class="form" method="post" action="créationPack.php">
+          <label>Name</label>
+          <input type="text" size="20" name="nomPack" placeholder="Enter name of pack" required><br>
+    
+          <label>Category</label>
+          <select name="catégorie" id="pack" required>
+                <option value="normal">NORMAL</option>
+                <option value="special">SPECIAL</option>
+                <option value="royal">ROYAL</option>
+          </select>
+          
+          <label>Date d'expiration</label>
+          <input type="date" name="dateExpiration" id="dateExpiration">
+    
+          <label>Wilaya</label>
+          <select name="wilaya" id="wilaya" required>
+            <option value="13">TLEMCEN</option>
+            <option value="31">ORAN</option>
+            <option value="16">ALGER</option>
+            <option value="25"> CONSTANTINE</option>
+            <option value="06">BEJAIA</option>
+            <option value="sahara">SAHARA</option>
+      </select>
+        
+          <label>Places</label>
+          <input type="text" name="place" id="places" size="30" placeholder="Enter your places" required><br>
+
+          <input type="button" value ="ADD PLACE" id="AddPlace" name="AddPlace" onclick="ajouterInput()">
+    
+          <label>Price</label>
+          <input   type="number" name="prixPack" ><br>
+
+          <input type="submit"  value="Crée" name="submit" id="submit">
+          
+        </form>
+   
+      </div>
+      
+      <script>
+        var compteur = 1;
+    function ajouterInput()
+        {
+        var nvInput = document.createElement("input");
+        var frere = document.getElementById("AddPlace");
+            nvInput.type = "text";
+            nvInput.placeholder = "Enter other places";
+            nvInput.name = "place" + compteur;
+             compteur++;
+
+        var nvPlace = document.getElementById("form");
+        nvPlace.appendChild(nvInput);
+        nvPlace.insertBefore(nvInput,frere);
+     
+        }
+      </script>
+</body>
+</html>
