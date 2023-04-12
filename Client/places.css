@@ -1,0 +1,264 @@
+:root
+{
+  --background--:#e0c9a5;
+  --header--:hsl(38, 99%, 70%);
+  --headerScroll--:hsla(37, 63%, 64%, 0.726);
+  --white--: #ffffff;
+  --green--: #4CAF50;
+  --borderGreen--: rgb(42, 139, 3);
+  --shadowGreen--: rgba(5, 201, 64, 0.5);
+  --grey--: #6e6e6e;
+  --gold--: #ddb067;
+} 
+*
+{
+  font-family: 'Rockwell', serif;
+}
+body
+{
+  width: 100%;
+  height: 100%;
+  padding: 0%;
+  padding-left: 0%;
+  padding-top: 0%;
+  align-items: center;
+  background-position: center;
+  background-color: var(--background--);
+  background-size: cover;
+  overflow-x: hidden;
+}
+::-webkit-scrollbar 
+{
+  width: 7px;
+  background-color: var(--header--);
+}
+::-webkit-scrollbar-thumb 
+{
+  background-color: var(--green--);
+  border-radius: 10px;
+}
+button
+{
+  display: inline-block;
+  padding: 5% 10%;
+  margin-top: 2%;
+  background-color: var(--green--);
+  font-size: 15px;
+  color: var(--white--);
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  opacity: 0.8;
+}
+button:hover  
+{
+  opacity: 1;
+  border-radius: 15px;
+  transform: scale(1);
+  border-bottom: 2px solid var(--borderGreen--);
+  box-shadow: 0 5px 5px var(--shadowGreen--);
+}
+#dynamicImageCover
+{
+  top: 0%;
+  left: 0%;
+  width: 101%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  position: absolute;
+  z-index: -1;
+}
+header 
+{
+  position: fixed;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 99.9%;
+  top:0%;
+  left: 0%;
+  height: 10%;
+  padding: 0 20px;
+  background-color: var(--header--);
+  z-index: 1;
+}
+.sectionGauche
+{
+  display: inline-flex;
+  align-items: center;
+}
+#logo
+{
+  position: absolute;
+  width: 40%;
+  height: 70%;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+.menu ul
+{
+  display: inline-flex;
+  list-style: none;
+  align-items: center;
+  margin-left: -60%;
+}
+.menu ul li
+{
+  margin: 4%;
+}
+.menu ul li a
+{
+  text-decoration: none;
+  color: var(--green--);
+  opacity: 0.7;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 17px;
+}
+.menu ul li a:hover
+{
+  border-bottom: 2px solid black;
+  font-size: 20px;
+  opacity: 1;
+}
+.menu button p
+{
+  font-size: 15px;
+  font-weight: bold;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.exploreWilaya
+{
+  margin-top: 15%;
+  margin-left: 10%;
+}
+.exploreWilaya h2
+{
+  font-size: 40px;
+  font-style: italic;
+}
+.packs
+{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-top: -20%;
+  margin-left: 10%;
+  box-shadow: 0 5px 12px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+}
+.pack 
+{
+  position: relative;
+  margin-top: 5%;
+  margin-left: 5%;
+  width: 90%;
+  height: 300px;
+  margin-bottom: 5%;
+  border-radius: 20px;
+  background-color: var(--white--);
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+.pack:hover 
+{
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.16);
+  border-radius: 5px;
+}
+.pack img 
+{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.pack .packName
+{
+  position: absolute;
+  width: 30%;
+  bottom: 0;
+  padding: 20px;
+  text-align: center;
+  background-color: var(--header--);
+  border-top-right-radius: 50px;
+  opacity: 0.9;
+}
+.pack .packName h3 
+{
+  font-size: 25px;
+  font-weight: 700;
+  margin: 0;
+  font-weight: bold;
+  color: var(--grey--);
+  text-transform: uppercase;
+  opacity: 1;
+}
+.pack .packName p
+{
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  color: var(--grey--);
+  text-transform: uppercase;
+}
+.pack .packInfo
+{
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  padding: 30%;
+  background-color: var(--header--);
+  transition: all 0.5s ease-in-out;
+  opacity: 0;
+}
+.pack .packInfo .packDescription 
+{
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0;
+  color: var(--grey--);
+}
+.pack:hover .packInfo 
+{
+  opacity: 1;
+  transform: translateY(0%);
+}
+.buttonPack
+{
+  position: absolute;
+  margin-left: 15%;
+  margin-top: 8%;
+  padding: 2% 3%;
+  background-color: var(--green--);
+  font-size: 15px;
+  color: var(--white--);
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+}
+.buttonPack:hover 
+{
+  opacity: 1;
+  transform: scale(1);
+  border-bottom: 2px solid var(--borderGreen--);
+  box-shadow: 0 5px 5px var(--shadowGreen--);
+}
+footer
+{
+  position: absolute;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 19%;
+  width: 101%;
+  left: 0%;
+  height: 10%;
+  background-color: var(--header--);
+  z-index: 1;
+}

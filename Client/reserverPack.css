@@ -1,0 +1,227 @@
+:root{
+    --background--:#e0c9a5;
+    --header--:hsl(38, 99%, 70%);
+    --headerScroll--:hsla(37, 63%, 64%, 0.726);
+    --white--: #ffffff;
+    --green--: #4CAF50;
+    --borderGreen--: rgb(42, 139, 3);
+    --shadowGreen--: rgba(5, 201, 64, 0.5);
+    --grey--: rgba(255, 255, 255, 0.5);
+    --gold--: #ddb067;
+}
+* 
+{
+  font-family: 'Rockwell', serif;
+}
+::-webkit-scrollbar 
+{
+  width: 7px;
+  scrollbar-color: var(--header--);
+}
+::-webkit-scrollbar-thumb 
+{
+  background-color: var(--green--);
+  border-radius: 10px;
+}
+body 
+{
+    align-items: center;
+    background-image: url(images/reserverPack.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+}
+button
+{
+  display: inline-block;
+  background-color: var(--green--);
+  font-size: 15px;
+  color: var(--white--);
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  opacity: 0.8;
+}
+button:hover  
+{
+  opacity: 1;
+  border-radius: 15px;
+  transform: scale(1);
+  border-bottom: 2px solid var(--borderGreen--);
+  box-shadow: 0 5px 5px var(--shadowGreen--);
+}
+header
+{
+    display: flex;
+    justify-content: center;
+    color: hsl(38, 99%, 70%);
+}
+.sectionGauche
+{
+    display: inline-flex;
+    align-items: center;
+}
+#logo
+{
+    width: 40%;
+    height: 70%;
+    margin-left: 0%;
+}
+header p 
+{
+    margin-left: 50%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.514);
+    border-radius: 10px;
+}
+.reservationForm 
+{
+    position: absolute;
+    width: 80%;
+    margin-top: 3%;
+    left: -10%;
+    color: var(--header--);
+    background-color: var(--headerScroll--);
+    border-radius: 20px;
+    border-color: var(--gold--);
+    border: 3px solid var(--gold--);
+    margin-left: 20%;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#title
+{
+    margin-left: 40%;
+    margin-right: 41%;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.514);
+}
+label 
+{
+    display: block;
+    margin-top: 2%;
+    margin-left: 5%;
+    margin-bottom: 1%;
+    font-weight: bold;
+}
+input
+{
+    align-items: center;
+    width: 30%; 
+    line-height: 2; 
+    border-radius: 10px;
+    border: none;
+    font-size: 15px;
+    opacity: 0.7;
+}
+input:focus, input:hover
+{
+    opacity: 1;
+    width: 30.1%;
+}
+.rightInput
+{
+    margin-left: 12%;
+    margin-bottom: 1%;
+}
+.accompagner
+{
+    position: absolute;
+    margin-top: -50%;
+    margin-left: 60%;
+    margin-bottom: 1%;
+}
+.accompagner label
+{
+    margin-left: -20%;
+    margin-bottom: 3%;
+}
+.accompagner .accompagnerYesNo
+{
+    margin-left: 5%;
+    margin-bottom: 2%;
+}
+.accompagner #SIaccompagner:checked, .accompagner #SINONaccompagner:checked
+{
+    color: var(--gold--);
+}
+.accompagner input
+{
+    width: 90%;
+    margin-bottom: 1%;
+}
+.accompagner input[type="radio"] 
+{
+    display: inline-block;
+    margin-left: -10%;
+} 
+.accompagner p
+{
+    margin-top: -4%;
+}
+.accompagner .accompagnerChoice button
+{
+    padding: 5% 10%;
+    margin-top: 5%;
+    margin-left: 30%;
+    margin-bottom: 3%;
+}
+.form button
+{
+    padding: 2% 4%;
+    margin-left: 77.5%;
+    margin-bottom: 5%;
+}
+table 
+{
+    border-collapse: collapse;
+    width: 100%;
+    margin-left: -5%;
+    margin-bottom: 2%;
+}
+thead 
+{
+    background-color: var(--white--);
+    opacity: 0.8;
+}
+th, td 
+{
+    padding: 4%;
+    margin-bottom: 1%;
+    text-align: left;
+    border: 2px solid var(--white--);
+}
+th 
+{
+    font-weight: bold;
+    border: 2px solid var(--white--);
+}
+tbody tr:hover 
+{
+    background-color: var(--white--);
+    opacity: 0.8;
+}
+#wilaya, #categorie
+{
+    margin-left: 12%;
+    padding: 0.6%;
+    font-size: 15px;
+    line-height: 2; 
+    border-radius: 10px;
+    border: none;
+    width: 30%;
+    background-color: var(--white--);
+    opacity: 0.8;
+}
+#wilaya option, #categorie option
+{
+    font-size: 13px;
+    background-color: var(--white--);
+}
+#wilaya:focus, #categorie:focus
+{
+    opacity: 1;
+    width: 30.1%;
+}
+  
+
+

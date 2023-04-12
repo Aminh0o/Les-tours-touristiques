@@ -1,0 +1,482 @@
+:root 
+{
+  --background: #e0c9a5;
+  --header: hsl(38, 99%, 70%);
+  --headerScroll: hsla(37, 63%, 64%, 0.726);
+  --white: #ffffff;
+  --green: #4CAF50;
+  --borderGreen: rgb(42, 139, 3);
+  --shadowGreen: rgba(5, 201, 64, 0.5);
+  --grey: #6e6e6e;
+  --gold: #ddb067;
+}
+::-webkit-scrollbar 
+{
+  width: 7px;
+  scrollbar-color: var(--header);
+}
+::-webkit-scrollbar-thumb 
+{
+  background-color: var(--green);
+  border-radius: 10px;
+}
+* 
+{
+  font-family: 'Rockwell', serif;
+}
+/***************************************************************************************************************************/
+body
+{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background-color: var(--background);
+  background-size: cover;
+  overflow-x: hidden;
+  transition: all 0.5s ease-in-out;
+}
+#dynamicImageCover
+{
+  top: 0;
+  left: 0;
+  width: 101%;
+  height: 75%;
+  background-size: cover;
+  position: absolute;
+  z-index: -1;
+}
+#scrollButton 
+{
+  position: fixed;
+  display: none;
+  border: none;
+  padding: 0.6%;
+  bottom: 11%;
+  right: 1%;
+  border-radius: 100%;
+  font-size: 150%;
+  background-color: var(--green);
+  color: var(--white);
+  cursor: pointer;
+  opacity: 0.8;
+  z-index: 999;
+}
+button
+{
+  display: inline-block;
+  padding: 5% 10%;
+  margin-top: 2%;
+  background-color: var(--green);
+  font-size: 15px;
+  color: var(--white);
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  opacity: 0.8;
+}
+button:hover  
+{
+  opacity: 1;
+  border-radius: 15px;
+  transform: scale(1);
+  border-bottom: 2px solid var(--borderGreen);
+  box-shadow: 0 5px 5px var(--shadowGreen);
+}
+/***************************************************************************************************************************/
+#header 
+{
+  position: fixed;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 99.9%;
+  top:0%;
+  left: 0%;
+  height: 10%;
+  padding: 0 20px;
+  background-color: var(--headerScroll);
+  z-index: 1;
+  transition: box-shadow 1s ease-in-out;
+}
+#header.scrolled 
+{
+  background-color: var(--header);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+.sectionGaucheHeader form
+{
+  display: flex;
+  align-items: center;
+}
+.sectionGaucheHeader input
+{
+  background-image: url(icons/search.png);
+  background-repeat: no-repeat;
+  background-position: 99%;
+  background-size: 20%;
+  border: none;
+  padding: 5% 20%;
+  margin-right: 5%;
+  background-color: var(--white);
+  border-radius: 10px;
+  outline: none;
+  opacity: 0.5;
+}
+.sectionGaucheHeader input:focus 
+{
+  opacity: 1;
+  width: 200px;
+}
+.sectionGaucheHeader button
+{
+  padding: 5% 10%;
+}
+.sectionMilieuHeader
+{
+  display: inline-flex;
+  align-items: center;
+}
+#logoHeader
+{
+  width: 40%;
+  height: 70%;
+  margin-left: 40%;
+}
+.menu ul
+{
+  display: inline-flex;
+  list-style: none;
+  align-items: center;
+  margin-left: -60%;
+}
+.menu ul li
+{
+  margin: 5%;
+}
+.menu ul li a
+{
+  text-decoration: none;
+  color: var(--green);
+  opacity: 0.7;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-size: 17px;
+}
+.menu ul li a:hover
+{
+  font-size: 20px;
+  opacity: 1;
+}
+/***************************************************************************************************************************/
+.paragraphWelcome 
+{
+  animation: move 1s linear infinite;
+  background-image: linear-gradient(var(--white) 0%,var(--header) 50%, var(--green) 50%, var(--white) 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+}
+.paragraphWelcome h1
+{
+  margin-top: 15%;
+  margin-left: 20%;
+  font-size: 80px;
+  letter-spacing: 4px;
+}
+.paragraphWelcome h3
+{
+  font-size: 50px;
+  font-weight: bold;
+  margin-left: 50%;
+  margin-top: -3%;
+}
+@keyframes move 
+{
+  50% { background-image: linear-gradient(var(--header) 50%, var(--white) 50%, var(--green) 50%); }
+}
+/*@keyframes colorChange 
+{
+  0% { color: #efefef;}
+  30% { color: #ffcc00;}
+  70% { color: #4CAF50;}
+  100% { color: #efefef;}
+}*/
+/***************************************************************************************************************************/
+.title
+{
+  font-size: 35px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  margin-left: 40%;
+  margin-right: 30%;
+  color: var(--grey);
+}
+#explore
+{
+  margin-top: 15%;
+  margin-left: 25%;
+  margin-right: 10%;
+}
+.explore
+{
+  position: relative;
+  margin-top: 3%;
+  margin-left: 10%;
+  width: 80%;
+  padding-top: 0.1%;
+  padding-bottom: 0.1%;
+  font-size: 20px;
+  letter-spacing: 4px;
+  justify-content: space-between;
+  box-shadow: 0 5px 12px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+#paragraphExplore
+{
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.856);
+  border-radius: 20px;
+  background-color: var(--gold);
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 3%;
+  word-spacing: 2px;
+  text-align: center;
+  color: var(--grey);
+}
+#paragraphExploreQuestion
+{
+  text-align: center;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  color: var(--grey);
+}
+#beginTravelParagraph, #becomeGuideTitle
+{
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.856);
+  margin-left: 20%;
+  margin-right: 20%;
+  color: var(--white);
+}
+.beginTravel
+{
+  text-align: center;
+  margin-top: 5%;
+  margin-left: 20%;
+  margin-right: 20%;
+  margin-bottom: 5%;
+  background: var(--gold);
+  background-image: url(images/road.jpg);
+  background-size: 100% 100%;
+  border-radius: 20px;
+  border: 2px solid var(--white);
+  box-shadow: 0px 4px 20px rgb(0 0 0 / 20%);
+}
+.beginTravel button, .becomeGuide button 
+{
+  opacity: 0.7;
+  background-color: var(--gold);
+}
+.beginTravel button:hover, .becomeGuide button:hover
+{
+  opacity: 1;
+  border-bottom: 2px solid var(--background);
+  box-shadow: 0 5px 5px var(--grey);
+}
+.beginTravel button a, .becomeGuide button a
+{
+  text-decoration: none;
+  color: var(--white);
+  font-size: 20px;
+}
+/***************************************************************************************************************************/
+.place 
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 10%;
+  box-shadow: 0 5px 12px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+.place-card
+{
+  position: relative;
+  flex: 17%;
+  margin: 5%;
+  background-color: var(--gold);
+  box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+  border-radius: 20px;
+}
+.place-card:hover 
+{
+  border-radius: 10px;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgb(0, 0, 0);
+}
+.place-card img 
+{
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 36px));
+}
+/***************************************************************************************************************************/
+.attraction-card
+{
+  position: relative;
+  flex: 17%;
+  margin: 5%;
+  background-color: var(--gold);
+  box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+  border-radius: 20px;
+}
+.attraction-card img 
+{
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 36px));
+}
+/***************************************************************************************************************************/
+.placeInfo
+{
+  padding: 5%;
+  text-align: center;
+}
+.placeInfo h3 
+{
+  margin: 0%;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  color: var(--white);
+  text-decoration: none;
+  border-bottom: none;
+}
+.placeInfo .border-line
+{
+  border-bottom: 1px solid var(--green);
+  border-width: 3px;
+  width: 40%;  
+  margin: 2% 30%;
+}
+.placeInfo .place-text
+{
+  color: var(--grey);  
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  margin-bottom: 5%;
+}
+.placeInfo button a
+{
+  text-decoration: none;
+  color: var(--white);
+  font-size: 15px;
+}
+/***************************************************************************************************************************/
+.about
+{
+  position: relative;
+  margin-top: 3%;
+  margin-left: 10%;
+  width: 80%;
+  padding-bottom: 6%;
+  font-size: 20px;
+  letter-spacing: 4px;
+  justify-content: space-between;
+  box-shadow: 0 5px 12px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+#becomeGuideParagraph
+{
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.856);
+  border-radius: 20px;
+  background-color: var(--gold);
+  margin-left: 5%;
+  margin-right: 50%;
+  color: var(--grey--);
+  text-align: center;
+}
+.becomeGuide
+{
+  text-align: center;
+  margin-top: -30%;
+  margin-left: 60%;
+  margin-right: 5%;
+  margin-bottom: 5%;
+  background: var(--gold--);
+  background-image: url(images/guide.jpg);
+  background-size: 100% 100%;
+  border-radius: 20px;
+  border: 2px solid var(--white);
+  box-shadow: 0px 4px 20px rgb(0 0 0 / 20%);
+}
+/***************************************************************************************************************************/
+.contactUS 
+{
+  margin-top: 3%;
+  margin-left: 10%;
+  margin-bottom: 3%;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 5px 12px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+.contact-us
+{
+  display: flex;
+  width: 80%;
+  margin-top: 3%;
+  margin-left: 5%;
+}
+.inputComment, .messageContact textarea
+{
+  background-color: var(--white);
+  margin-bottom: 5%;
+  width: 100%;
+  padding: 2%;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  opacity: 0.5;
+  font-size: 15px;
+}
+.inputComment:focus, .messageContact textarea:focus
+{
+  opacity: 1;
+  width: 101%;
+}
+.messageContact textarea
+{
+  height: 70%;
+  margin-left: 40%;
+}
+.messageContact button
+{
+  margin-top: -3%;
+  margin-left: 100%;
+}
+/***************************************************************************************************************************/
+footer
+{
+  position: absolute;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  left: 0%;
+  height: 10%;
+  background-color: var(--header);
+}
+.sectionMilieuFooter
+{
+  display: inline-flex;
+  align-items: center;
+}
+#logoFooter
+{
+  width: 40%;
+  height: 70%;
+}

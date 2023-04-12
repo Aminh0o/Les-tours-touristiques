@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up</title>
+  <link rel="stylesheet" href="signupClient.css">
+</head>
+<body>
+  <header>
+    <h1>Sign Up</h1>
+  </header>
+
+  <div>
+    <form method="POST" class="form" action="signupClient.php">
+      <label>First Name :</label>
+      <input type="text" size="20" name="nomUtilisateur" placeholder="Enter your first name" required><br>
+
+      <label>Last Name :</label>
+      <input type="text" size="20" name="prenomUtilisateur" placeholder="Enter your last name" required><br>
+
+      <label>Birth Date :</label>
+      <input type="date" name="dateNaissance"><br>
+
+      <label>Phone Number :</label>
+      <input type="number" name="telephone" size="10" placeholder="Enter your telephone number" required><br>
+
+      <label>E-mail :</label>
+      <input type="email" name="email" placeholder="Enter your email address" required><br>
+      
+      <label>Mot de passe :</label>
+      <input type="password" size="30" id="mot_de_passe1" name="mot_de_passe1" placeholder="Enter your password" oninput="verifier_mot_passe()" required><br>
+      <input type="password" size="30" id="mot_de_passe2" name="mot_de_passe2" placeholder="Re-enter your password" oninput="verifier_mot_passe()" required><br>
+
+      <button id="submit">Submit</button>
+    </form>
+  </div>
+
+  <script>
+		function verifier_mot_passe()
+		{
+			var x,y; 
+			x = document.getElementById("mot_de_passe1").value ; 
+			y = document.getElementById("mot_de_passe2").value ; 
+			if ((x == "" || y == "") || (x != y)) 
+			{
+				document.getElementById("mot_de_passe1").style.color="red";
+				document.getElementById("mot_de_passe2").style.color="red";
+				document.getElementById("submit").disabled=true;
+			}
+			else 
+			{ 
+				document.getElementById("mot_de_passe1").style.color="green"; 
+				document.getElementById("mot_de_passe2").style.color="green";
+				document.getElementById("submit").disabled=false;
+			}	
+		}
+	</script>
+</body>
+</html>

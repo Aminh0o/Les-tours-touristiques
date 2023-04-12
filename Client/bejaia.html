@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEJAIA</title>
+    <link rel="stylesheet" href="places.css">
+</head>
+<body>
+    <div>
+        <img id="dynamicImageCover" src="images/bejaia3.jpg">
+        <header>
+            <div class="sectionGauche">
+                <a href="InterfaceClient.html"><img src="icons/logoo.png" id="logo"></a>
+		    </div>
+		    <nav class="menu">
+                <ul>
+                    <li><a href="#home" id="navHome" onclick="ScrollNav(this)"><p>Home</p></a></li>
+                    <li><a href="#pack" id="navPack" onclick="ScrollNav(this)"><p>Packs</p></a></li>
+                    <li><a href="#place" id="navPlace" onclick="ScrollNav(this)"><p>Places</p></a></li>
+                    <li><a href="#transport" id="navTransport" onclick="ScrollNav(this)"><p>Transports</p></a></li>
+                    <li><a href="#hebergement" id="navHebergement" onclick="ScrollNav(this)"><p>Hebergements</p></a></li>
+                    <li><a href="#restaurant" id="navRestaurants" onclick="ScrollNav(this)"><p>Restaurants</p></a></li>
+                    <li>
+                        <button>
+                            <p>RESERVE</p>
+                            <span class="fi fi-sr-angle-down"></span>
+                        </button>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="home">
+
+            </section>
+            
+            <section id="pack">
+                <div class="packs">
+                    <div id="pack-royal">
+                        <div class="pack">
+                            <img src="icons/gold.jpg">
+                            <div class="packName">
+                                <h3 id="nomRoyal">PACK 1</h3>
+                                <p id="categorieRoyal">ROYAL</p>
+                            </div>
+                            <div class="packInfo">
+                                <p class="packDescription">Description</p>
+                                <a href="#" class="buttonPack">View Details</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="pack-special">
+                        <div class="pack">
+                            <img src="icons/silver.jpg">
+                            <div class="packName">
+                                <h3 id="nomSpecial">PACK 2</h3>
+                                <p id="categorieSpecial">SPECIAL</p>
+                            </div>
+                            <div class="packInfo">
+                                <p class="packDescription">Description</p>
+                                <a href="#" class="buttonPack">View Details</a>
+                            </div>
+                        </div>      
+                    </div>
+                    <div id="pack-normal">
+                        <div class="pack">
+                            <img src="icons/bronze.jpg">
+                            <div class="packName">
+                                <h3 id="nomNormal">PACK 3</h3>
+                                <p id="categorieNormal">NORMAL</p>
+                            </div>
+                            <div class="packInfo">
+                                <p class="packDescription">Description</p>
+                                <a href="#" class="buttonPack">View Details</a>
+                            </div>
+                        </div>
+                    </div>       
+                </div>
+            </section>
+
+            <section id="place"></section>
+            <section id="transport"></section>
+            <section id="hebergement"></section>
+            <section id="restaurant"></section>
+        </main>
+        
+        <footer>
+
+        </footer>
+
+        <script>
+            function ScrollNav(link)
+            {
+                var Navigation = 
+                [
+                    document.getElementById("home"),
+                    document.getElementById("pack"),
+                    document.getElementById("place"),
+                    document.getElementById("transport"),
+                    document.getElementById("hebergement"),
+                    document.getElementById("restaurant")
+                ];
+                for (var i = 0 ; i<Navigation.length ; i++)
+                {
+                    if(Navigation[i].id === link.getAttribute("href").substring(1))
+                        Navigation[i].style.visibility = 'visible';
+                    else
+                        Navigation[i].style.visibility = 'hidden';  
+                }
+            }
+            ScrollNav(document.querySelector('a[href="#home"]'));
+        </script>
+    </div>   
+</body>
+</html>
