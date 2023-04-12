@@ -155,7 +155,7 @@ nav
   margin-left: -2%;
   margin-right: 2.5%;
   margin-bottom: 5%;
-  width: 5%;
+  width: 5.5%;
   height: 80%;
   background: var(--header--);
   font-size: 15px;
@@ -202,15 +202,7 @@ nav ul li a:hover
   opacity: 1;
   background: var(--gold--);
 }
-#img-item-admin
-{
-  position: relative;
-  display: block;
-  margin-left: -3%;
-  min-width: 30px;
-  height: 30px;
-  line-height: 40px;
-}
+
 .img-item
 {
   position: relative;
@@ -219,6 +211,9 @@ nav ul li a:hover
   min-width: 30px;
   height: 30px;
   line-height: 40px;
+}
+#admin{
+  text-transform: uppercase;
 }
 .nav-item 
 {
@@ -252,7 +247,7 @@ nav:hover .nav-item
   position: absolute;
   margin-top: 7%;
   margin-left: 10%;
-  transition: margin-left 1s;
+  transition: margin-left 1.5s;
   width: 80%; 
   height: 10%;
 }
@@ -271,7 +266,7 @@ nav:hover ~ .gestion
   border-color: var(--header--);
   border-style: bold;
   box-shadow: 0 5px 5px rgba(0,0,0,0.5);
-  padding: 4% 4%;
+  padding: 3% 4%;
   width: 40%; 
 }
 .PackGestion:hover 
@@ -292,7 +287,7 @@ footer
   justify-content: space-between;
   align-items: center;
   width: 99.9%;
-  top: 90%;
+  top: 91.5%;
   left: 0%;
   height: 10%;
   background-color: var(--headerScroll--);

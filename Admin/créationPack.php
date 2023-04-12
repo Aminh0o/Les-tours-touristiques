@@ -6,7 +6,7 @@ $password="";
 $namePack = $_POST["nomPack"];
 $categorie = $_POST["catégorie"];
 $wilaya = $_POST["wilaya"];
-$place = $_POST["places"];
+//$place = $_POST["places"];
 $prixPack = $_POST["prixPack"];
 $dateExpiration = $_POST["dateExpiration"];
 session_start();
@@ -35,7 +35,7 @@ try{
     else
     {
         echo "<script> alert('échec de création de pack ')
-    window.location.href = 'créationPack.html';
+    window.location.href = 'créationPack.php';
     </script>";
     }
     

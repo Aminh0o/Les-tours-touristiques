@@ -1,12 +1,12 @@
 <?php
+
     $server="localhost";
     $nom_bdd="essai";
     $user="root";
     $password="";
     $login = $_POST["login"];
     $mdps = $_POST["password"];
-    session_start();
-
+   
     try{
         if($login && $mdps)
         {
@@ -17,7 +17,7 @@
             if($admin)
             {
                 $_SESSION["administrateur"] = $admin;
-                header("Location: AdminPrincipal.html");
+                header("Location: AdminPrincipal.php");
                 exit();
             }
             else

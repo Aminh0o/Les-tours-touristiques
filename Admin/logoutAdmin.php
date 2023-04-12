@@ -8,7 +8,7 @@ function confirmerDeconnexion() {
     echo "}";
     echo "else";
     echo"{
-        window.location.href = 'AdminPrincipal.html';
+        window.location.href = 'AdminPrincipal.php';
     }";
     echo "</script>";
   }

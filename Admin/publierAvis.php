@@ -1,21 +1,26 @@
+<?php
+
+
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="suppressionPack.css">
-    <title>PACK - Suppression</title>
+    <title>Avis - Publication</title>
 </head>
 <body>
     <header>
-        <h1>Suppression du PACK</h1>
+        <h1>Suppression d'avis</h1>
       </header>
         <div>
             <form class="form" method="post" action="suppressionPack.php">
-              <label>NumeroPack</label>
-              <input type="number" size="20" name="NumeroPack" placeholder="Enter number of pack to delete"><br>
+              <label>ID Avis</label>
+              <input type="number" size="20" name="NumeroPack" placeholder="Enter ID de avis à publier"><br>
         
-              <input type="submit"  value="supprimer" name="submit" id="submit">
+              <input type="submit"  value="publier" name="submit" id="submit">
             </form>
         </div>
 </body>
