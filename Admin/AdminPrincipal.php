@@ -1,30 +1,31 @@
 <?php
-function admin(){
-session_start();
-$server="localhost";
-$nom_bdd="essai";
-$user="root";
-$password="";
-
-  try{
-    $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-    $res = $connexion->query("SELECT NOM FROM ADMINISTRATEUR ");
-    if($res && $res->rowCount() > 0) {
-        $tuple = $res->fetch(PDO::FETCH_ASSOC);
-        echo "<span class='nav-item' id='admin'>".$tuple["NOM"]."</span></a>";
-    } 
-  }
-  
-
-  catch (PDOException $e) 
-  {
-    echo "Erreur ! " . $e->getMessage() . "<br/>";
-  }
-
-
-}
-?>
-
+      session_start();
+        function AdminName() {
+          $server = "localhost";
+          $nom_bdd = "essai";
+          $user = "root";
+          $password = "";
+            if(isset($_SESSION["login"])){
+              $email = $_SESSION["login"];
+             
+            try {
+              $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd", $user, $password);
+             
+      
+              $req = "SELECT NOM FROM ADMINISTRATEUR WHERE LOGIN_ADMIN = '$email' ";
+              $resultat = $connexion->query($req);
+          
+              $tuple = $resultat->fetch(PDO::FETCH_ASSOC);
+              echo "<span class='nav-item' id='admin'>".$tuple["NOM"]."</span></a>";
+            } catch (PDOException $e) {
+       
+              echo "Erreur ! " . $e->getMessage() . "<br/>";
+            }
+          }
+        }
+       
+        
+      ?>
  <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -52,15 +53,15 @@ $password="";
             <p>Notifications</p>
         </a>
       </div>
-    
-    
+     
+  
     <nav id="navBar">
       <ul>
         <li class="nav-logo" >
           <a href="#NavGestion1" onclick="ScrollNav(this)">
 
            <span class="fi fi-sr-user" class="img-item">
-              <?php admin(); ?> 
+              <?php AdminName(); ?> 
           </li>
 
         <li>
