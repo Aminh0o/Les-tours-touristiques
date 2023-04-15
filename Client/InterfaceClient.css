@@ -53,12 +53,10 @@ body
   padding: 0.6%;
   bottom: 11%;
   right: 1%;
-  border-radius: 100%;
   font-size: 150%;
   background-color: var(--green);
   color: var(--white);
   cursor: pointer;
-  opacity: 0.8;
   z-index: 999;
 }
 button
@@ -80,8 +78,7 @@ button:hover
   opacity: 1;
   border-radius: 15px;
   transform: scale(1);
-  border-bottom: 2px solid var(--borderGreen);
-  box-shadow: 0 5px 5px var(--shadowGreen);
+  font-size: 15.5px;
 }
 /***************************************************************************************************************************/
 #header 
@@ -167,6 +164,78 @@ button:hover
   font-size: 20px;
   opacity: 1;
 }
+/************************************************************/
+.profile
+{
+  visibility: hidden;
+  position: absolute;
+  top: 105%;
+  right: 3.1%;
+  width: 20%;
+  height: 250%;
+  background-color: var(--gold);
+  border-radius: 15px;
+}
+.profile button
+{
+  padding: 2% 4%;
+  margin-left: 85%;
+}
+.profile .nameProfile
+{
+  display: flex;
+  align-items: center;
+  margin-top: -8%;
+}
+.profile .nameProfile h2
+{
+  font-size: 18px;
+  color: var(--white);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  margin-left: 40%;
+}
+.profile hr
+{
+  border: 0;
+  height: 2px;
+  width: 80%;
+  background: var(--green);
+}
+.profile .menuProfile
+{
+  display: flex;
+  align-items: center;
+  width: 60%;
+  height: 20%;
+  margin-left: 20%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  text-decoration: none;
+  color: var(--grey);
+  font-weight: bold;
+  font-size: 15px;
+}
+.profile .menuProfile:hover 
+{
+  background-color: var(--background);
+  font-size: 16px;
+}
+.profile .menuProfile .iconeProfile
+{
+  position: relative;
+  display: block;
+  margin-left: 20%;
+  min-width: 30px;
+  height: 50px;
+  line-height: 100px;
+}
+.profile .menuProfile p
+{
+  display: block;
+  position: fixed;
+  margin-top: -1.5%;
+  margin-left: 4%;
+}
 /***************************************************************************************************************************/
 .paragraphWelcome 
 {
@@ -229,15 +298,20 @@ button:hover
   box-shadow: 0 5px 12px 2px rgba(0, 0, 0, 0.2);
   border-radius: 20px;
 }
-#paragraphExplore
+.paragraphExplore
 {
   box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.856);
   border-radius: 20px;
   background-color: var(--gold);
+  width: 60%;
   margin-top: 5%;
   margin-left: 20%;
   margin-right: 20%;
-  margin-bottom: 3%;
+}
+.paragraphExplore p
+{
+  margin-left: 2%;
+  margin-top: 2%;
   word-spacing: 2px;
   text-align: center;
   color: var(--grey);
@@ -351,6 +425,7 @@ button:hover
   letter-spacing: 0.5px;
   font-size: 20px;
   color: var(--white);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   text-decoration: none;
   border-bottom: none;
 }

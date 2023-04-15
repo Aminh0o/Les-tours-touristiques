@@ -91,11 +91,10 @@ header
 }
 #logo
 {
-  position: absolute;
   width: 40%;
   height: 70%;
   margin-left: 10%;
-  margin-top: 5%;
+  margin-top: 4%;
 }
 .menu ul
 {

@@ -6,6 +6,8 @@
     <title>Gestion Des Tours</title>
     <link rel="stylesheet" href="InterfaceClient.css">
 	<link rel="stylesheet" href="icons/icons/css/icons.css">
+	<script src="JS/loginClient.js"></script>
+	<script src="JS/client.js"></script>
 </head>
 
 <body>
@@ -26,16 +28,38 @@
 		</div>
 		<nav class="menu">
 			<ul>
-				<li><a href="#" id="navHome"><p>Home</p></a></li>
 				<li><a href="#explore" id="navExplore"><p>Explore</p></a></li>
 				<li><a href="#places" id="navPlace"><p>Places</p></a></li>
 				<li><a href="#about" id="navAbout"><p>About</p></a></li>
 				<li><a href="#contact" id="navContact"><p>Contact</p></a></li>
-				<li><a href="loginClient.html" id="navLogin"><p>Login</p></a></li>
+				<li><a href="" id="navNotif"><p>Notifications</p></a></li>
+				<li>
+					<a id="navProfil" onclick="afficherProfile()">
+						<p>Profil</p>
+					</a>
+				</li>
 			</ul>
+			
+			<div id="profile" class="profile">
+				<button>
+					<span class="fi fi-sr-x" id="quitMenu"></span>
+				</button>
+				<div class="nameProfile">
+					<h2>NAME</h2>
+				</div>
+				<hr>
+				<a href="" class="menuProfile">
+					<span class="fi fi-sr-settings" class="iconProfile">
+					<p>Edit Profile</p>
+				</a>
+				<a href="logoutClient.php" class="menuProfile">
+					<span class="fi fi-sr-sign-out-alt" class="iconProfile">
+					<p>Logout</p>
+				</a>
+			</div>
 		</nav>
 	</header>
-	
+
 	<section>
 		<div class="paragraphWelcome">
 			<h1 id="introTitle">WELCOME</h1>
@@ -46,16 +70,18 @@
 	<section>
 		<h1 id="explore" class="title">EXPLORE ALGERIA WITH CONFIDENCE !</h1>
 		<div class="explore">
-			<p id="paragraphExplore">
-				Algeria is a vibrant North African country, rich in history, culture, 
-				and natural beauty. From the bustling streets of its vibrant cities to 
-				the vast Sahara desert, Algeria is a land of diverse landscapes and experiences. 
-				Its ancient ruins, offer a glimpse into the country's fascinating past, 
-				while its vibrant markets, lively music scene, and delicious cuisine reflect its 
-				dynamic present. Whether you're seeking adventure in the desert, relaxation on 
-				the coast, or a glimpse into a unique culture, <br>
-				<b>Algeria is a destination that won't disappoint.</b>
-			</p>
+			<div class="paragraphExplore">
+				<p>
+					Algeria is a vibrant North African country, rich in history, culture, 
+					and natural beauty. From the bustling streets of its vibrant cities to 
+					the vast Sahara desert, Algeria is a land of diverse landscapes and experiences. 
+					Its ancient ruins, offer a glimpse into the country's fascinating past, 
+					while its vibrant markets, lively music scene, and delicious cuisine reflect its 
+					dynamic present. Whether you're seeking adventure in the desert, relaxation on 
+					the coast, or a glimpse into a unique culture <br>
+					<b>Algeria is a destination that won't disappoint</b>
+				</p>
+			</div>
 			<h3 id="paragraphExploreQuestion">Where you want to go now ?</h3>
 			<div class="beginTravel">
 				<h3 id="beginTravelParagraph">Start your tour simply here !</h3>
@@ -249,52 +275,24 @@
 			<img src="icons/logoo.png" id="logoFooter">
 		</div>
 	</footer>
-  
-	<script>
-		window.onscroll = function() 
-		{
-			var header = document.getElementById("header");
-			var scrollButton = document.getElementById("scrollButton");
-			if (window.pageYOffset > 0) 
-			{ 
-				header.classList.add("scrolled"); 
-				scrollButton.style.display = 'block';
-			}
-			else 
-			{ 
-				header.classList.remove("scrolled");
-				scrollButton.style.display = 'none';
-			}
-			scrollButton.addEventListener('click', function() 
-			{
-				window.scrollTo 
-				({
-					top: 0,
-					behavior: 'smooth'
-				});
-			});
-		}
-	</script>
-	<script>
-	    var images = 
-		[
-			"images/bejaia.jpg",
-			"images/biskra.jpg",
-			"images/alger3.jpg",
-			"images/alger2.jpg",
-			"images/Sahara5.jpg",
-		];
-		var dynamicImages = document.getElementById("dynamicImageCover");
-		var compteur = 0;
-		function changeImage() 
-		{
-			dynamicImages.src = images[compteur];
-			compteur = (compteur + 1) % images.length;
-		}
-		setInterval(changeImage, 5000);
-	</script>
-	<script>
-		
-	</script>
 </body>
+<!--------------------------------------------------------------------------------------------------Background loop-->
+<script>
+	var images = 
+	[
+		"images/bejaia.jpg",
+		"images/biskra.jpg",
+		"images/alger3.jpg",
+		"images/alger2.jpg",
+		"images/Sahara5.jpg",
+	];
+	var dynamicImages = document.getElementById("dynamicImageCover");
+	var compteur = 0;
+	function changeImage() 
+	{
+		dynamicImages.src = images[compteur];
+		compteur = (compteur + 1) % images.length;
+	}
+	setInterval(changeImage, 5000);
+</script>
 </html>
