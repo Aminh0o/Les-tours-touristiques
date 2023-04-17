@@ -1,6 +1,5 @@
 <?php
-      session_start();
-        function AdminName() {
+          session_start();
           $server = "localhost";
           $nom_bdd = "essai";
           $user = "root";
@@ -10,22 +9,38 @@
              
             try {
               $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd", $user, $password);
-             
-      
-              $req = "SELECT NOM FROM ADMINISTRATEUR WHERE LOGIN_ADMIN = '$email' ";
+              $req = "SELECT * FROM ADMINISTRATEUR WHERE LOGIN_ADMIN = '$email' ";
               $resultat = $connexion->query($req);
           
               $tuple = $resultat->fetch(PDO::FETCH_ASSOC);
-              echo "<span class='nav-item' id='admin'>".$tuple["NOM"]."</span></a>";
             } catch (PDOException $e) {
        
               echo "Erreur ! " . $e->getMessage() . "<br/>";
             }
-          }
-        }
-       
-        
-      ?>
+          }     
+?>
+
+<?php
+$data1 = array();
+$wilayas = array('ALGER', 'TLEMCEN', 'ORAN', 'COSTANTINE', 'BEJAIA', 'SAHARA');
+foreach ($wilayas as $wilaya) {
+    $sql = "SELECT COUNT(*) FROM PACK WHERE WILAYA = :wilaya";
+    $stmt = $connexion->prepare($sql);
+    $stmt->execute(array(":wilaya" => $wilaya));
+    $count1 = $stmt->fetchColumn();
+    $data1[] = $count1;
+}
+$data2 = array();
+$categories = array('ROYAL', 'SPECIAL', 'NORMAL');
+foreach ($categories as $categorie) {
+    $sql = "SELECT COUNT(*) FROM PACK WHERE CATEGORIE = :categorie";
+    $stmt = $connexion->prepare($sql);
+    $stmt->execute(array(":categorie" => $categorie));
+    $count2 = $stmt->fetchColumn();
+    $data2[] = $count2;
+}
+
+?>
  <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -33,6 +48,8 @@
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="AdminPrincipal.css" />
     <link href="img/icons/css/icons.css" rel="stylesheet">
+    <script src="chart.js" ></script>
+    <script src="helpers.esm.min.js"></script>
   </head>
   <body>
     <header class="header">
@@ -44,7 +61,7 @@
         </form>
       </div>
       <div class="sectionMilieu">
-        <a href="InterfaceClient.php"><img src="img/logoo.png" id="logo"></a>
+        <a href="InterfaceClient.html"><img src="img/logoo.png" id="logo"></a>
       </div>
 
       <div class="sectionDroite">
@@ -61,7 +78,7 @@
           <a href="#NavGestion1" onclick="ScrollNav(this)">
 
            <span class="fi fi-sr-user" class="img-item">
-              <?php AdminName(); ?> 
+              <?php echo "<span class='nav-item' id='admin'>".$tuple["NOM"]."</span></a>"; ?> 
           </li>
 
         <li>
@@ -77,9 +94,9 @@
           </a>
         </li>
         <li>
-          <a href="#report" onclick="ScrollNav(this)">
+          <a href="#stats" onclick="ScrollNav(this)">
             <span class="fi fi-sr-clipboard-list-check" class="img-item">
-            <span class="nav-item">REPORT</span>
+            <span class="nav-item">STATS</span>
           </a>
         </li>
         <li class="gestionButton" id="gestionButton">
@@ -98,16 +115,29 @@
       </ul>
     </nav>
 
-    <section  id="NavGestion1">
-    
-    <div class="PackGestion">
-    </div>
+    <section id="NavGestion1">
+       <div>
+        
+       </div> 
     </section>
+
+    <section class="gestion" id="stats">
+          <div>
+            <canvas id="graphe1" width="380px" height="200px"></canvas>
+          </div>
+
+          <div>
+            <canvas id="graphe2" width="380px" height="200px"></canvas>
+          </div>
+
+    </section>
+
+    
     
     <section  id="NavGestion2">
   
     </section>
-
+    
      <section  class="gestion" id="NavGestion3">
         <div class="PackGestion">
         <h3>GESTION DES PACKS</h3>
@@ -144,11 +174,14 @@
      </footer>
      
      <script>
+      //******************************************************//
       function ScrollNav(link)
       {
-        var NavGestion = [document.getElementById("NavGestion1"),
+        var NavGestion = [
+          document.getElementById("NavGestion1"),
         document.getElementById("NavGestion2"),
-        document.getElementById("NavGestion3")];
+        document.getElementById("NavGestion3"),
+        document.getElementById("stats")];
         for(var i = 0 ; i<NavGestion.length ; i++ )
         {
           if(NavGestion[i].id === link.getAttribute("href").substring(1))
@@ -160,7 +193,76 @@
         }
         
       }
-      ScrollNav(document.querySelector('a[href="#NavGestion3"]'));
+      ScrollNav(document.querySelector('a[href="#stats"]'));
+      //******************************************************//
+      var graphe1 = document.getElementById("graphe1").getContext("2d");
+      var myChart1 = new Chart(graphe1, {
+    type: 'bar',
+    data: {
+        labels: ['ALGER', 'TLEMCEN', 'ORAN', 'COSTANTINE', 'BEJAIA', 'SAHARA'],
+        datasets: [{
+            label: 'Nombre des Packs par Wilaya',
+            data: <?php echo json_encode($data1); ?>,
+            backgroundColor: ['lightgreen', 'lightblue', 'gold'],
+            borderColor: ['green', 'navy', 'black'],
+            borderWidth: 2
+        }]
+    },
+    options: {
+      responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        title: {
+            display: true,
+        },
+        legend: {
+          
+            display: false
+        }
+    }
+});
+
+//******************************************************//
+var graphe2 = document.getElementById("graphe2").getContext("2d");
+      var myChart2 = new Chart(graphe2, {
+    type: 'bar',
+    data: {
+        labels: ['ROYAL', 'SPECIAL', 'NORMAL'],
+        datasets: [{
+            label: 'Nombre des Packs par Catégorie',
+            data: <?php echo json_encode($data2); ?>,
+            backgroundColor: ['yellow', 'aqua','pink', 'lightgreen', 'lightblue', 'gold'],
+            borderColor: ['red', 'blue', 'fuchsia','green', 'navy', 'black'],
+            borderWidth: 2
+        }]
+    },
+    options: {
+      responsive: false,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        title: {
+            display: true,
+        },
+        legend: {
+          
+            display: false
+        }
+    }
+});
+
+
+
+
      </script>
 
   </body>
