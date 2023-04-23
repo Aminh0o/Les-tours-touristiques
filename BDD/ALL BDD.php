@@ -28,7 +28,7 @@
 		
 		/**********************************************************/
 		//Création de la table ADMINISTRATEUR
-		$requete_sql_administrateur = "CREATE TABLE IF NOT EXISTS ADMINISTRATEUR (
+		$requete_sql_administrateur = "CREATE TABLE IF NOT EXISTS ADMINISTRATEUR(
 			ID_ADMIN             varchar(10) not null,
             ID_RESERVATION       varchar(10) not null,
             ID_RECRUTEMENT       varchar(10) not null,
@@ -113,7 +113,7 @@
 		//Création de la table COMPTE
 		$requete_sql_compte = "CREATE TABLE IF NOT EXISTS COMPTE (
 			ID_COMPTE            varchar(10) not null,
-			NOM                  text not null,
+			NOM                 text not null,
 			LOGIN_COMPTE         varchar(20) not null,
 			MOT_DE_PASSE         varchar(10) not null,
 			primary key (ID_COMPTE)
@@ -140,8 +140,11 @@
 		//Création de la table PACK
 		$requete_sql_pack = "CREATE TABLE IF NOT EXISTS PACK (
 			NUMEROPACK           int not null,
+			NOMPACK              varchar(10) not null,
+			DATE_CREATION        date not null,
 			CATEGORIE            varchar(10) not null,
 			WILAYA               varchar(20) not null,
+			TYPE_PACK			 varchar(10) not null,
 			PRIX                 float not null,
 			primary key (NUMEROPACK)
 		)";
@@ -153,7 +156,9 @@
 		//Création de la table RECRUTEMENT
 		$requete_sql_recrutement = "CREATE TABLE IF NOT EXISTS RECRUTEMENT (
             ID_RECRUTEMENT       varchar(10) not null,
-			DATE_D_ENVOI         date not null,
+			NOM_RECRUTEUR        varchar(30) not null,
+			GENDER               varchar(10) not null,
+			DATE_DE_ENVOI         date not null,
 			CV                   varchar(100) not null,
 			primary key (ID_RECRUTEMENT)
 		)";
@@ -165,6 +170,7 @@
 		//Création de la table RESERVATION
 		$requete_sql_reservation = "CREATE TABLE IF NOT EXISTS RESERVATION (
 			ID_RESERVATION       varchar(10) not null,
+			NOM_RESERVATION      varchar(10) not null,
 			DATE_RESERVATION     date not null,
 			NBR_PLACES_DEMANDE   int not null,
 			primary key (ID_RESERVATION)
@@ -178,7 +184,12 @@
 		$requete_sql_tour = "CREATE TABLE IF NOT EXISTS TOUR (
             ID_TOUR              varchar(10) not null,
 			NOMTOUR              text not null,
-			DUREETOUR            time not null,
+			DATE_TOUR          	 date not null,
+			WILAYA               varchar(15) not null,
+			PLACE                varchar(15) not null,
+			HEURE_DEPART          time not null,
+			HEURE_ARRIVE 		  time not null,
+			CATEGORIE             varchar(10) not null,
 			primary key (ID_TOUR)
 		)";
 		
@@ -371,7 +382,7 @@
 		echo "Table ADMINISTRATEUR modifier avec succès.<br>";
 		
 		$requete_sql_ADMINISTRATEUR6 = "alter table ADMINISTRATEUR add constraint FK_RECEVER1 foreign key (ID_EMETTEUR)
-		references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict";	  
+		references NOTIF (ID_EMETTEUR) on delete restrict on update restrict";	  
 		
 		$connexion->exec($requete_sql_ADMINISTRATEUR6);
 		echo "Table ADMINISTRATEUR modifier avec succès.<br>";
@@ -385,7 +396,7 @@
 		echo "Table ADMIN_HEBERGEMENT modifier avec succès.<br>";
 				
 		$requete_sql_ADMIN_HEBERGEMENT2 = "alter table ADMIN_HEBERGEMENT add constraint FK_RECEVER5 foreign key (ID_EMETTEUR)
-		references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict";
+		references NOTIF (ID_EMETTEUR) on delete restrict on update restrict";
 				
 		$connexion->exec($requete_sql_ADMIN_HEBERGEMENT2);
 		echo "Table ADMIN_HEBERGEMENT modifier avec succès.<br>";
@@ -399,7 +410,7 @@
 		echo "Table ADMIN_RESTAURATION modifier avec succès.<br>";
 			
 		$requete_sql_RESTAURATION2 = "alter table ADMIN_RESTAURATION add constraint FK_RECEVER4 foreign key (ID_EMETTEUR)
-		references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict";
+		references NOTIF (ID_EMETTEUR) on delete restrict on update restrict";
 		
 		$connexion->exec($requete_sql_RESTAURATION2);
 		echo "Table ADMIN_RESTAURATION modifier avec succès.<br>";
@@ -413,7 +424,7 @@
 		echo "Table ADMIN_TRANSPORT modifier avec succès.<br>";
 			
 		$requete_sql_TRANSPORT2 = "alter table ADMIN_TRANSPORT add constraint FK_RECEVER2 foreign key (ID_EMETTEUR)
-		references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict";
+		references NOTIF (ID_EMETTEUR) on delete restrict on update restrict";
 					
 		$connexion->exec($requete_sql_TRANSPORT2);
 		echo "Table ADMIN_TRANSPORT modifier avec succès.<br>";
@@ -421,7 +432,7 @@
 		/**********************************************************/
 		//Modification de la table GUIDE	
 		$requete_sql_GUIDE = "alter table GUIDE add constraint FK_RECEVER3 foreign key (ID_EMETTEUR)
-		references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict";
+		references NOTIF (ID_EMETTEUR) on delete restrict on update restrict";
 		   
 		$connexion->exec($requete_sql_GUIDE);
 		echo "Table GUIDE modifier avec succès.<br>";
@@ -430,7 +441,7 @@
 	    //Modification de la table UTILISATEUR
 		
 		$requete_sql_UTILISATEUR= "alter table UTILISATEUR add constraint FK_RECEVER foreign key (ID_EMETTEUR)
-		references NOTIFICATION (ID_EMETTEUR) on delete restrict on update restrict";
+		references NOTIF (ID_EMETTEUR) on delete restrict on update restrict";
 			
 		$connexion->exec($requete_sql_UTILISATEUR);
 		echo "Table UTILISATEUR modifier avec succès.<br>";
@@ -970,55 +981,7 @@
 		$connexion->exec($requete_sql_Restauration_data32);
 		echo "Insertion réussie au niveau de la table RESTAURATION.<br>";
 		
-		/**********************************************************/
-		//Insertion de données pour la table TOUR
-		
-		$requete_sql_Tour_data1 = "INSERT INTO TOUR (ID_TOUR, NOMTOUR, DUREETOUR) VALUES 
-		('','','')";
 
-		$requete_sql_Tour_data2 = "INSERT INTO TOUR (ID_TOUR, NOMTOUR, DUREETOUR) VALUES 
-		('','','')";
-
-		$requete_sql_Tour_data3 = "INSERT INTO TOUR (ID_TOUR, NOMTOUR, DUREETOUR) VALUES 
-		('','','')";
-
-		$requete_sql_Tour_data4 = "INSERT INTO TOUR (ID_TOUR, NOMTOUR, DUREETOUR) VALUES 
-		('','','')";
-
-		$requete_sql_Tour_data5 = "INSERT INTO TOUR (ID_TOUR, NOMTOUR, DUREETOUR) VALUES 
-		('','','')";
-		
-		$connexion->exec($requete_sql_Tour_data1);
-		$connexion->exec($requete_sql_Tour_data2);
-		$connexion->exec($requete_sql_Tour_data3);
-		$connexion->exec($requete_sql_Tour_data4);
-		$connexion->exec($requete_sql_Tour_data5);
-		echo "Insertion réussie au niveau de la table TOUR.<br>";
-
-		/**********************************************************/
-		//Insertion de données pour la table COMPTE
-		
-		$requete_sql_Compte_data1 = "INSERT INTO COMPTE (ID_COMPTE, NOM, LOGIN_COMPTE, MOT_DE_PASSE) VALUES 
-		('','','','')";
-
-		$requete_sql_Compte_data2 = "INSERT INTO COMPTE (ID_COMPTE, NOM, LOGIN_COMPTE, MOT_DE_PASSE) VALUES 
-		('','','','')";
-
-		$requete_sql_Compte_data3 = "INSERT INTO COMPTE (ID_COMPTE, NOM, LOGIN_COMPTE, MOT_DE_PASSE) VALUES 
-		('','','','')";
-
-		$requete_sql_Compte_data4 = "INSERT INTO COMPTE (ID_COMPTE, NOM, LOGIN_COMPTE, MOT_DE_PASSE) VALUES 
-		('','','','')";
-
-		$requete_sql_Compte_data5 = "INSERT INTO COMPTE (ID_COMPTE, NOM, LOGIN_COMPTE, MOT_DE_PASSE) VALUES 
-		('','','','')";
-		
-		$connexion->exec($requete_sql_Compte_data1);
-		$connexion->exec($requete_sql_Compte_data2);
-		$connexion->exec($requete_sql_Compte_data3);
-		$connexion->exec($requete_sql_Compte_data4);
-		$connexion->exec($requete_sql_Compte_data5);
-		echo "Insertion réussie au niveau de la table COMPTE.<br>";
 
 
 		//Clôture de la connexion
