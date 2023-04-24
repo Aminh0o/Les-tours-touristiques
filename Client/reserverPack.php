@@ -18,12 +18,18 @@
     $nbr_places_demande = $_POST['nbr_places_demande'];
 
     $utilisateurs = array();
-    for ($i = 1; $i <= $nbr_places_demande ; $i++) 
+    for ($i = 0; $i < $nbr_places_demande; $i++) 
     {
-        $nom_passager = $_POST["nomPassager".$i];
-        $prenom_passager = $_POST["prenomPassager".$i];
-        $date_de_naissance_passager = $_POST["naissance".$i];
-        $utilisateur = array("nom" => $nom_passager, "prenom" => $prenom_passager, "dateNaissance" => $date_de_naissance_passager);
+        $nom = $_POST['nomPassager'.$i];
+        $prenom = $_POST['prenomPassager'.$i];
+        $date_naissance = $_POST['naissance'.$i];
+
+        $utilisateur = array(
+            'nom' => $nom,
+            'prenom' => $prenom,
+            'date_naissance' => $date_naissance
+        );
+
         array_push($utilisateurs, $utilisateur);
     }
     $choix = $_POST['accompagner'];

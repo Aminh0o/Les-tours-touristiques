@@ -215,12 +215,26 @@ header
   transition: all 0.5s ease-in-out;
   opacity: 0;
 }
-.pack .packInfo .packDescription 
+.packDescription 
+{
+  position: absolute;
+  color: var(--grey--);
+}
+.packDescription h4
+{
+  font-size: 20px;
+  margin-top: -80%;
+  margin-left: 40%;
+}
+.packDescription h6
 {
   font-size: 15px;
-  font-weight: 500;
-  margin: 0;
-  color: var(--grey--);
+  margin-top: -10%;
+}
+.packDescription p
+{
+  margin-top: -91%;
+  margin-left: 95%;
 }
 .pack:hover .packInfo 
 {

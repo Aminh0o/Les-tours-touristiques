@@ -12,101 +12,82 @@
         <div class="sectionGauche">
             <a href="InterfaceClient.html"><img src="icons/logoo.png" id="logo"></a>
         </div>
-        <p>Welcome Name </p>
     </header>
 
     <section class="reservationForm">
         <h1 id="title">RESERVE A PACK</h1>
         <form method="POST" class="form" action="reserverPack.php">
-            <label>First Name :</label>
-            <input class="rightInput" type="text" size="20" name="nomUtilisateur" placeholder="Enter your first name" ><br>
-      
-            <label>Last Name :</label>
-            <input class="rightInput" type="text" size="20" name="prenomUtilisateur" placeholder="Enter your last name" ><br>
-      
-            <label>Birth Date :</label>
-            <input class="rightInput" type="date" name="dateNaissance"><br>
-      
-            <label>Phone Number :</label>
-            <input class="rightInput" type="number" name="telephone" size="10" placeholder="Enter your telephone number" ><br>
-      
-            <label>E-mail :</label>
-            <input class="rightInput" type="email" name="email" placeholder="Enter your email address" ><br>
-
-            <label>Date de réservation :</label>
-            <input class="rightInput" type="date" name="date_reservation"><br>
-
-            <div class="accompagner">
-                <label >Are you accompanied ?</label>
-                <label class="accompagnerYesNo">
-                    YES <input type="radio" name="accompagner" id="SIaccompagner" value="yes" onclick="afficherAccompagner()" checked>
-                </label>
-                <label class="accompagnerYesNo">
-                    No &nbsp;&nbsp;<input type="radio" name="accompagner" id="SINONaccompagner" value="no" onclick="afficherAccompagner()">
-                </label>
-                <br>
-                  
-                <div id="formAccompagner" class="accompagnerChoice">
-
-                    <label>How many people do you want to go with ?</label>
-                    <input type="number" name="nbr_places_demande" id="nbr_places_demande" size="5" placeholder="How many you want to go ?" ><br>
-
-                    <label>Do you want to add accompanying persons ?</label>
-                    <div id="afficherFormAccompagner">
-                        <label>First Name :</label>
-                        <input type="text" size="20" id="nomPassager" placeholder="Enter your first name"><br>
+            <div class="leftInput">
+                <label>First Name :</label>
+                <input type="text" size="20" name="nomUtilisateur" placeholder="Enter your first name" ><br>
                 
-                        <label>Last Name :</label>
-                        <input type="text" size="20" id="prenomPassager" placeholder="Enter your last name"><br>
+                <label>Last Name :</label>
+                <input type="text" size="20" name="prenomUtilisateur" placeholder="Enter your last name" ><br>
                 
-                        <label>Birth Date :</label>
-                        <input type="date" id="naissance"><br>
+                <label>Birth Date :</label>
+                <input type="date" name="dateNaissance"><br>
                 
-                        <button onclick="ajouterUtilisateur(event)">Add</button>
-                    </div>
-                    
-                    <table>
-                        <thead>
-                            <tr>
-                                <th>First Name</th>
-                                <th>Last Name</th>
-                                <th>Birth Date</th>
-                            </tr>
-                        </thead>
-                        <tbody id="listeUtilisateurs" name="listeUtilisateurs">
-
-                        </tbody>
-                    </table>
-                </div>
+                <label>Phone Number :</label>
+                <input type="number" name="telephone" size="10" placeholder="Enter your telephone number" ><br>
+                
+                <label>E-mail :</label>
+                <input type="email" name="email" placeholder="Enter your email address" ><br>
+                
+                <label>Date de réservation :</label>
+                <input type="date" name="date_reservation"><br>
             </div>
 
-            <label>Choose the place you want to visit :</label>
-            <select name="wilaya" id="wilaya">
-                <option value="alger">ALGER</option>
-                <option value="tlemcen">TLEMCEN</option>
-                <option value="oran">ORAN</option>
-                <option value="costantine">CONSTANTINE</option>
-                <option value="bejaia">BEJAIA</option>
-                <option value="sahara">SAHARA</option>
-            </select>
+            <div class="rightInput">
+                <div class="accompagner">
+                    <label >Are you accompanied ?</label>
+                    <label>
+                        YES <input type="radio" name="accompagner" id="SIaccompagner" value="yes" onclick="afficherAccompagner()" checked>
+                    </label>
+                    <label>
+                        No <input type="radio" name="accompagner" id="SINONaccompagner" value="no" onclick="afficherAccompagner()">
+                    </label>
+                </div>
 
-            <label>Choose your pack option ?</label>
-            <select name="categorie" id="categorie" >
-                <option value="royal">ROYAL</option>
-                <option value="special">SPECIAL</option>
-                <option value="normal">NORMAL</option>
-            </select>
+                <label>Choose the place you want to visit :</label>
+                <select name="wilaya" id="wilaya">
+                    <option value="alger">ALGER</option>
+                    <option value="tlemcen">TLEMCEN</option>
+                    <option value="oran">ORAN</option>
+                    <option value="costantine">CONSTANTINE</option>
+                    <option value="bejaia">BEJAIA</option>
+                    <option value="sahara">SAHARA</option>
+                </select>
+    
+                <label>Choose your pack option ?</label>
+                <select name="categorie" id="categorie" >
+                    <option value="royal">ROYAL</option>
+                    <option value="special">SPECIAL</option>
+                    <option value="normal">NORMAL</option>
+                </select>
 
-            <button id="submit">Submit</button>
+                <button id="submit">Submit</button>
+            </div>     
 
+            <div id="formAccompagner" class="accompagnerChoice">
+                <label>How many people do you want to go with ?</label>
+                <input type="number" name="nbr_places_demande" id="nbr_places_demande" size="5" placeholder="How many you want to go ?" ><br>
+
+                <button onclick="ajouterUtilisateur(event)">Add</button>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Birth Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="listeUtilisateurs" name="listeUtilisateurs"></tbody>
+                </table>
+            </div>
         </form>
-
     </section>
 
-    <footer>
-
-    </footer>
-    
     <script>
         /***********************************************************************************************************************/
         function afficherAccompagner()
@@ -121,53 +102,25 @@
         }
         /**********************************************************************************************************************/
         var utilisateurs = [];
-        var compteur = 1;
         function ajouterUtilisateur(event) 
         {
             event.preventDefault();
-            
-            var nombrePlace = parseInt(document.getElementById("nbr_places_demande").value);
-            
-            var nom = document.getElementById("nomPassager").value;
-            var prenom = document.getElementById("prenomPassager").value;
-            var dateNaissance = document.getElementById("naissance").value;
-            var utilisateur = { nom: nom, prenom: prenom, dateNaissance: dateNaissance };
 
-            utilisateurs.push(utilisateur);
+            var nbr_places_demande = document.getElementById("nbr_places_demande").value;
+            var listeUtilisateurs = document.getElementById("listeUtilisateurs");
+            
+            for (var i = 0; i < nbr_places_demande; i++) 
+            {
+                var ligne = listeUtilisateurs.insertRow();
                 
-            var tableauDonnees = document.getElementById("listeUtilisateurs");
-            var nvCell = tableauDonnees.insertRow();
-            var nomCell = nvCell.insertCell();
-            var prenomCell = nvCell.insertCell();
-            var dateNaissanceCell = nvCell.insertCell();
+                var nomCell = ligne.insertCell();
+                var prenomCell = ligne.insertCell();
+                var dateCell = ligne.insertCell();
                 
-            nomCell.innerText = utilisateur.nom;
-            prenomCell.innerText = utilisateur.prenom;
-            dateNaissanceCell.innerText = utilisateur.dateNaissance;
-
-            var hiddenNomInput = document.createElement("input");
-            hiddenNomInput.type = "hidden";
-            hiddenNomInput.name = "nomPassager" + compteur;
-            hiddenNomInput.value = nom;
-            document.getElementById("afficherFormAccompagner").appendChild(hiddenNomInput);
-  
-            var hiddenPrenomInput = document.createElement("input");
-            hiddenPrenomInput.type = "hidden";
-            hiddenPrenomInput.name = "prenomPassager" + compteur;
-            hiddenPrenomInput.value = prenom;
-            document.getElementById("afficherFormAccompagner").appendChild(hiddenPrenomInput);
-           
-            var hiddenDateNaissanceInput = document.createElement("input");
-            hiddenDateNaissanceInput.type = "hidden";
-            hiddenDateNaissanceInput.name = "naissance" + compteur;
-            hiddenDateNaissanceInput.value = dateNaissance;
-            document.getElementById("afficherFormAccompagner").appendChild(hiddenDateNaissanceInput);
-        
-            compteur++;
-                
-            document.getElementById("nomPassager").value = "";
-            document.getElementById("prenomPassager").value = "";
-            document.getElementById("naissance").value = "";
+                nomCell.innerHTML = '<input type="text" size="20" id="nomPassager'+ i +'" placeholder="Enter your first name">';
+                prenomCell.innerHTML = '<input type="text" size="20" id="prenomPassager'+ i +'" placeholder="Enter your last name">';
+                dateCell.innerHTML = '<input type="date" id="naissance'+ i +'">';
+            }
         }
     </script>
 </body>
