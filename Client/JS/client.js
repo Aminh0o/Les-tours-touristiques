@@ -33,5 +33,35 @@ function afficherProfile()
     {
       profile.style.visibility = "hidden";
     }
+}
+/***********************************************************************************/
+function setupAvisCarousel() {
+    const container = document.querySelector('.avis');
+    const previousButton = document.querySelector('.previous');
+    const nextButton = document.querySelector('.next');
+  
+    let scrollPosition = 0;
+  
+    previousButton.addEventListener('click', () => {
+      // scroll left by the width of one card
+      scrollPosition -= container.offsetWidth / 3;
+      container.scroll({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+    });
+  
+    nextButton.addEventListener('click', () => {
+      // scroll right by the width of one card
+      scrollPosition += container.offsetWidth / 3;
+      container.scroll({
+        left: scrollPosition,
+        behavior: 'smooth'
+      });
+    });
   }
+  
+  // Call the setupAvisCarousel function to set up the carousel
+  setupAvisCarousel();
+  
   
