@@ -286,6 +286,31 @@
 		</div>
 	</section>
 
+	<section>
+		<div>
+			<h1 class="title">AVIS</h1>
+		</div>
+		<div class="avis">
+		
+			<div class="avis-card">
+				<h3>Amine</h3>
+				<p>Awesome</p>
+			</div>
+			<div class="avis-card">
+				<h3>Mohammed</h3>
+				<p>Nice</p>
+			</div>
+			<div class="avis-card">
+				<h3>Sifou</h3>
+				<p>Good</p>
+			</div>
+		</div>
+		<div class="avis-controls">
+			<button class="previous" onclick="setupAvisCarousel()">&lt;</button>
+			<button class="next" onclick="setupAvisCarousel()">&gt;</button>
+		</div>
+	</section>
+
 	<section id="contact">
 		<div>
 			<h1 class="title">CONTACT US</h1>
