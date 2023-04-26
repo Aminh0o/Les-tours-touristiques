@@ -113,7 +113,7 @@
 		//Création de la table COMPTE
 		$requete_sql_compte = "CREATE TABLE IF NOT EXISTS COMPTE (
 			ID_COMPTE            varchar(10) not null,
-			NOM                 text not null,
+			NOM                  text not null,
 			LOGIN_COMPTE         varchar(20) not null,
 			MOT_DE_PASSE         varchar(10) not null,
 			primary key (ID_COMPTE)
@@ -158,7 +158,7 @@
             ID_RECRUTEMENT       varchar(10) not null,
 			NOM_RECRUTEUR        varchar(30) not null,
 			GENDER               varchar(10) not null,
-			DATE_DE_ENVOI         date not null,
+			DATE_DE_ENVOI        date not null,
 			CV                   varchar(100) not null,
 			primary key (ID_RECRUTEMENT)
 		)";
@@ -187,9 +187,9 @@
 			DATE_TOUR          	 date not null,
 			WILAYA               varchar(15) not null,
 			PLACE                varchar(15) not null,
-			HEURE_DEPART          time not null,
-			HEURE_ARRIVE 		  time not null,
-			CATEGORIE             varchar(10) not null,
+			HEURE_DEPART         time not null,
+			HEURE_ARRIVE 		 time not null,
+			CATEGORIE            varchar(10) not null,
 			primary key (ID_TOUR)
 		)";
 		
