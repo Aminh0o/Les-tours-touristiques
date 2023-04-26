@@ -262,6 +262,92 @@ header
   border-bottom: 2px solid var(--borderGreen--);
   box-shadow: 0 5px 5px var(--shadowGreen--);
 }
+.place 
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 10%;
+  box-shadow: 0 5px 12px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+.place-card
+{
+  position: relative;
+  flex: 17%;
+  margin: 5%;
+  background-color: var(--gold);
+  box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+  border-radius: 20px;
+}
+.place-card:hover 
+{
+  border-radius: 10px;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgb(0, 0, 0);
+}
+.place-card img 
+{
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 36px));
+}
+/***************************************************************************************************************************/
+.attraction-card
+{
+  position: relative;
+  flex: 17%;
+  margin: 5%;
+  background-color: var(--gold);
+  box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+  border-radius: 20px;
+}
+.attraction-card img 
+{
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 36px));
+}
+/***************************************************************************************************************************/
+.placeInfo
+{
+  padding: 5%;
+  text-align: center;
+}
+.placeInfo h3 
+{
+  margin: 0%;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  font-size: 20px;
+  color: var(--white);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  text-decoration: none;
+  border-bottom: none;
+}
+.placeInfo .border-line
+{
+  border-bottom: 1px solid var(--green);
+  border-width: 3px;
+  width: 40%;  
+  margin: 2% 30%;
+}
+.placeInfo .place-text
+{
+  color: var(--grey);  
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  margin-bottom: 5%;
+}
+.placeInfo button a
+{
+  text-decoration: none;
+  color: var(--white);
+  font-size: 15px;
+}
 footer
 {
   position: absolute;

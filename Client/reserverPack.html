@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Réservation</title>
     <link rel="stylesheet" href="reserverPack.css">
+    <script src="JS/reserverPack.js"></script>
 </head>
 <body>
     <header>
@@ -33,19 +34,15 @@
                 <label>E-mail :</label>
                 <input type="email" name="email" placeholder="Enter your email address" ><br>
                 
-                <label>Date de réservation :</label>
-                <input type="date" name="date_reservation"><br>
             </div>
 
             <div class="rightInput">
                 <div class="accompagner">
-                    <label >Are you accompanied ?</label>
-                    <label>
-                        YES <input type="radio" name="accompagner" id="SIaccompagner" value="yes" onclick="afficherAccompagner()" checked>
-                    </label>
-                    <label>
-                        No <input type="radio" name="accompagner" id="SINONaccompagner" value="no" onclick="afficherAccompagner()">
-                    </label>
+                    <h4>Are you accompanied ?</h4>
+                    <label for="SIaccompagner">Yes</label>
+                    <input type="radio" name="accompagner" id="SIaccompagner" value="yes" onclick="afficherAccompagner()">
+                    <label for="SINONaccompagner">No</label>
+                    <input type="radio" name="accompagner" id="SINONaccompagner" value="no" onclick="afficherAccompagner()" checked>
                 </div>
 
                 <label>Choose the place you want to visit :</label>
@@ -58,19 +55,32 @@
                     <option value="sahara">SAHARA</option>
                 </select>
     
-                <label>Choose your pack option ?</label>
+                <label>Choose your pack option :</label>
                 <select name="categorie" id="categorie" >
                     <option value="royal">ROYAL</option>
                     <option value="special">SPECIAL</option>
                     <option value="normal">NORMAL</option>
                 </select>
 
-                <button id="submit">Submit</button>
+                <label>Choose your pack type :</label>
+                <select name="type" id="type" >
+                    <option value="royal">FAMILIAL</option>
+                    <option value="special">ADULT</option>
+                    <option value="normal">PERSONAL</option>
+                </select>
+
+                <label>Choose your pack included options :</label>
+                <select name="includedOption" id="includedOption" multiple>
+                    <option value="normal">Guide</option>
+                    <option value="royal">Accommodation</option>
+                    <option value="special">Transportation</option>
+                    <option value="normal">Feeding</option>
+                </select>
             </div>     
 
-            <div id="formAccompagner" class="accompagnerChoice">
+            <div id="accompagnerChoice" class="accompagnerChoice">
                 <label>How many people do you want to go with ?</label>
-                <input type="number" name="nbr_places_demande" id="nbr_places_demande" size="5" placeholder="How many you want to go ?" ><br>
+                <input type="number" name="nbr_places_demande" id="nbr_places_demande" size="5" placeholder="Enter a number !" >
 
                 <button onclick="ajouterUtilisateur(event)">Add</button>
                 
@@ -85,43 +95,9 @@
                     <tbody id="listeUtilisateurs" name="listeUtilisateurs"></tbody>
                 </table>
             </div>
+
+            <button id="submit">Submit</button>
         </form>
     </section>
-
-    <script>
-        /***********************************************************************************************************************/
-        function afficherAccompagner()
-        {
-            var accompagner = document.getElementById("SIaccompagner");
-            var accompagner2 = document.getElementById("SINONaccompagner");
-            var div = document.getElementById("formAccompagner");
-            if(accompagner.checked)
-                div.style.visibility = 'visible';
-            else if (accompagner2.checked)
-                div.style.visibility = 'hidden';
-        }
-        /**********************************************************************************************************************/
-        var utilisateurs = [];
-        function ajouterUtilisateur(event) 
-        {
-            event.preventDefault();
-
-            var nbr_places_demande = document.getElementById("nbr_places_demande").value;
-            var listeUtilisateurs = document.getElementById("listeUtilisateurs");
-            
-            for (var i = 0; i < nbr_places_demande; i++) 
-            {
-                var ligne = listeUtilisateurs.insertRow();
-                
-                var nomCell = ligne.insertCell();
-                var prenomCell = ligne.insertCell();
-                var dateCell = ligne.insertCell();
-                
-                nomCell.innerHTML = '<input type="text" size="20" id="nomPassager'+ i +'" placeholder="Enter your first name">';
-                prenomCell.innerHTML = '<input type="text" size="20" id="prenomPassager'+ i +'" placeholder="Enter your last name">';
-                dateCell.innerHTML = '<input type="date" id="naissance'+ i +'">';
-            }
-        }
-    </script>
 </body>
 </html>

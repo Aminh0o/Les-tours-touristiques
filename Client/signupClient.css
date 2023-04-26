@@ -1,17 +1,20 @@
 :root{
-    --background--:#e0c9a5;
-    --header--:hsl(38, 99%, 70%);
-    --headerScroll--:hsla(37, 63%, 64%, 0.726);
-    --white--: #ffffff;
-    --green--: #4CAF50;
-    --borderGreen--: rgb(42, 139, 3);
-    --shadowGreen--: rgba(5, 201, 64, 0.5);
-    --grey--: rgba(255, 255, 255, 0.5);
-    --gold--: #ddb067;
+    --background:#e0c9a5;
+    --header:hsl(38, 99%, 70%);
+    --headerScroll:hsla(37, 63%, 64%, 0.726);
+    --white: #ffffff;
+    --green: #4CAF50;
+    --borderGreen: rgb(42, 139, 3);
+    --shadowGreen: rgba(5, 201, 64, 0.5);
+    --grey: rgba(255, 255, 255, 0.5);
+    --gold: #ddb067;
+}
+*
+{
+    font-family: 'Rockwell', 'serif';
 }
 body 
 {
-    font-family: 'Rockwell', 'serif';
     align-items: center;
     background-image: url(images/timgad.jpg);
     background-attachment: fixed;
@@ -24,8 +27,20 @@ header
 {
     display: flex;
     justify-content: center;
-    color: hsl(38, 99%, 70%);
+    margin-left: -36%;
+    color: var(--header);
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+.sectionGauche
+{
+    display: inline-flex;
+    align-items: center;
+}
+#logo
+{
+    width: 40%;
+    height: 70%;
+    margin-left: -20%;
 }
 .form 
 {
@@ -33,11 +48,11 @@ header
     align-items: center;
     width: 60%;
     padding: 20px 0px 20px 0px;
-    color: hsl(38, 99%, 70%);
-    background-color: var(--grey--);
+    color: var(--header);
+    background-color: var(--grey);
     border-radius: 20px;
-    border-color: var(--header--);
-    border: 3px solid var(--header--);
+    border-color: var(--header);
+    border: 3px solid var(--header);
     margin-left: 20%;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -49,18 +64,20 @@ label
 input
 {
     align-items: center;
-    width:60%; 
-    line-height: 2; 
-    border-radius: 20px;
+    width: 60%;
+    line-height: 2.5;
+    border: none; 
+    border-radius: 15px;
     margin-left: 25%;
     margin-bottom: 1%;
     font-size: 15px;
-    opacity: 0.6;
+    opacity: 0.8;
+    outline: none;
 }
 input:focus, input:hover
 {
     opacity: 1;
-    width: 65%;
+    width: 61%;
 }
 #submit 
 {
@@ -69,19 +86,19 @@ input:focus, input:hover
     padding: 10px 20px;
     font-size: 15px;
     font-weight: bold;
-    color:white;
-    background-color:var(--green--);
+    color: var(--white);
+    background-color:var(--green);
     border: none;
     border-radius: 10px;
     cursor: pointer;
-    opacity: 0.8;
+    opacity: 0.9;
 }
 #submit:hover
 {
     opacity: 1;
-    transform: scale(1.1);
-    border-bottom: 2px solid var(--borderGreen--);
-    box-shadow: 0 5px 5px var(--shadowGreen--);
-    font-size: 18px;
+    transform: scale(1);
+    border-bottom: 2px solid var(--borderGreen);
+    box-shadow: 0 5px 5px var(--shadowGreen);
+    font-size: 16px;
 }
 
