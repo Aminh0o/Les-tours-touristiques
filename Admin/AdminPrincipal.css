@@ -1,24 +1,27 @@
-:root
+:root 
 {
-  --background--:#e0c9a5;
-  --header--:hsl(38, 99%, 70%);
-  --headerScroll--:hsla(37, 63%, 64%, 0.726);
-  --white--: #ffffff;
-  --green--: #4CAF50;
-  --borderGreen--: rgb(42, 139, 3);
-  --shadowGreen--: rgba(5, 201, 64, 0.5);
-  --grey--: rgba(255, 255, 255, 0.5);
-  --gold--: #ddb067;
-} 
+  --background: #e0c9a5;
+  --header: hsl(38, 99%, 70%);
+  --headerScroll: hsla(37, 63%, 64%, 0.726);
+  --white: #ffffff;
+  --green: #4CAF50;
+  --borderGreen: rgb(42, 139, 3);
+  --shadowGreen: rgba(5, 201, 64, 0.5);
+  --grey: #6e6e6e;
+  --gold: #ddb067;
+  --dark: #0F172B;
+  --font-1: "Poppins", sans-serif;
+  --font-2: 'system-ui';
+  --font-3: 'Rockwell', serif;
+}
 body
 {
   width: 100%;
   height: 100%;
   align-items: center;
-  font-family: 'Rockwell', serif;
-  background-color: var(--background--);
+  background-color: var(--background);
   background-size: cover;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 .header
 {
@@ -27,20 +30,20 @@ body
   justify-content: space-between;
   align-items: center;
   width: 99.9%;
-  top:0%;
-  left: 0%;
-  height: 12%;
-  background-color: var(--headerScroll--);
+  top: 0;
+  left: 0;
+  height: 10%;
+  background-color: var(--gold);
 }
 button 
 {
   margin-top: 5%;
   margin-left: auto;
   padding: 10px 20px;
-  font-family: 'Rockwell', serif;
   font-size: 15px;
-  color: var(--white--);
-  background-color: var(--green--);
+  font-family: var(--font-2);
+  color: var(--white);
+  background-color: var(--green);
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -51,113 +54,66 @@ button:hover
 {
   opacity: 1;
   transform: scale(1);
-  border-bottom: 2px solid var(--borderGreen--);
-  box-shadow: 0 5px 5px var(--shadowGreen--);
+  border-bottom: 2px solid var(--borderGreen);
+  box-shadow: 0 5px 5px var(--shadowGreen);
 }
 .sectionGauche
 {
   display: flex;
   align-items: center;
 }
-.sectionGauche a
+#logo
 {
-  margin-left: 1%;
-  margin-right: 5%;
-  text-decoration: none;
-  color: var(--green--);
-  font-size: 18px;
-  opacity: 0.9;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  width: 40%;
+  height: 70%;
+  padding: 2% 2%;
 }
-.sectionGauche a:hover
+.sectionDroite
 {
-  opacity: 1;
-  transform: scale(1.1);
+  display: inline-flex;
+  align-items: center;
+  margin-left: 20%;
 }
-.sectionGauche form
+.sectionDroite form
 {
   position: absolute;
   display: flex;
-  align-items: center;
-  margin-left: 3%;
+  margin-left: -27%;
 }
-.sectionGauche input
+.sectionDroite input
 {
   background-image: url(img/search.png);
   background-repeat: no-repeat;
   background-position: 99%;
   background-size: 20%;
   border: none;
-  padding: 5% 20%;
-  margin-right: 5%;
-  background-color: var(--white--);
+  background-color: var(--white);
   border-radius: 10px;
   outline: none;
   opacity: 0.5;
+  margin-right: 5%;
+  padding: 3% 20%;
 }
-.sectionGauche input:focus 
+.sectionDroite input:focus 
 {
   opacity: 1;
   width: 200px;
 }
-.sectionGauche button
+.sectionDroite button
 {
   margin-top: 0.8%;
   padding: 5% 10%;
 }
-.sectionMilieu
-{
-  display: inline-flex;
-  align-items: center;
-}
-#logo
-{
-  width: 40%;
-  height: 70%;
-  margin-left: 60%;
-}
-.sectionDroite
-{
-  display: flex;
-  list-style: none;
-  align-items: center;
-  margin-right: -50%;
-}
-.sectionDroite a
-{
-  margin-top: 20%;
-  text-decoration: none;
-  color: var(--green--);
-  opacity: 0.7;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  font-size: 17px;
-}
-.sectionDroite a:hover
-{
-  font-size: 20px;
-  opacity: 1;
-}
-.sectionDroite span /*NOTIFICATION*/
-{
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  margin-top: -1%;
-  left: 89%;
-  color: var(--green--);
-  border-radius: 30%;
-  text-align: center;
-}
 nav
 {
-  position: fixed;
-  margin-top: 49.9%;
-  margin-left: -2%;
-  margin-right: 2.5%;
-  margin-bottom: 5%;
-  width: 5.5%;
-  height: 80%;
-  background: var(--header--);
+  position: absolute;
+  top: 10%;
+  bottom: 0;
+  left: 0;
+  width: 8%;
+  height: 90%;
+  background: var(--gold);
+  font-family: var(--font-2);
   font-size: 15px;
   overflow: hidden;
   transition: 0.5s;
@@ -166,64 +122,60 @@ nav:hover
 {
   width: 17%;
   transition: 1s;
-  transform: translateX(10%);
 }
 nav ul 
 {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 10;
+  margin-left: -10%;
   width: 100%;
 }
 nav ul li
 {
   position: relative;
-  margin-bottom: 7%;
-  padding: 7%;;
   list-style: none;
-  background-color: var(--headerScroll--);
+  left: -5%;
+  background-color: var(--headerScroll);
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
 nav ul li:hover
 {
-  background-color: var(--gold--);
+  background-color: var(--white);
 }
 nav ul li a 
 {
+  display: table;
+  position: relative;
   text-decoration: none;
-  color: var(--green--);
+  color: var(--dark);
   opacity: 0.8;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
   font-size: 17px;
+  padding: 20px;
 }
 nav ul li a:hover
 {
   opacity: 1;
-  background: var(--gold--);
+  background: var(--white);
+  border-radius: 10px;
 }
-
-.img-item
+nav .img-item
 {
   position: relative;
   display: block;
-  margin-left: 20%;
+  margin-left: -5%;
   min-width: 30px;
   height: 30px;
-  line-height: 40px;
 }
-#admin{
-  text-transform: uppercase;
-}
-.nav-item 
+nav .nav-item 
 {
   position: fixed;
   display: block;
-  margin-top: -7%;
-  margin-left: 15%;
   padding: 0 20%;
   height: 30%;
   line-height: 50%;
+  margin-top: -1%;
+  margin-left: -15%;
   opacity: 0;
   transition: opacity 0.5s;
 }
@@ -233,11 +185,11 @@ nav:hover .nav-item
 }
 .nav-logo
 {
-  margin-bottom: 30%;
+  margin-bottom: 20px;
 }
 .nav-logout
 {
-  margin-top: 30%;
+  margin-top: 100px;
 }
 .gestion 
 {
@@ -246,10 +198,10 @@ nav:hover .nav-item
   justify-content: space-between;
   position: absolute;
   margin-top: 7%;
-  margin-left: 10%;
+  margin-left: 15%;
   transition: margin-left 1.5s;
   width: 80%; 
-  height: 10%;
+  height: 20%;
 }
 nav:hover ~ .gestion 
 {
@@ -259,15 +211,16 @@ nav:hover ~ .gestion
 .PackGestion 
 {
   position: relative;
-  margin: 0.5%;
+  margin-bottom: 3%;
   border-radius: 20px;
   text-align: left;
-  background: var(--gold--);
-  border-color: var(--header--);
+  background: var(--gold);
+  border-color: var(--header);
   border-style: bold;
   box-shadow: 0 5px 5px rgba(0,0,0,0.5);
-  padding: 3% 4%;
-  width: 40%; 
+  padding: 3% 4.5%;
+  width: 40%;
+  font-family: var(--font-2);
 }
 .PackGestion:hover 
 {
@@ -279,16 +232,4 @@ nav:hover ~ .gestion
   position: absolute;
   top: 50%;
   right: 4%; 
-}
-footer
-{
-  position: fixed;
-  display: inline-flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 99.9%;
-  top: 91.5%;
-  left: 0%;
-  height: 10%;
-  background-color: var(--headerScroll--);
 }

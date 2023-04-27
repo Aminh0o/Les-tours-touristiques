@@ -24,22 +24,21 @@
 $data1 = array();
 $wilayas = array('ALGER', 'TLEMCEN', 'ORAN', 'COSTANTINE', 'BEJAIA', 'SAHARA');
 foreach ($wilayas as $wilaya) {
-    $sql = "SELECT COUNT(*) FROM PACK WHERE WILAYA = :wilaya";
-    $stmt = $connexion->prepare($sql);
-    $stmt->execute(array(":wilaya" => $wilaya));
-    $count1 = $stmt->fetchColumn();
+    $sql1 = "SELECT COUNT(*) FROM PACK WHERE WILAYA = :wilaya";
+    $res1 = $connexion->prepare($sql1);
+    $res1->execute(array(":wilaya" => $wilaya));
+    $count1 = $res1->fetchColumn();
     $data1[] = $count1;
 }
 $data2 = array();
 $categories = array('ROYAL', 'SPECIAL', 'NORMAL');
 foreach ($categories as $categorie) {
-    $sql = "SELECT COUNT(*) FROM PACK WHERE CATEGORIE = :categorie";
-    $stmt = $connexion->prepare($sql);
-    $stmt->execute(array(":categorie" => $categorie));
-    $count2 = $stmt->fetchColumn();
+    $sql2 = "SELECT COUNT(*) FROM PACK WHERE CATEGORIE = :categorie";
+    $res2 = $connexion->prepare($sql2);
+    $res2->execute(array(":categorie" => $categorie));
+    $count2 = $res2->fetchColumn();
     $data2[] = $count2;
 }
-
 ?>
  <!DOCTYPE html>
 <html lang="en">
@@ -47,83 +46,78 @@ foreach ($categories as $categorie) {
     <meta charset="UTF-8" />
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="AdminPrincipal.css" />
-    <link href="img/icons/css/icons.css" rel="stylesheet">
-    <script src="chart.js" ></script>
-    <script src="helpers.esm.min.js"></script>
+    <link href="icons/icons/css/icons.css" rel="stylesheet">
+    <script src="JS/chart.js" ></script>
+    <script src="JS/helpers.esm.min.js"></script>
   </head>
   <body>
+  
     <header class="header">
-      
       <div class="sectionGauche">
+        <a href="InterfaceClient.html"><img src="img/logoo.png" id="logo"></a>
+      </div>
+      <div class="sectionDroite">
         <form>
-          <input type="text" placeholder="Rechercher...">
+          <input type="text" placeholder="Type to search...">
           <button type="submit">Search</button>
         </form>
       </div>
-      <div class="sectionMilieu">
-        <a href="InterfaceClient.html"><img src="img/logoo.png" id="logo"></a>
-      </div>
+    </header>
 
-      <div class="sectionDroite">
-        <a href="" id="notification-paragraph">
-          <span class="fi fi-sr-bell-ring" id="notification-img"></span>
-            <p>Notifications</p>
-        </a>
-      </div>
-     
-  
     <nav id="navBar">
       <ul>
         <li class="nav-logo" >
           <a href="#NavGestion1" onclick="ScrollNav(this)">
-
-           <span class="fi fi-sr-user" class="img-item">
-              <?php echo "<span class='nav-item' id='admin'>".$tuple["NOM"]."</span></a>"; ?> 
-          </li>
+            <span class="fi-sr-user" class="img-item">
+            <?php echo "<span class='nav-item' id='admin'>".$tuple["NOM"]."</span></a>"; ?>
+          </a>
+        </li>
 
         <li>
           <a href="#NavGestion2" onclick="ScrollNav(this)">
-            <span class="fi fi-sr-home" class="img-item">
+            <span class="fi-sr-home" class="img-item">
             <span class="nav-item">HOME</span>
           </a>
         </li>
         <li>
           <a href="#message" onclick="ScrollNav(this)">
-            <span class="fi fi-sr-envelope" class="img-item">
+            <span class="fi-sr-envelope" class="img-item">
             <span class="nav-item">MESSAGE</span>
           </a>
         </li>
         <li>
+          <a href="#notifications" onclick="ScrollNav(this)">
+            <span class="fi-sr-bell-ring" class="img-item">
+            <span class="nav-item">NOTIFS</span>
+          </a>
+        </li>
+        <li>
           <a href="#stats" onclick="ScrollNav(this)">
-            <span class="fi fi-sr-clipboard-list-check" class="img-item">
+            <span class="fi-sr-clipboard-list-check" class="img-item">
             <span class="nav-item">STATS</span>
           </a>
         </li>
         <li class="gestionButton" id="gestionButton">
           <a href="#NavGestion3" onclick="ScrollNav(this)">
-            <span class="fi fi-sr-settings" class="img-item">
+            <span class="fi-sr-settings" class="img-item">
             <span class="nav-item">GESTIONS</span>
           </a>
         </li>
         <li class="nav-logout">
           <a href="logoutAdmin.php">
-            <span class="fi fi-sr-sign-out-alt" class="img-item">
+            <span class="fi-sr-sign-out-alt" class="img-item">
             <span class="nav-item">LOGOUT</span>
           </a>
         </li>
-
       </ul>
     </nav>
 
-    <section id="NavGestion1">
-       <div>
-        
-       </div> 
-    </section>
+    <section  id="NavGestion1"></section>
+    <section  id="NavGestion2"></section>
 
     <section class="gestion" id="stats">
           <div>
-            <canvas id="graphe1" width="380px" height="200px"></canvas>
+            <canvas id="graphe1" width="430px" height="200px"></canvas>
           </div>
 
           <div>
@@ -132,12 +126,6 @@ foreach ($categories as $categorie) {
 
     </section>
 
-    
-    
-    <section  id="NavGestion2">
-  
-    </section>
-    
      <section  class="gestion" id="NavGestion3">
         <div class="PackGestion">
         <h3>GESTION DES PACKS</h3>
@@ -158,27 +146,24 @@ foreach ($categories as $categorie) {
        </div>
 
        <div class="PackGestion">
-        <h3>GESTION DES RECRUTEMENT</h3>
+        <h3>GESTION DES RECRUTEMENTS</h3>
         <p>gérer tous les demandes de recrutement  </p>
         <a href="gestionRecrutement.php"><button>View Détails</button></a>
        </div>
 
        <div class="PackGestion">
-        <h3>GESTION DES RESERVATION</h3>
+        <h3>GESTION DES RESERVATIONS</h3>
         <p>gérer tous les réservations  </p>
         <a href="gestionReservation.php"> <button>View Détails</button></a> 
        </div>
-     </section>
-     <footer>
+    </section>
 
-     </footer>
-     
      <script>
       //******************************************************//
       function ScrollNav(link)
       {
         var NavGestion = [
-          document.getElementById("NavGestion1"),
+        document.getElementById("NavGestion1"),
         document.getElementById("NavGestion2"),
         document.getElementById("NavGestion3"),
         document.getElementById("stats")];
@@ -187,14 +172,14 @@ foreach ($categories as $categorie) {
           if(NavGestion[i].id === link.getAttribute("href").substring(1))
           {
             NavGestion[i].style.visibility = 'visible';
-            }
+          }
           else
           NavGestion[i].style.visibility = 'hidden';  
         }
         
       }
-      ScrollNav(document.querySelector('a[href="#stats"]'));
-      //******************************************************//
+      ScrollNav(document.querySelector('a[href="#NavGestion3"]'));
+      //*********************************************************//
       var graphe1 = document.getElementById("graphe1").getContext("2d");
       var myChart1 = new Chart(graphe1, {
     type: 'bar',
@@ -213,7 +198,7 @@ foreach ($categories as $categorie) {
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
                 }
             }]
         },
@@ -246,7 +231,7 @@ var graphe2 = document.getElementById("graphe2").getContext("2d");
         scales: {
             yAxes: [{
                 ticks: {
-                    beginAtZero: true
+                    beginAtZero: true,
                 }
             }]
         },
@@ -259,10 +244,6 @@ var graphe2 = document.getElementById("graphe2").getContext("2d");
         }
     }
 });
-
-
-
-
      </script>
 
   </body>
