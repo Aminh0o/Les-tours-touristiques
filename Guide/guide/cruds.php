@@ -1,106 +1,146 @@
 
 <?php
-$server="localhost";
-    $nom_bdd="essai";
-    $user="root";
-    $password="";
-   
-    
-    
-
-
-
-$title = $_POST['title'];
-$date = $_POST['date'];
-$wilaya = $_POST['wilaya'];
-$place1 = $_POST['place1'];
-$place2 = $_POST['place2'];
-$place3 = $_POST['place3'];
-$heure_depart = $_POST['heure_depart'];
-$heure_arrive = $_POST['heure_arrive'];
-$count = $_POST['count'];
-$category = $_POST['category'];
 session_start();
 
-try{
-// create sortie
-if (isset($_COOKIE['sortie'])) {
-  $dataPro = json_decode($_COOKIE['sortie'], true);
-} else {
-  $dataPro = array();
+   
+try
+    {
+      
+      function showData(){
+
+        $server="localhost";
+        $nom_bdd="essai";
+        $user="root";
+        $password="";
+        
+        $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
+        if(isset($_POST["submit"])) {
+          $nomTour = $_POST['nomTour'];
+          $dateTour = $_POST['dateTour'];
+          $wilaya = $_POST['wilaya'];
+          $place = $_POST['place'];
+          $heure_depart = $_POST['heurDepart'];
+          $heure_arrive = $_POST['heurArrive'];
+          $category = $_POST['category'];
+       
+        $req= "INSERT INTO TOUR (NOMTOUR,DATE_TOUR,	WILAYA,PLACE,HEURE_DEPART,HEURE_ARRIVE,CATEGORIE) VALUES ('$nomTour','$dateTour','$wilaya','$place','$heure_depart','$heure_arrive','$category')";
+        $connexion->exec($req); }
+        
+      
+         $req1= "SELECT * FROM TOUR";
+         $res=$connexion->query($req1);
+         while($row=$res->fetch(PDO::FETCH_ASSOC)){
+          echo" 
+          <tr>
+            <td>".$row["ID_TOUR"]."</td>
+            <td>".$row["NOMTOUR"]."</td>
+            <td>".$row["DATE_TOUR"]."</td>
+            <td>".$row['WILAYA']."</td>
+            <td>".$row['PLACE']."</td>
+            <td>".$row['HEURE_DEPART']."</td>
+            <td>".$row['HEURE_ARRIVE']."</td>
+            <td>".$row['CATEGORIE']."</td>
+            <td><a href='updateSortie.php?id=".$row["ID_TOUR"]."'><button id='update' name='update'>update</button></a></td>
+            <td><a href='deleteSortie.php?id=".$row["ID_TOUR"]."'><button id='delete'>delete</button></a></td>
+          </tr>
+        ";
+       
+      }
+      
+    
 }
-
-$newPro = array(
-  'title' => $title,
-  'date' => $date,
-  'wilaya' => $wilaya,
-  'place1' => $place1,
-  'place2' => $place2,
-  'place3' => $place3,
-  'heure_depart' => $heure_depart,
-  'heure_arrive' => $heure_arrive,
-  'count' => $count,
-  'category' => $category
-);
-
-$dataPro[] = $newPro;
-setcookie('sortie', json_encode($dataPro), time() + (86400 * 30), "/");
-
-clearData();
-showData();
-
-// clear inputs
-function clearData() {
-  $_POST = array();
-}
-
-// afficher les donnees
-function showData() {
-  $table = '';
-  if (isset($_COOKIE['sortie'])) {
-    $dataPro = json_decode($_COOKIE['sortie'], true);
-    foreach($dataPro as $i => $pro) {
-      $table .= '
-        <tr>
-          <td>'.($i+1).'</td>
-          <td>'.$pro['title'].'</td>
-          <td>'.$pro['date'].'</td>
-          <td>'.$pro['wilaya'].'</td>
-          <td>'.$pro['place1'].'</td>
-          <td>'.$pro['place2'].'</td>
-          <td>'.$pro['place3'].'</td>
-          <td>'.$pro['heure_depart'].'</td>
-          <td>'.$pro['heure_arrive'].'</td>
-          <td>'.$pro['category'].'</td>
-          <td><button id="update">update</button></td>
-          <td><button onclick="deleteData('.$i.')" id="delete">delete</button></td>
-        </tr>
-      ';
-    }
-  }
   
-  echo '<table><thead><tr><th>ID</th><th>Title</th><th>Date</th><th>Wilaya</th><th>Place1</th><th>Place2</th><th>Place3</th><th>Heure Depart</th><th>Heure Arrive</th><th>Category</th><th></th><th></th></tr></thead><tbody>'.$table.'</tbody></table>';
-
-  if (isset($_COOKIE['sortie']) && count($dataPro) > 0) {
-    echo '<button onclick="deleteALL()">Delete ALL</button>';
-  }
-}
-
-// supprimer un donnee
-function deleteData($i) {
-  $dataPro = json_decode($_COOKIE['sortie'], true);
-  array_splice($dataPro, $i, 1);
-  setcookie('sortie', json_encode($dataPro), time() + (86400 * 30), "/");
-  showData();
-}
-
-function deleteALL() {
-  setcookie('sortie', '', time() - 3600, "/");
-  showData();
-}
 }
 catch (PDOException $e) 
 {
-    echo "Erreur ! " . $e->getMessage() . "<br/>";
-}
+  echo "Erreur ! " . $e->getMessage() . "<br/>";
+} 
 ?>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+        <meta charset="UTF-8" />
+        <title>Oragniser Une Sortie</title>
+        <link rel="stylesheet" href="cruds.css" />
+  
+  </head>
+
+  <body>
+
+    <div class="cruds">
+
+      <div class="heade">
+       
+        <h2>DISCOVER ALGERIA</h2>
+        <p>oraganiser une sortie</p>
+
+      </div>
+      
+      <form  method="post">
+      <div class="inputs">
+      <input placeholder="title" type="text" id="title" name="nomTour">
+        <div class="plan">
+          <input type="date" id="date" name="dateTour" >
+          <input  placeholder="Wilaya" type="text" id="wilaya"name="wilaya">
+          <input  placeholder="Place 1" type="text" id="place1"name="place">
+          <input type="time" id="heur_depart" name="heurDepart">
+          <input type="time" id="heur_arrive" name="heurArrive">
+        </div>
+        
+        <input placeholder="category" type="text" id="category" name="category">
+        <button id="submit" name="submit">Create</button>
+   
+
+
+      </div>
+      </form>
+     
+      <div class="outputs"></div>
+        <div class="searchBloc">
+           <input type="text" id="search" placeholder="Search">
+           <div class="btnSearch">
+            <button id="searchTitle"> Search by Title</button>
+            <button id="searchTcategory"> Search by Category </button>
+
+           </div>
+
+        </div>
+       
+
+       <div id="deleteALL">
+       <a href="deleteALL.php"><button >Delete ALL</button></a>
+       </div>
+
+      <table>
+
+       <tr>
+         <th>id</th>
+         <th>Title</th>
+         <th>Date</th>
+         <th>Wilaya</th>
+         <th>Place</th>
+         <th>Heure depart</th>
+         <th>Heure arrive</th>
+         <th>Category</th>
+         <th>Update</th>
+         <th>Delete</th>
+       </tr>
+
+       <tbody id="tbody">
+       <?php showData();?>
+        
+       </tbody>
+
+      </table>
+
+
+    </div>
+
+     
+  </body>
+
+
+</html>
+
+
+
