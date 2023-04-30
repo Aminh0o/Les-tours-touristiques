@@ -9,7 +9,6 @@
 <body>
 	<?php 
 	
-	
 	 function afficherPack()
 	 {
 	session_start();
@@ -51,8 +50,8 @@
 			else
 			{$guide = "Not Included";echo "<td>" . $guide. " </td>";}
 
-
-
+            echo "<td><a href='modificationPack.php?id=".$tuple["NUMEROPACK"]."'><button>Modifier</button></a></td>";
+			echo "<td><a href='suppressionPack.php?id=".$tuple["NUMEROPACK"]."'><button>Supprimer</button></a></td>";
 			echo "</tr>";
     		}
 		
@@ -81,6 +80,8 @@
 				<th>With transport</th>
 				<th>With food</th>
 				<th>With guide</th>
+				<th>Modifier</th>
+				<th>supprimer</th>
 				
 			</tr>
 		</thead>
@@ -89,8 +90,6 @@
 		</tbody>
 	</table>
 	
-	<a href="créationPack.php"><button>Créer un pack</button></a>
-	<a href='modificationPack.html'><button>Modifier un pack</button></a>
-	<a href='suppressionPack.html'><button>Supprimer un pack</button></a>
+	<a href="créationPack.php"><button id="cree">Créer un pack</button></a>
 </body>
 </html>
