@@ -41,9 +41,25 @@ try{
    
 
     $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
+
+    /*$ID_user = "SELECT ID_UTILISATEUR FROM UTILISATEUR WHERE EMAIL = 'amine.bhr@gmail.com' ";
+    $resultat_id_recp = $connexion->query($ID_user);
+    $id_user =  $resultat_id_recp->fetch(PDO::FETCH_ASSOC);
+    $id_utilisateur = $id_user["ID_UTILISATEUR"];*/
+
+   /* $ID_admin = "SELECT ID_ADMIN FROM ADMINISTRATEUR WHERE LOGIN_ADMIN = 'mohamed2023' ";
+    $resultat_id_emet = $connexion->query($ID_admin);
+    $id_admin = $resultat_id_emet->fetch(PDO::FETCH_ASSOC);
+    $id_administrateur = $id_admin["ID_ADMIN"];*/
+
+   
     $res = "INSERT INTO PACK (NOMPACK,DATE_CREATION,CATEGORIE,WILAYA,TYPE_PACK,PRIX) VALUES
     ('$namePack','$dateCreation','$categorie','$wilaya','$typePack','$prixPack') ";
     $connexion->exec($res);
+
+    /*$notif1 = "INSERT INTO NOTIF (ID_EMETTEUR,ID_RECEPTEUR,MESSAGE_NOTIF) VALUES
+     ('$id_administrateur','$id_utilisateur','Un Nouveau pack a été ajouter dans le site')";
+    $connexion->exec($notif1);*/
     echo "<script> alert('un nouveau pack a été crée ')
     window.location.href = 'gestionPack.php';
     </script>";
