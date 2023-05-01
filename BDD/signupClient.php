@@ -10,18 +10,29 @@
     $email = $_POST["email"];
     $mdps1 = $_POST["mot_de_passe1"];
     $mdps2 = $_POST["mot_de_passe2"];
+    $compteur = 1;
 session_start();
-try{
+
+try
+{
 if($nom && $prenom && $date && $telephone && $email && $mdps1 && $mdps2 )
 {
+  
     if($mdps1 == $mdps2)
     {
     $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
 
-    $requette="INSERT INTO UTILISATEUR (`ID_EMETTEUR`,`NOM`,`PRENOM`,`EMAIL`,`DATE_DE_NAISSANCE`,`TELEPHONE`,`MOT_DE_PASSE`) 
-    VALUES('1','$nom','$prenom','$email','$date','$telephone','$mdps2')";
-    $resultat = $connexion->exec($requette);     
-    header("Location: InterfaceClient.php");
+
+
+$requette="INSERT INTO UTILISATEUR (`NOM`,`PRENOM`,`EMAIL`,`DATE_DE_NAISSANCE`,`TELEPHONE`,`MOT_DE_PASSE`) 
+    VALUES('$nom','$prenom','$email','$date','$telephone','$mdps2')";
+
+
+    /*$requette="INSERT INTO UTILISATEUR (`ID_UTILISATEUR`,`ID_EMETTEUR`,`NOM`,`PRENOM`,`EMAIL`,`DATE_DE_NAISSANCE`,`TELEPHONE`,`MOT_DE_PASSE`) 
+    VALUES('','1','$nom','$prenom','$email','$date','$telephone','$mdps2')";*/
+    $resultat = $connexion->exec($requette); 
+    
+    header("Location: login.php");
     }
     else echo "saged l mot de passe";
 }
@@ -41,10 +52,13 @@ catch (PDOException $e)
   <link rel="stylesheet" href="signupClient.css">
 </head>
 <body>
-  <header>
-    <h1>Sign Up</h1>
+<header>
+    <div class="sectionGauche">
+      <a href="InterfaceClient.php"><img src="icons/logoo.png" id="logo"></a>
+    </div>
+    <h1>SIGN UP</h1>
   </header>
-
+  
   <div>
     <form method="POST" class="form">
       <label>First Name :</label>
