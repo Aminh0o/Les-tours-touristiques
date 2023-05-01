@@ -6,6 +6,7 @@
     <title>Gestion Des Tours</title>
     <link rel="stylesheet" href="InterfaceClient.css">
 	<link rel="stylesheet" href="icons/icons/css/icons.css">
+	<link rel="stylesheet" href="icons/icons/css/font awesome.css">
 	<script src="JS/loginClient.js"></script>
 	<script src="JS/client.js"></script>
 </head>
@@ -15,23 +16,40 @@
 	<button id="scrollButton" href="#"><span class="fi fi-sr-angle-up" id="scroll-img"></span></button>
 
 	<div class="box">
-	<img id="dynamicImageCover" src="images/Sahara.png">
+	<img id="dynamicImageCover" src="images/Sahara4.png">
 	<header id="header">
 		<div class="sectionGaucheHeader">
-			<form>
-				<input type="text" placeholder="Rechercher...">
-				<button type="submit">Search</button>
-			</form>
-		</div>
-		<div class="sectionMilieuHeader">
-			<img src="icons/logoo.png" id="logoHeader">
+			<img src="icons/logoo1.png" id="logoHeader">
 		</div>
 		<nav class="menu">
-			<ul>
-				<li><a href="#explore" id="navExplore"><p>Explore</p></a></li>
-				<li><a href="#places" id="navPlace"><p>Places</p></a></li>
-				<li><a href="#about" id="navAbout"><p>About</p></a></li>
-				<li><a href="#contact" id="navContact"><p>Contact</p></a></li>
+
+			<div class="menu-responsive-button">
+				<button>
+					<span class="fi-sr-align-justify"></span>
+				</button>
+			</div>
+
+			<ul class="menu-items">
+				<li>
+					<span class="fi-sr-map-marker" class="img-item">
+						<a href="#explore" id="navExplore"><p>Explore</p></a>
+					</span>
+				</li>
+				<li>
+					<span class="fi-sr-earth-africa" class="img-item">
+						<a href="#places" id="navPlace"><p>Places</p></a>
+					</span>
+				</li>
+				<li>
+					<span class="fi-sr-comment-info" class="img-item">
+						<a href="#about" id="navAbout"><p>About</p></a>
+					</span>
+				</li>
+				<li>
+					<span class="fi-sr-paper-plane" class="img-item">
+						<a href="#contact" id="navContact"><p>Contact</p></a>
+					</span>
+				</li>
 
 				<!---------------------------------------------------------------------------------------------------->
                 <?php 
@@ -43,14 +61,27 @@
 
                 if (isLoggedIn()) 
                 {
-                    echo "  <li><a href='' id='navNotif'><p>Notifications</p></a></li>
-					        <li>
-							    <a id='navProfil' onclick='afficherProfile()'>
-								    <p>Profil</p>
-							    </a>
-							</li>";
+                    echo "  <li>
+					            <span class='fi-sr-bell-ring' class='img-item'>
+						            <a href='' id='navNotif'><p>Notifications</p></a>
+					            </span>
+				            </li>
+				            <li>
+					            <span class='fi-sr-user' class='img-item'>
+						            <a id='navProfil' onclick='afficherProfile()'>
+							            <p>Profil</p>
+						            </a>
+					            </span>
+				            </li>";
                 }
-                else {echo"<li><a href='loginClient.php' id='navLogin'><p>Login</p></a></li>";}
+                else 
+				{
+					echo "	<li>
+					            <span class='fi-sr-sign-in-alt' class='img-item'>
+						            <a href='login.php' id='navLogin'><p>Login</p></a>
+					            </span>
+				            </li>";
+				}
 
 				function afficherName()
 				{
@@ -94,6 +125,13 @@
 				</a>
 			</div>
 		</nav>
+
+		<div class="sectionDroiteHeader">
+			<form>
+				<input type="text" id="searchInput" placeholder="Rechercher...">
+				<button onclick="searchSections(event)">Search</button>
+			</form>
+		</div>
 	</header>
 	
 	<section>
@@ -104,9 +142,9 @@
 	</section>
 
 	<section>
-		<h1 id="explore" class="title">EXPLORE ALGERIA WITH CONFIDENCE !</h1>
+		<h1 id="explore" class="title">Explore <b>ALGERIA</b> With Confidence !</h1>
 		<div class="explore">
-		    <div class="paragraphExplore">
+			<div class="paragraphExplore">
 				<p>
 					Algeria is a vibrant North African country, rich in history, culture, 
 					and natural beauty. From the bustling streets of its vibrant cities to 
@@ -122,19 +160,22 @@
 			<div class="beginTravel">
 				<h3 id="beginTravelParagraph">Start your tour simply here !</h3>
 				<form method="POST" name="formReservation">
-					<button><a href="reserverPack.html">Let's Go !</a></button>
+					<button onclick="<?php if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true) { ?>
+					        alert('Please login to make a reservation.'); 
+							window.location.href='login.php'; return false; 
+						<?php } ?>">
+						<a href="reserverPack.html">Let's Go</a>
+					</button>
 				</form>
 			</div>
 		</div>
 	</section>
 
 	<section id="places" class="places">
-		<div>
-			<h1 class="title">TOP PLACES</h1>
-		</div>
+		<h1 class="title" id="topPlaces">TOP PLACES</h1>
 		<div class="place">
 			<div class="place-card">
-				<img src="images/alger-qasabah.jpg">
+				<img src="images/alger-qasabah.jpg" id="algerImages">
 				<div class="placeInfo">
 					<h3>ALGER</h3>
 					<div class="border-line"></div>
@@ -144,7 +185,7 @@
 				</div>
 			</div>
 			<div class="place-card">
-				<img src="images/tlemcen4.jpg">
+				<img src="images/tlemcen4.jpg" id="tlemcenImages">
 				<div class="placeInfo">
 					<h3>TLEMCEN</h3>
 					<div class="border-line"></div>
@@ -153,7 +194,7 @@
 				</div>
 			</div>
 			<div class="place-card">
-				<img src="images/oran.jpg">
+				<img src="images/oran.jpg" id="oranImages">
 				<div class="placeInfo">
 					<h3>ORAN</h3>
 					<div class="border-line"></div>
@@ -163,7 +204,17 @@
 				</div>
 			</div>
 			<div class="place-card">
-				<img src="images/constantine1.jfif">
+				<img src="images/bejaia2.jpg" id="bejaiaImages">
+				<div class="placeInfo">
+					<h3>BEJAIA</h3>
+					<div class="border-line"></div>
+					<p class="place-text">Bejaia is a coastal city located in the northeastern part of Algeria, 
+						known for its stunning beaches, rugged cliffs, and historic landmarks</p>
+					<button><a href="bejaia.html" class="buttonPlace">Voir Details</a></button>
+				</div>
+			</div>
+			<div class="place-card">
+				<img src="images/constantine1.jfif" id="constantineImages">
 				<div class="placeInfo">
 					<h3>CONSTANTINE</h3>
 					<div class="border-line"></div>
@@ -174,17 +225,7 @@
 				</div>
 			</div>
 			<div class="place-card">
-				<img src="images/bejaia2.jpg">
-				<div class="placeInfo">
-					<h3>BEJAIA</h3>
-					<div class="border-line"></div>
-					<p class="place-text">Bejaia is a coastal city located in the northeastern part of Algeria, 
-						known for its stunning beaches, rugged cliffs, and historic landmarks</p>
-					<button><a href="bejaia.html" class="buttonPlace">Voir Details</a></button>
-				</div>
-			</div>
-			<div class="place-card">
-				<img src="images/Sahara5.jpg">
+				<img src="images/Sahara5.jpg" id="saharaImages">
 				<div class="placeInfo">
 					<h3>SAHARA</h3>
 					<div class="border-line"></div>
@@ -196,17 +237,15 @@
 		</div>  
 	</section>
 
-	<section>
-		<div>
-			<h1 class="title">TOP ATTRACTIONS</h1>
-		</div>
-		<div class="place">
+	<section id="top-attractions">
+		<h1 class="title" id="topAttractions">TOP ATTRACTIONS</h1>
+		<div class="attraction">
 			<div class="attraction-card">
 				<img src="images/tassili.jpg">
-				<div class="placeInfo">
+				<div class="attractionInfo">
 					<a href=""><h3>Tassili n'Ajjer</h3></a>
 					<div class="border-line"></div>
-					<p class="place-text">Tassili n'Ajjer is a vast plateau located in southeastern Algeria, 
+					<p class="attraction-text">Tassili n'Ajjer is a vast plateau located in southeastern Algeria, 
 						known for its striking red sandstone formations, deep canyons, and ancient rock art. 
 						It's a UNESCO World Heritage Site and a popular destination for adventure seekers who 
 						want to explore the Sahara Desert.</p>
@@ -214,10 +253,10 @@
 			</div>
 			<div class="attraction-card">
 				<img src="images/chrea.jpg">
-				<div class="placeInfo">
+				<div class="attractionInfo">
 					<a href=""><h3>Chréa</h3></a>
 					<div class="border-line"></div>
-					<p class="place-text">Chréa is a beautiful mountain resort located in the Blida province, 
+					<p class="attraction-text">Chréa is a beautiful mountain resort located in the Blida province, 
 						about 50 km away from the capital city, Algiers. It's a popular destination for skiing 
 						and hiking enthusiasts, offering breathtaking views of the Atlas Mountains and a cool 
 						climate all year round.
@@ -225,43 +264,12 @@
 				</div>
 			</div>
 			<div class="attraction-card">
-				<img src="images/tikjda.jpg">
-				<div class="placeInfo">
-					<a href=""><h3>Tikjda</h3></a>
-					<div class="border-line"></div>
-					<p class="place-text">Tikjda is a mountainous area located in the Djurdjura range, 
-						about 100 km east of Algiers. It's a popular destination for nature lovers, with 
-						beautiful hiking trails, lakes, and stunning panoramic views of the surrounding landscape.
-					</p>
-				</div>
-			</div>
-			<div class="attraction-card">
 				<img src="images/timgad.jpg">
-				<div class="placeInfo">
+				<div class="attractionInfo">
 					<a href=""><h3>Timgad</h3></a>
 					<div class="border-line"></div>
-					<p class="place-text">Timgad is a UNESCO World Heritage Site and one of the best-preserved 
+					<p class="attraction-text">Timgad is a UNESCO World Heritage Site and one of the best-preserved 
 						ancient Roman cities in the world, located in the Batna province, northeastern Algeria. 
-					</p>
-				</div>
-			</div>
-			<div class="attraction-card">
-				<img src="images/aftis.jpg">
-				<div class="placeInfo">
-					<a href=""><h3>Aftis</h3></a>
-					<div class="border-line"></div>
-					<p class="place-text">Aftis is a small town in Ghardaia, southern Algeria, famous for 
-						its unique M'zab style of traditional architecture built with sun-dried mud bricks. 
-					</p>
-				</div>
-			</div>
-			<div class="attraction-card">
-				<img src="images/cherchell.jpg">
-				<div class="placeInfo">
-					<a href=""><h3>Cherchell</h3></a>
-					<div class="border-line"></div>
-					<p class="place-text">Cherchell is a coastal town in the Tipaza province, Algeria, with ancient Roman 
-						ruins, including a theater, forum, and baths. It also boasts beautiful beaches and a picturesque harbor.
 					</p>
 				</div>
 			</div>
@@ -270,8 +278,8 @@
 	</section>
 
 	<section>
-		<div class="about" id="about">
-			<h1 class="title">ABOUT US</h1>
+		<h1 class="title" id="about">ABOUT US</h1>
+		<div class="about">
 			<p id="becomeGuideParagraph">
 				We are a team of passionate individuals dedicated to promoting tourism in Algeria. 
 				Our goal is to provide visitors with an unforgettable experience while discovering 
@@ -281,40 +289,74 @@
 			</p>
 			<div class="becomeGuide">
 				<h3 id="becomeGuideTitle">Want to become a guide ?</h3>
-				<button><a href="joinUS.html">Join here</a></button>
+				<button onclick="<?php if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true) { ?>
+						alert('Please login to join us as a guide.'); 
+						window.location.href='login.php'; return false;
+					<?php } ?>">
+					<a href="joinUS.html">Join here</a>
+				</button>
 			</div>
 		</div>
 	</section>
 
 	<section>
-		<div>
-			<h1 class="title">AVIS</h1>
-		</div>
+		<h1 class="title" id="avis">AVIS</h1>
 		<div class="avis">
-		
-			<div class="avis-card">
-				<h3>Amine</h3>
-				<p>Awesome</p>
-			</div>
-			<div class="avis-card">
-				<h3>Mohammed</h3>
-				<p>Nice</p>
-			</div>
-			<div class="avis-card">
-				<h3>Sifou</h3>
-				<p>Good</p>
+			<div class="avis-card-placement">
+				
+				<div class="avis-card">
+					<div class="avis-icon-top">
+						<span class="fi-sr-message-quote"></span>
+					</div>
+					<div class="avis-text">
+						<p>				We are a team of passionate individuals dedicated to promoting tourism in Algeria. 
+							Our goal is to provide visitors with an unforgettable experience while discovering 
+							the diverse and rich culture of our country.</p>
+					</div>
+					<div class="avis-rating">
+						<label for="star1"></label>
+						<label for="star2"></label>
+						<label for="star3"></label>
+						<label for="star4"></label>
+						<label for="star5"></label>
+					</div>
+					<div class="avis-name">
+						<h3>Aminho</h3>
+					</div>
+					<div class="avis-icon-down">
+						<span class="fi-sr-message-quote"></span>
+					</div>
+				</div>
+
+				<div class="avis-card">
+					<div class="avis-icon-top">
+						<span class="fi-sr-message-quote"></span>
+					</div>
+					<div class="avis-text">
+						<p>gg</p>
+					</div>
+					<div class="avis-rating">
+						<label for="star1"></label>
+						<label for="star2"></label>
+						<label for="star3"></label>
+						<label for="star4"></label>
+						<label for="star5"></label>
+					</div>
+					<div class="avis-name">
+						<h3>Aminho</h3>
+					</div>
+					<div class="avis-icon-down">
+						<span class="fi-sr-message-quote"></span>
+					</div>
+				</div>
+
 			</div>
 		</div>
-		<div class="avis-controls">
-			<button class="previous" onclick="setupAvisCarousel()">&lt;</button>
-			<button class="next" onclick="setupAvisCarousel()">&gt;</button>
-		</div>
+
 	</section>
 
-	<section id="contact">
-		<div>
-			<h1 class="title">CONTACT US</h1>
-		</div>
+	<section>
+		<h1 class="title" id="contact">CONTACT US</h1>
 		<div class="contactUS">
 			<form class="contact-us" method="post" action="">
 				<div class="inputContact">
@@ -322,39 +364,75 @@
 					<input type="email" name="emailComment" class="inputComment" id="emailComment" placeholder="Email"/>
 					<input type="text" name="subjectComment" class="inputComment" id="subjectComment" class="form" placeholder="Subject"/>
 					<input type="number" name="phoneComment" class="inputComment" id="phoneComment" placeholder="Phone"/>
+				<div class="ratingContact">
+					<span>Rate your experience :</span>
+					<input type="radio" name="rating" id="star1" value="1"/><label for="star1"></label>
+					<input type="radio" name="rating" id="star2" value="2"/><label for="star2"></label>
+					<input type="radio" name="rating" id="star3" value="3"/><label for="star3"></label>
+					<input type="radio" name="rating" id="star4" value="4"/><label for="star4"></label>
+					<input type="radio" name="rating" id="star5" value="5"/><label for="star5"></label>
+				</div>
 				</div>	
 				<div class="messageContact">	
-					<textarea name="messageComment" id="messageComment" placeholder="Message"></textarea>
-					<button type="submit" id="buttonComment" name="buttonComment">Send Message</button> 
+					<textarea name="messageComment" id="messageComment" placeholder="Message" pattern=".{0,100}"></textarea>
+					<button type="submit" id="buttonComment" name="buttonComment">
+						Send
+						<span class="fi-sr-paper-plane"></span>
+					</button> 
 				</div>
 			</form>
 		</div>
 	</section>
 
 	<footer>
+		<div class="sectionGaucheFooter">
+			<div class="footer-liens">
+				<h3>Quick Links</h3>
+				<ul>
+				  <li><a href="#">Home</a></li>
+				  <li><a href="#explore">Explore</a></li>
+				  <li><a href="#places">Places</a></li>
+				  <li><a href="#about">About</a></li>
+				</ul>
+			</div>
+		</div>
 		<div class="sectionMilieuFooter">
-			<img src="icons/logoo.png" id="logoFooter">
+			<a href="#">
+				<img src="icons/logoo1.png" id="logoFooter">
+			</a>
+			<ul class="social-icons">
+				<li><a href="#"><img src="icons/facebook.png" class="icons-footer"></a></li>
+				<li><a href="#"><img src="icons/twitter.png" class="icons-footer"></a></li>
+				<li><a href="#"><img src="icons/instagram.png" class="icons-footer"></a></li>
+			</ul>
+		</div>
+		<div class="sectionDroiteFooter">
+			<div class="footer-contact">
+				<h3>Contact</h3>
+				<p><span class="fi-sr-marker"></span>Université-Abou-Bekr-Belkaid <b>Tlemcen</b></p>
+				<p><span class="fi-sr-circle-envelope"></span>discover_algeria@gmail.com</p>
+				<p><span class="fi-sr-circle-phone"></span>+213 552 45 41 34</p>
+			</div>
 		</div>
 	</footer>
-	<!--------------------------------------------------------------------------------------------------Background loop -->
-    <script>
-        var images = 
-        [
-            "images/bejaia.jpg",
-            "images/biskra.jpg",
-            "images/alger3.jpg",
-            "images/alger2.jpg",
-            "images/Sahara5.jpg",
-        ];
-        var dynamicImages = document.getElementById("dynamicImageCover");
-        var compteur = 0;
-        function changeImage() 
-        {
-            dynamicImages.src = images[compteur];
-            compteur = (compteur + 1) % images.length;
-        }
-        setInterval(changeImage, 5000);
-    </script>
-
 </body>
+<!--------------------------------------------------------------------------------------------------Background loop-->
+<script>
+	var images = 
+	[		
+		"images/ruins3.jpg",				
+		"images/alger10.png",		
+		"images/alger2.jpg",		
+		"images/Sahara5.jpg"	
+	];
+	var dynamicImages = document.getElementById("dynamicImageCover");
+	var compteur = 0;
+
+	function changeImage() 
+	{
+		dynamicImages.src = images[compteur];
+		compteur = (compteur + 1) % images.length;
+	}
+	setInterval(changeImage, 5000);
+</script>
 </html>
