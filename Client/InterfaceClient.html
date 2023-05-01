@@ -84,8 +84,8 @@
 		</nav>
 
 		<div class="sectionDroiteHeader">
-			<form>
-				<input type="text" placeholder="Rechercher...">
+			<form onsubmit="return searchSections()">
+				<input type="text" id="searchInput" placeholder="Rechercher...">
 				<button type="submit">Search</button>
 			</form>
 		</div>
@@ -156,6 +156,16 @@
 				</div>
 			</div>
 			<div class="place-card">
+				<img src="images/bejaia2.jpg" id="bejaiaImages">
+				<div class="placeInfo">
+					<h3>BEJAIA</h3>
+					<div class="border-line"></div>
+					<p class="place-text">Bejaia is a coastal city located in the northeastern part of Algeria, 
+						known for its stunning beaches, rugged cliffs, and historic landmarks</p>
+					<button><a href="bejaia.html" class="buttonPlace">Voir Details</a></button>
+				</div>
+			</div>
+			<div class="place-card">
 				<img src="images/constantine1.jfif" id="constantineImages">
 				<div class="placeInfo">
 					<h3>CONSTANTINE</h3>
@@ -164,16 +174,6 @@
 						known for its stunning natural beauty and rich history. The city is perched on a hill overlooking 
 						a deep gorge, and is home to several historic landmarks.</p>
 					<button><a href="constantine.html" class="buttonPlace">Voir Details</a></button>
-				</div>
-			</div>
-			<div class="place-card">
-				<img src="images/bejaia2.jpg" id="bejaiaImages">
-				<div class="placeInfo">
-					<h3>BEJAIA</h3>
-					<div class="border-line"></div>
-					<p class="place-text">Bejaia is a coastal city located in the northeastern part of Algeria, 
-						known for its stunning beaches, rugged cliffs, and historic landmarks</p>
-					<button><a href="bejaia.html" class="buttonPlace">Voir Details</a></button>
 				</div>
 			</div>
 			<div class="place-card">
@@ -189,7 +189,7 @@
 		</div>  
 	</section>
 
-	<section>
+	<section id="top-attractions">
 		<h1 class="title" id="topAttractions">TOP ATTRACTIONS</h1>
 		<div class="attraction">
 			<div class="attraction-card">

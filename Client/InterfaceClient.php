@@ -128,8 +128,8 @@
 
 		<div class="sectionDroiteHeader">
 			<form>
-				<input type="text" placeholder="Rechercher...">
-				<button type="submit">Search</button>
+				<input type="text" id="searchInput" placeholder="Rechercher...">
+				<button onclick="searchSections(event)">Search</button>
 			</form>
 		</div>
 	</header>
@@ -160,7 +160,12 @@
 			<div class="beginTravel">
 				<h3 id="beginTravelParagraph">Start your tour simply here !</h3>
 				<form method="POST" name="formReservation">
-					<button><a href="reserverPack.html">Let's Go </a></button>
+					<button onclick="<?php if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true) { ?>
+					        alert('Please login to make a reservation.'); 
+							window.location.href='login.php'; return false; 
+						<?php } ?>">
+						<a href="reserverPack.html">Let's Go</a>
+					</button>
 				</form>
 			</div>
 		</div>
@@ -199,6 +204,16 @@
 				</div>
 			</div>
 			<div class="place-card">
+				<img src="images/bejaia2.jpg" id="bejaiaImages">
+				<div class="placeInfo">
+					<h3>BEJAIA</h3>
+					<div class="border-line"></div>
+					<p class="place-text">Bejaia is a coastal city located in the northeastern part of Algeria, 
+						known for its stunning beaches, rugged cliffs, and historic landmarks</p>
+					<button><a href="bejaia.html" class="buttonPlace">Voir Details</a></button>
+				</div>
+			</div>
+			<div class="place-card">
 				<img src="images/constantine1.jfif" id="constantineImages">
 				<div class="placeInfo">
 					<h3>CONSTANTINE</h3>
@@ -207,16 +222,6 @@
 						known for its stunning natural beauty and rich history. The city is perched on a hill overlooking 
 						a deep gorge, and is home to several historic landmarks.</p>
 					<button><a href="constantine.html" class="buttonPlace">Voir Details</a></button>
-				</div>
-			</div>
-			<div class="place-card">
-				<img src="images/bejaia2.jpg" id="bejaiaImages">
-				<div class="placeInfo">
-					<h3>BEJAIA</h3>
-					<div class="border-line"></div>
-					<p class="place-text">Bejaia is a coastal city located in the northeastern part of Algeria, 
-						known for its stunning beaches, rugged cliffs, and historic landmarks</p>
-					<button><a href="bejaia.html" class="buttonPlace">Voir Details</a></button>
 				</div>
 			</div>
 			<div class="place-card">
@@ -232,7 +237,7 @@
 		</div>  
 	</section>
 
-	<section>
+	<section id="top-attractions">
 		<h1 class="title" id="topAttractions">TOP ATTRACTIONS</h1>
 		<div class="attraction">
 			<div class="attraction-card">
@@ -284,7 +289,12 @@
 			</p>
 			<div class="becomeGuide">
 				<h3 id="becomeGuideTitle">Want to become a guide ?</h3>
-				<button><a href="joinUS.html">Join here</a></button>
+				<button onclick="<?php if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true) { ?>
+						alert('Please login to join us as a guide.'); 
+						window.location.href='login.php'; return false;
+					<?php } ?>">
+					<a href="joinUS.html">Join here</a>
+				</button>
 			</div>
 		</div>
 	</section>

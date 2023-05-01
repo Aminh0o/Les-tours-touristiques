@@ -310,7 +310,7 @@ button:hover
 #explore
 {
   position: relative;
-  margin: 20% 10% 2% 10%;
+  margin: 22% 10% 2% 10%;
 }
 #explore b
 {
@@ -773,7 +773,7 @@ button:hover
 #contact
 {
   position: relative;
-  margin: 8% 10% 1% 70%;
+  margin: 2% 10% 1% 70%;
 }
 #contact::before 
 {
@@ -788,7 +788,7 @@ button:hover
 /************** Section for contactUS ************/
 .contactUS 
 {
-  margin: 3% 0% 5% 10%;
+  margin: 2% 0% 5% 10%;
   width: 80%;
   display: flex;
   justify-content: space-between;
