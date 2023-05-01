@@ -21,6 +21,9 @@ window.onscroll = function()
             behavior: 'smooth'
         });
     });
+    var logoHeader = document.getElementById("logoHeader");
+    if (window.pageYOffset > 0) { logoHeader.src = "icons/logoo2.png";} 
+    else { logoHeader.src = "icons/logoo1.png";}
 }
 /********************************************************************************** Show and hide profile*/
 function afficherProfile() 
@@ -35,33 +38,52 @@ function afficherProfile()
     }
 }
 /***********************************************************************************/
-function setupAvisCarousel() {
-    const container = document.querySelector('.avis');
-    const previousButton = document.querySelector('.previous');
-    const nextButton = document.querySelector('.next');
+function AvisLeftAndRightScroll() 
+{
+  const container = document.querySelector('.avis-card-placement');
+  const previousButton = document.querySelector('.previous');
+  const nextButton = document.querySelector('.next');
   
-    let scrollPosition = 0;
+  let scrollPosition = 0;
   
-    previousButton.addEventListener('click', () => {
-      // scroll left by the width of one card
-      scrollPosition -= container.offsetWidth / 3;
-      container.scroll({
-        left: scrollPosition,
-        behavior: 'smooth'
-      });
+  previousButton.addEventListener('click', () => {
+    scrollPosition -= container.offsetWidth * 2 ;
+    container.scroll({
+      left: scrollPosition,
+      behavior: 'smooth'
     });
+  });
   
-    nextButton.addEventListener('click', () => {
-      // scroll right by the width of one card
-      scrollPosition += container.offsetWidth / 3;
-      container.scroll({
-        left: scrollPosition,
-        behavior: 'smooth'
-      });
+  nextButton.addEventListener('click', () => {
+    scrollPosition += container.offsetWidth * 2 ;
+    container.scroll({
+      left: scrollPosition,
+      behavior: 'smooth'
     });
+  });
+}
+/********************************************************************************************** search function*/
+function searchSections(event) 
+{
+  event.preventDefault();
+  
+  var searchInput = document.getElementById("searchInput").value.toLowerCase();
+
+  var topPlacesSection = document.getElementById("places");
+  var topAttractionsSection = document.getElementById("top-attractions");
+
+  var topPlacesContent = topPlacesSection.innerText.toLowerCase();
+  var topAttractionsContent = topAttractionsSection.innerText.toLowerCase();
+
+  var options = 
+  {
+    behavior: "smooth",
+    block: "center",
+    inline: "center"
   }
-  
-  // Call the setupAvisCarousel function to set up the carousel
-  setupAvisCarousel();
-  
-  
+
+  if (topPlacesContent.includes(searchInput))  { topPlacesSection.scrollIntoView(options); } 
+  else if (topAttractionsContent.includes(searchInput)) { topAttractionsSection.scrollIntoView(options); } 
+
+  return false;
+}
