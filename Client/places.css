@@ -20,7 +20,7 @@
 ::-webkit-scrollbar 
 {
   width: 8px;
-  background-color: var(--borderGreen);
+  background-color: var(--dark);
 }
 ::-webkit-scrollbar-thumb 
 {
@@ -49,7 +49,7 @@ button
   background-color: var(--dark);
   font-size: 15px;
   font-family: var(--font-2);
-  color: var(--white);
+  color: var(--orange);
   border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
@@ -74,7 +74,7 @@ button:hover
   background-size: cover;
   position: fixed;
   z-index: -99;
-  filter: brightness(0.7) contrast(120%);
+  filter: brightness(0.7) contrast(100%);
 }
 /***************************************************************************************************************************/
 /************** header Style ************/
@@ -103,7 +103,6 @@ header
   width: 40%;
   height: 70%;
   margin-left: 2%;
-  margin-top: 1%;
 }
 /************** section of menu ************/
 .menu ul
@@ -120,7 +119,7 @@ header
 .menu ul li a
 {
   text-decoration: none;
-  color: var(--borderGreen);
+  color: var(--dark);
   opacity: 0.9;
   font-family: var(--font-2);
   font-size: 18px;
@@ -158,8 +157,7 @@ header
 {
   font-style: italic;
   font-size: 35px;
-  color: var(--green);
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  color: var(--white);
 }
 .exploreWilaya p
 {
@@ -195,7 +193,7 @@ header
   align-items: center;
   flex-wrap: wrap;
   width: 80%;
-  margin-top: -40%;
+  margin-top: -35%;
   margin-left: 10%;
   box-shadow: 0 5px 12px 2px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -303,7 +301,7 @@ header
   margin-left: 15%;
   margin-top: 8%;
   padding: 2% 3%;
-  background-color: var(--green);
+  background-color: var(--dark);
   font-size: 15px;
   font-family: var(--font-1);
   color: var(--white);
@@ -316,8 +314,7 @@ header
 {
   opacity: 1;
   transform: scale(1);
-  border-bottom: 2px solid var(--borderGreen);
-  box-shadow: 0 5px 5px var(--shadowGreen);
+  box-shadow: 0 5px 5px var(--dark);
 }
 /***************************************************************************************************************************/
 /************** cards: places ************/
@@ -372,7 +369,7 @@ header
 .cardInfo .border-line
 {
   position: relative;
-  border-bottom: 2px solid var(--green);
+  border-bottom: 2px solid var(--dark);
   border-width: 3px;
   width: 30%;  
   margin: 8% 0% 20% 60%;

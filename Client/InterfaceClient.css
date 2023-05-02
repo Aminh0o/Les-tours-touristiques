@@ -207,7 +207,7 @@ button:hover
   right: 3.1%;
   width: 20%;
   height: 250%;
-  background-color: var(--gold);
+  background-color: var(--orange);
   border-radius: 15px;
   border: 2px solid var(--dark);
 }
@@ -412,6 +412,7 @@ button:hover
   opacity: 0.9;
   background-color: var(--dark);
   padding: 1%;
+  margin-bottom: 2%;
 }
 .beginTravel button:hover, .becomeGuide button:hover
 {
@@ -464,6 +465,8 @@ button:hover
   border-top-left-radius: 15px;
   border-bottom-right-radius: 15px;
   box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+  overflow-y: scroll;
+  padding-bottom: 2%;
 }
 .place-card:hover 
 {
@@ -483,6 +486,10 @@ button:hover
 {
   padding: 5%;
   text-align: center;
+}
+.placeInfo p .place-text 
+{
+  margin-bottom: 0;
 }
 .placeInfo h3 
 {
@@ -509,7 +516,11 @@ button:hover
 }
 .placeInfo button
 {
-  padding: 2% 4%;
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3% 8%;
   background-color: var(--orange);
 }
 .placeInfo button a
