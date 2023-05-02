@@ -814,10 +814,14 @@ button:hover
   opacity: 0.7;
   font-size: 15px;
 }
-.inputComment:focus, .messageContact textarea:focus, .ratingContact:focus
+.inputComment:focus, .ratingContact:focus
 {
   opacity: 1;
   width: 101%;
+}
+.messageContact textarea:focus
+{
+  width: 121%;
 }
 .messageContact textarea
 {

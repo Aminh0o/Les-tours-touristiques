@@ -8,34 +8,43 @@
 </head>
 <body>
     <div>
-        <img id="dynamicImageCover" src="images/bejaia3.jpg">
+        <img id="dynamicImageCover" src="images/alger10.png">
         <header>
             <div class="sectionGauche">
-                <a href="InterfaceClient.html"><img src="icons/logoo.png" id="logo"></a>
+                <a href="InterfaceClient.php"><img src="icons/logoo.png" id="logo"></a>
 		    </div>
 		    <nav class="menu">
                 <ul>
                     <li><a href="#home" id="navHome" onclick="ScrollNav(this)"><p>Home</p></a></li>
                     <li><a href="#pack" id="navPack" onclick="ScrollNav(this)"><p>Packs</p></a></li>
                     <li><a href="#place" id="navPlace" onclick="ScrollNav(this)"><p>Places</p></a></li>
-                    <li><a href="#transport" id="navTransport" onclick="ScrollNav(this)"><p>Transports</p></a></li>
-                    <li><a href="#hebergement" id="navHebergement" onclick="ScrollNav(this)"><p>Hebergements</p></a></li>
-                    <li><a href="#restaurant" id="navRestaurants" onclick="ScrollNav(this)"><p>Restaurants</p></a></li>
-                    <li>
-                        <button>
-                            <p>RESERVE</p>
-                            <span class="fi fi-sr-angle-down"></span>
-                        </button>
-                    </li>
+                    <li><a href="#transport" id="navTransport" onclick="ScrollNav(this)"><p>Transportations</p></a></li>
+                    <li><a href="#hebergement" id="navHebergement" onclick="ScrollNav(this)"><p>Accommodations</p></a></li>
+                    <li><a href="#restaurant" id="navRestaurants" onclick="ScrollNav(this)"><p>Feeding</p></a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
             <section id="home">
-
+                <div class="exploreWilaya">
+                    <h2><b>EXPLORE</b> BEJAIA!</h2>
+                    <div class="photoSlider">
+                        <img src="images/Alger.jpg" alt="Slide 1">
+                        <img src="images/alger11.png" alt="Slide 2">
+                        <img src="images/alger7.jpg" alt="Slide 3">
+                    </div>
+                    <p>
+                        Béjaïa is a coastal city in Algeria with a population of over 180,000 people. 
+                        It's known for its beautiful coastline, natural scenery, and cultural heritage. 
+                        Visitors can explore the Yemma Gouraya mountain peak and the scenic seaside promenade La Brise de Mer. 
+                        The village of Beni Abbas offer stunning views, while the The Bordj Moussa Museum showcases 
+                        the region's history and culture. The Congrès de la Soummam is a historic 
+                        site, and the Ruines Romaines - Ifrane - are a set of Roman ruins located outside the city.
+                    </p>
+                </div>
             </section>
-            
+
             <section id="pack">
                 <div class="packs">
                     <div id="pack-royal">
@@ -46,8 +55,12 @@
                                 <p id="categorieRoyal">ROYAL</p>
                             </div>
                             <div class="packInfo">
-                                <p class="packDescription">Description</p>
-                                <a href="#" class="buttonPack">View Details</a>
+                                <div class="packDescription">
+                                    <h4>Bejaia</h4>
+                                    <h6>Type :</h6>
+                                    <p>Familial</p>
+                                </div>
+                                <a href="packDetails.html" class="buttonPack">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -59,8 +72,12 @@
                                 <p id="categorieSpecial">SPECIAL</p>
                             </div>
                             <div class="packInfo">
-                                <p class="packDescription">Description</p>
-                                <a href="#" class="buttonPack">View Details</a>
+                                <div class="packDescription">
+                                    <h4>Bejaia</h4>
+                                    <h6>Type :</h6>
+                                    <p>Familial</p>
+                                </div>
+                                <a href="packDetails.html" class="buttonPack">View Details</a>
                             </div>
                         </div>      
                     </div>
@@ -72,23 +89,210 @@
                                 <p id="categorieNormal">NORMAL</p>
                             </div>
                             <div class="packInfo">
-                                <p class="packDescription">Description</p>
-                                <a href="#" class="buttonPack">View Details</a>
+                                <div class="packDescription">
+                                    <h4>Bejaia</h4>
+                                    <h6>Type :</h6>
+                                    <p>Familial</p>
+                                </div>
+                                <a href="packDetails.html" class="buttonPack">View Details</a>
                             </div>
                         </div>
-                    </div>       
+                    </div>    
                 </div>
             </section>
 
-            <section id="place"></section>
-            <section id="transport"></section>
-            <section id="hebergement"></section>
-            <section id="restaurant"></section>
-        </main>
-        
-        <footer>
+            <section id="place">
+                <section>
+                    <div class="cards">
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>Yemma Gouraya</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    Yemma Gouraya is a mountain peak and popular tourist destination in Bejaia, Algeria, 
+                                    known for its stunning views of the Mediterranean Sea.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>Village Beni Abbas</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    Beni Abbas is a picturesque village located in the mountains of Bejaia, Algeria, 
+                                    famous for its traditional architecture and beautiful natural scenery.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>The Bordj Moussa Museum</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    The Bordj Moussa Museum is a historical museum located in Bejaia, Algeria,
+                                    that showcases the region's rich history and cultural heritage.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>The Congress of the Soummam</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    The Congress of the Soummam is a historical site in Bejaia, Algeria, 
+                                    where the Algerian War of Independence was planned and launched in 1956.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>Ruines Romaines - Ifrane</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    The Roman ruins of Ifrane are ancient archaeological sites located in Bejaia, Algeria, 
+                                    that date back to the 2nd century AD and offer a glimpse into the region's rich Roman history.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>La Brise de Mer</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    La Brise de Mer is a beautiful seaside promenade in Bejaia, Algeria, 
+                                    that offers stunning views of the Mediterranean Sea and is a popular spot for locals and tourists alike.
+                                </p>
+                            </div>
+                        </div>
+                    </div> 
+            </section>
 
-        </footer>
+            <section id="transport">
+                <section>
+                    <div class="cards">
+                        <div class="card">
+                            <h1>1</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Type :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h1>2</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Type :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+            </section>
+
+            <section id="hebergement">
+                <section>
+                    <div class="cards">
+                        <div class="card">
+                            <h1>1</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Type :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                    <li>
+                                        <h6>Rating :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h1>2</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Type :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                    <li>
+                                        <h6>Rating :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+            </section>
+
+            <section id="restaurant">
+                <section>
+                    <div class="cards">
+                        <div class="card">
+                            <h1>1</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h1>2</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+            </section>
+        </main>
 
         <script>
             function ScrollNav(link)

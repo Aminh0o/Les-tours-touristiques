@@ -8,34 +8,43 @@
 </head>
 <body>
     <div>
-        <img id="dynamicImageCover" src="images/oran1.jpg">
+        <img id="dynamicImageCover" src="images/alger10.png">
         <header>
             <div class="sectionGauche">
-                <a href="InterfaceClient.html"><img src="icons/logoo.png" id="logo"></a>
+                <a href="InterfaceClient.php"><img src="icons/logoo.png" id="logo"></a>
 		    </div>
 		    <nav class="menu">
                 <ul>
                     <li><a href="#home" id="navHome" onclick="ScrollNav(this)"><p>Home</p></a></li>
                     <li><a href="#pack" id="navPack" onclick="ScrollNav(this)"><p>Packs</p></a></li>
                     <li><a href="#place" id="navPlace" onclick="ScrollNav(this)"><p>Places</p></a></li>
-                    <li><a href="#transport" id="navTransport" onclick="ScrollNav(this)"><p>Transports</p></a></li>
-                    <li><a href="#hebergement" id="navHebergement" onclick="ScrollNav(this)"><p>Hebergements</p></a></li>
-                    <li><a href="#restaurant" id="navRestaurants" onclick="ScrollNav(this)"><p>Restaurants</p></a></li>
-                    <li>
-                        <button>
-                            <p>RESERVE</p>
-                            <span class="fi fi-sr-angle-down"></span>
-                        </button>
-                    </li>
+                    <li><a href="#transport" id="navTransport" onclick="ScrollNav(this)"><p>Transportations</p></a></li>
+                    <li><a href="#hebergement" id="navHebergement" onclick="ScrollNav(this)"><p>Accommodations</p></a></li>
+                    <li><a href="#restaurant" id="navRestaurants" onclick="ScrollNav(this)"><p>Feeding</p></a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
             <section id="home">
-
+                <div class="exploreWilaya">
+                    <h2><b>EXPLORE</b> ORAN!</h2>
+                    <div class="photoSlider">
+                        <img src="images/Alger.jpg" alt="Slide 1">
+                        <img src="images/alger11.png" alt="Slide 2">
+                        <img src="images/alger7.jpg" alt="Slide 3">
+                    </div>
+                    <p>
+                        Oran is a bustling coastal city in northwestern Algeria with a population of over 1 million 
+                        people. The city is known for its stunning architecture, rich cultural heritage, 
+                        and lively atmosphere. Some of the notable attractions include the 16th-century 
+                        Fort Santa Cruz, the Front de Mer promenade, the Oran Theater, the historic bullfighting 
+                        The Tourine Arena, and the Ahmed Zabana Museum, which showcases the city's history 
+                        and traditions.
+                    </p>
+                </div>
             </section>
-            
+
             <section id="pack">
                 <div class="packs">
                     <div id="pack-royal">
@@ -46,8 +55,12 @@
                                 <p id="categorieRoyal">ROYAL</p>
                             </div>
                             <div class="packInfo">
-                                <p class="packDescription">Description</p>
-                                <a href="#" class="buttonPack">View Details</a>
+                                <div class="packDescription">
+                                    <h4>ORAN</h4>
+                                    <h6>Type :</h6>
+                                    <p>Familial</p>
+                                </div>
+                                <a href="packDetails.html" class="buttonPack">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -59,8 +72,12 @@
                                 <p id="categorieSpecial">SPECIAL</p>
                             </div>
                             <div class="packInfo">
-                                <p class="packDescription">Description</p>
-                                <a href="#" class="buttonPack">View Details</a>
+                                <div class="packDescription">
+                                    <h4>ORAN</h4>
+                                    <h6>Type :</h6>
+                                    <p>Familial</p>
+                                </div>
+                                <a href="packDetails.html" class="buttonPack">View Details</a>
                             </div>
                         </div>      
                     </div>
@@ -72,24 +89,196 @@
                                 <p id="categorieNormal">NORMAL</p>
                             </div>
                             <div class="packInfo">
-                                <p class="packDescription">Description</p>
-                                <a href="#" class="buttonPack">View Details</a>
+                                <div class="packDescription">
+                                    <h4>ORAN</h4>
+                                    <h6>Type :</h6>
+                                    <p>Familial</p>
+                                </div>
+                                <a href="packDetails.html" class="buttonPack">View Details</a>
                             </div>
                         </div>
-                    </div>       
+                    </div>    
                 </div>
             </section>
 
-            <section id="place"></section>
-            <section id="transport"></section>
-            <section id="hebergement"></section>
-            <section id="restaurant"></section>
+            <section id="place">
+                <section>
+                    <div class="cards">
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>Fort Santa Cruz</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    A historic fort located in Oran that dates back to the Spanish colonial era.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>Front de Mer</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    A scenic waterfront promenade in Oran that offers stunning views of the Mediterranean Sea.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>Oran Theater</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    A cultural center and theater in Oran that hosts various artistic performances and events.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>The Tourine Arena</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    A popular open-air amphitheater in Oran that is known for its spectacular panoramic views.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>Ahmed Zabana Museum</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    A museum in Oran dedicated to the life and legacy of Ahmed Zabana,
+                                    a prominent Algerian revolutionary figure.
+                                </p>
+                            </div>
+                        </div>
+                    </div> 
+            </section>
+
+            <section id="transport">
+                <section>
+                    <div class="cards">
+                        <div class="card">
+                            <h1>1</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Type :</h6>
+                                        <p></p>
+                                    </li>
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h1>2</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Type :</h6>
+                                        <p></p>
+                                    </li>
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+            </section>
+
+            <section id="hebergement">
+                <section>
+                    <div class="cards">
+                        <div class="card">
+                            <h1>1</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Type :</h6>
+                                        <p></p>
+                                    </li>
+                                    <li>
+                                        <h6>Rating :</h6>
+                                        <p></p>
+                                    </li>
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h1>2</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Type :</h6>
+                                        <p></p>
+                                    </li>
+                                    <li>
+                                        <h6>Rating :</h6>
+                                        <p></p>
+                                    </li>
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+            </section>
+
+            <section id="restaurant">
+                <section>
+                    <div class="cards">
+                        <div class="card">
+                            <h1>1</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h1>2</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+            </section>
         </main>
         
-        <footer>
-
-        </footer>
-
         <script>
             function ScrollNav(link)
             {

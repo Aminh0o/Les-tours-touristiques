@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALGER</title>
+    <title>ALGIERS</title>
     <link rel="stylesheet" href="places.css">
 </head>
 <body>
@@ -11,16 +11,16 @@
         <img id="dynamicImageCover" src="images/alger10.png">
         <header>
             <div class="sectionGauche">
-                <a href="InterfaceClient.html"><img src="icons/logoo.png" id="logo"></a>
+                <a href="InterfaceClient.php"><img src="icons/logoo.png" id="logo"></a>
 		    </div>
 		    <nav class="menu">
                 <ul>
                     <li><a href="#home" id="navHome" onclick="ScrollNav(this)"><p>Home</p></a></li>
                     <li><a href="#pack" id="navPack" onclick="ScrollNav(this)"><p>Packs</p></a></li>
                     <li><a href="#place" id="navPlace" onclick="ScrollNav(this)"><p>Places</p></a></li>
-                    <li><a href="#transport" id="navTransport" onclick="ScrollNav(this)"><p>Transports</p></a></li>
-                    <li><a href="#hebergement" id="navHebergement" onclick="ScrollNav(this)"><p>Hebergements</p></a></li>
-                    <li><a href="#restaurant" id="navRestaurants" onclick="ScrollNav(this)"><p>Restaurants</p></a></li>
+                    <li><a href="#transport" id="navTransport" onclick="ScrollNav(this)"><p>Transportations</p></a></li>
+                    <li><a href="#hebergement" id="navHebergement" onclick="ScrollNav(this)"><p>Accommodations</p></a></li>
+                    <li><a href="#restaurant" id="navRestaurants" onclick="ScrollNav(this)"><p>Feeding</p></a></li>
                 </ul>
             </nav>
         </header>
@@ -28,18 +28,20 @@
         <main>
             <section id="home">
                 <div class="exploreWilaya">
-                    <h2><b>EXPLORE</b> ALGER!</h2>
+                    <h2><b>EXPLORE</b> ALGIERS!</h2>
+                    <div class="photoSlider">
+                        <img src="images/Alger.jpg" alt="Slide 1">
+                        <img src="images/alger11.png" alt="Slide 2">
+                        <img src="images/alger7.jpg" alt="Slide 3">
+                    </div>
                     <p>
-                        Alger is located in the north-central region of Algeria and is the capital of the country. 
-                        It covers an area of approximately 1,191 square kilometers and has a population of over 
-                        3.4 million people. Alger is a vibrant and bustling city that is rich in history, culture, 
-                        and tradition. It is known for its Mediterranean climate, beautiful architecture, and lively markets. 
-                        The city boasts several attractions, including the Casbah of Algiers, the Notre-Dame d'Afrique, 
-                        and the Jardin d'Essai du Hamma botanical garden. Alger is also an important economic hub and is home 
-                        to many businesses, government agencies, and international organizations. Its strategic location on the 
-                        Mediterranean Sea has made it a center for commerce and trade for centuries. Overall, 
-                        Wilaya Alger is a fascinating and dynamic place that is steeped in history and offers visitors a unique 
-                        and unforgettable experience.
+                        Algiers is the capital of Algeria, covering an area of approximately 1,191 square kilometers
+                        and with a population of over 3.4 million people. It is a vibrant city known for its 
+                        Mediterranean climate, beautiful architecture, and lively markets. Some notable 
+                        attractions in the city include the Casbah, the Grand Mosque, The Memorial of the Martyrs, 
+                        The Notre-Dame d'Afrique, Dar Ahmed Bey, The National Museum.<br>
+                        Overall, Algiers is a fascinating and dynamic place that offers visitors a unique and unforgettable 
+                        experience.
                     </p>
                 </div>
             </section>
@@ -102,76 +104,196 @@
 
             <section id="place">
                 <section>
-                    <div class="place">
-                        <div class="attraction-card">
+                    <div class="cards">
+                        <div class="card">
                             <img src="images/tassili.jpg">
-                            <div class="placeInfo">
-                                <a href=""><h3>Tassili n'Ajjer</h3></a>
+                            <div class="cardInfo">
+                                <a href=""><h3>Casbah</h3></a>
                                 <div class="border-line"></div>
-                                <p class="place-text">Tassili n'Ajjer is a vast plateau located in southeastern Algeria, 
-                                    known for its striking red sandstone formations, deep canyons, and ancient rock art. 
-                                    It's a UNESCO World Heritage Site and a popular destination for adventure seekers who 
-                                    want to explore the Sahara Desert.</p>
-                            </div>
-                        </div>
-                        <div class="attraction-card">
-                            <img src="images/chrea.jpg">
-                            <div class="placeInfo">
-                                <a href=""><h3>Chréa</h3></a>
-                                <div class="border-line"></div>
-                                <p class="place-text">Chréa is a beautiful mountain resort located in the Blida province, 
-                                    about 50 km away from the capital city, Algiers. It's a popular destination for skiing 
-                                    and hiking enthusiasts, offering breathtaking views of the Atlas Mountains and a cool 
-                                    climate all year round.
+                                <p class="card-text">
+                                    The Casbah of Algiers is a historic citadel that dates back to the 17th century 
+                                    and is a UNESCO World Heritage site.
                                 </p>
                             </div>
                         </div>
-                        <div class="attraction-card">
-                            <img src="images/tikjda.jpg">
-                            <div class="placeInfo">
-                                <a href=""><h3>Tikjda</h3></a>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>The Grand Mosque</h3></a>
                                 <div class="border-line"></div>
-                                <p class="place-text">
+                                <p class="card-text">
+                                    The Grand Mosque of Algiers is an iconic Islamic landmark 
+                                    and one of the largest mosques in Africa.
                                 </p>
                             </div>
                         </div>
-                        <div class="attraction-card">
-                            <img src="images/timgad.jpg">
-                            <div class="placeInfo">
-                                <a href=""><h3>Timgad</h3></a>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>The Memorial of the Martyrs</h3></a>
                                 <div class="border-line"></div>
-                                <p class="place-text">
+                                <p class="card-text">
+                                    The Memorial of the Martyrs is a monument dedicated to 
+                                    the Algerian soldiers who died during the war of independence against France.
                                 </p>
                             </div>
                         </div>
-                        <div class="attraction-card">
-                            <img src="images/aftis.jpg">
-                            <div class="placeInfo">
-                                <a href=""><h3>Aftis</h3></a>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>The Notre-Dame d'Afrique</h3></a>
                                 <div class="border-line"></div>
-                                <p class="place-text">
+                                <p class="card-text">
+                                    The Notre-Dame d'Afrique is a Catholic basilica that overlooks the city of Algiers 
+                                    and is a popular tourist attraction.
                                 </p>
                             </div>
                         </div>
-                        <div class="attraction-card">
-                            <img src="images/cherchell.jpg">
-                            <div class="placeInfo">
-                                <a href=""><h3>Cherchell</h3></a>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>Dar Ahmed Bey</h3></a>
                                 <div class="border-line"></div>
-                                <p class="place-text">
+                                <p class="card-text">
+                                    Dar Ahmed Bey is a historical palace in Algiers that now serves as a museum of 
+                                    traditional Algerian arts and crafts.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>The National Museum</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    The National Museum of Algeria is a cultural institution that showcases the country's
+                                    rich history and diverse heritage through its vast collection of artifacts and artworks.
                                 </p>
                             </div>
                         </div>
                     </div> 
             </section>
-            <section id="transport"></section>
-            <section id="hebergement"></section>
-            <section id="restaurant"></section>
-        </main>
-        
-        <footer>
 
-        </footer>
+            <section id="transport">
+                <section>
+                    <div class="cards">
+                        <div class="card">
+                            <h1>1</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Type :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p>aaaa</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h1>2</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Type :</h6>
+                                        <p>aaaa</p>
+                                    </li>
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p>aaaaa</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+            </section>
+
+            <section id="hebergement">
+                <section>
+                    <div class="cards">
+                        <div class="card">
+                            <h1>1</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Type :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                    <li>
+                                        <h6>Rating :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h1>2</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Type :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                    <li>
+                                        <h6>Rating :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+            </section>
+
+            <section id="restaurant">
+                <section>
+                    <div class="cards">
+                        <div class="card">
+                            <h1>1</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p>aaaa</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h1>2</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p>aaa</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+            </section>
+        </main>
 
         <script>
             function ScrollNav(link)

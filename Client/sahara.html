@@ -8,34 +8,41 @@
 </head>
 <body>
     <div>
-        <img id="dynamicImageCover" src="images/Sahara6.jpg">
+        <img id="dynamicImageCover" src="images/alger10.png">
         <header>
             <div class="sectionGauche">
-                <a href="InterfaceClient.html"><img src="icons/logoo.png" id="logo"></a>
+                <a href="InterfaceClient.php"><img src="icons/logoo.png" id="logo"></a>
 		    </div>
 		    <nav class="menu">
                 <ul>
                     <li><a href="#home" id="navHome" onclick="ScrollNav(this)"><p>Home</p></a></li>
                     <li><a href="#pack" id="navPack" onclick="ScrollNav(this)"><p>Packs</p></a></li>
                     <li><a href="#place" id="navPlace" onclick="ScrollNav(this)"><p>Places</p></a></li>
-                    <li><a href="#transport" id="navTransport" onclick="ScrollNav(this)"><p>Transports</p></a></li>
-                    <li><a href="#hebergement" id="navHebergement" onclick="ScrollNav(this)"><p>Hebergements</p></a></li>
-                    <li><a href="#restaurant" id="navRestaurants" onclick="ScrollNav(this)"><p>Restaurants</p></a></li>
-                    <li>
-                        <button>
-                            <p>RESERVE</p>
-                            <span class="fi fi-sr-angle-down"></span>
-                        </button>
-                    </li>
+                    <li><a href="#transport" id="navTransport" onclick="ScrollNav(this)"><p>Transportations</p></a></li>
+                    <li><a href="#hebergement" id="navHebergement" onclick="ScrollNav(this)"><p>Accommodations</p></a></li>
+                    <li><a href="#restaurant" id="navRestaurants" onclick="ScrollNav(this)"><p>Feeding</p></a></li>
                 </ul>
             </nav>
         </header>
 
         <main>
             <section id="home">
-
+                <div class="exploreWilaya">
+                    <h2><b>EXPLORE</b> SAHARA!</h2>
+                    <div class="photoSlider">
+                        <img src="images/Alger.jpg" alt="Slide 1">
+                        <img src="images/alger11.png" alt="Slide 2">
+                        <img src="images/alger7.jpg" alt="Slide 3">
+                    </div>
+                    <p>
+                        The Algerian Sahara is a vast and diverse region that covers a large part of the country. 
+                        Tamanrasset, Adrar, and Djanet are some of the most popular destinations in the region. 
+                        Tamanrasset has Ksar Moussa, while Adrar has Sefar and Tamasakht. 
+                        Djanet is a gateway to the Dunes of Tin Merzouga and the Tadrart Rouge rock formations.
+                    </p>
+                </div>
             </section>
-            
+
             <section id="pack">
                 <div class="packs">
                     <div id="pack-royal">
@@ -46,8 +53,12 @@
                                 <p id="categorieRoyal">ROYAL</p>
                             </div>
                             <div class="packInfo">
-                                <p class="packDescription">Description</p>
-                                <a href="#" class="buttonPack">View Details</a>
+                                <div class="packDescription">
+                                    <h4>SAHARA</h4>
+                                    <h6>Type :</h6>
+                                    <p>Familial</p>
+                                </div>
+                                <a href="packDetails.html" class="buttonPack">View Details</a>
                             </div>
                         </div>
                     </div>
@@ -59,8 +70,12 @@
                                 <p id="categorieSpecial">SPECIAL</p>
                             </div>
                             <div class="packInfo">
-                                <p class="packDescription">Description</p>
-                                <a href="#" class="buttonPack">View Details</a>
+                                <div class="packDescription">
+                                    <h4>SAHARA</h4>
+                                    <h6>Type :</h6>
+                                    <p>Familial</p>
+                                </div>
+                                <a href="packDetails.html" class="buttonPack">View Details</a>
                             </div>
                         </div>      
                     </div>
@@ -72,24 +87,205 @@
                                 <p id="categorieNormal">NORMAL</p>
                             </div>
                             <div class="packInfo">
-                                <p class="packDescription">Description</p>
-                                <a href="#" class="buttonPack">View Details</a>
+                                <div class="packDescription">
+                                    <h4>SAHARA</h4>
+                                    <h6>Type :</h6>
+                                    <p>Familial</p>
+                                </div>
+                                <a href="packDetails.html" class="buttonPack">View Details</a>
                             </div>
                         </div>
-                    </div>       
+                    </div>    
                 </div>
             </section>
 
-            <section id="place"></section>
-            <section id="transport"></section>
-            <section id="hebergement"></section>
-            <section id="restaurant"></section>
+            <section id="place">
+                <section>
+                    <div class="cards">
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>Ksar Moussa</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    A historic fortified granary located in the Algerian Sahara.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>Tenessa</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    A small oasis town located in the Tamanrasset province of southern Algeria.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>Tagrera</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    A prehistoric site in the Adrar region of Algeria, known for its rock art.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>Sefar</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    A village in the Djanet area of southern Algeria, surrounded by dramatic rock formations and natural arches.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>Tamasakht</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    An oasis town located in the Tamanrasset province of southern Algeria.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/tassili.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>Tin Merzouga Dunes</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    A series of towering sand dunes located in the heart of the Algerian Sahara, near the town of Djanet.
+                                </p>
+                            </div>
+                        </div>
+                    </div> 
+            </section>
+
+            <section id="transport">
+                <section>
+                    <div class="cards">
+                        <div class="card">
+                            <h1>1</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Type :</h6>
+                                        <p></p>
+                                    </li>
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h1>2</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Type :</h6>
+                                        <p></p>
+                                    </li>
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+            </section>
+
+            <section id="hebergement">
+                <section>
+                    <div class="cards">
+                        <div class="card">
+                            <h1>1</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Type :</h6>
+                                        <p></p>
+                                    </li>
+                                    <li>
+                                        <h6>Rating :</h6>
+                                        <p></p>
+                                    </li>
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h1>2</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Type :</h6>
+                                        <p></p>
+                                    </li>
+                                    <li>
+                                        <h6>Rating :</h6>
+                                        <p></p>
+                                    </li>
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+            </section>
+
+            <section id="restaurant">
+                <section>
+                    <div class="cards">
+                        <div class="card">
+                            <h1>1</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <h1>2</h1>
+                            <div class="cardInfo">
+                                <a href=""><h3>name</h3></a>
+                                <div class="border-line"></div>
+                                <ul class="card-text">
+                                    <li>
+                                        <h6>Phone Number :</h6>
+                                        <p></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div> 
+            </section>
         </main>
         
-        <footer>
-
-        </footer>
-
         <script>
             function ScrollNav(link)
             {

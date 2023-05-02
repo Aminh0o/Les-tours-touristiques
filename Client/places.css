@@ -1,19 +1,34 @@
-:root
+/***************************************************************************************************************************/
+/************** define colors and font ************/
+:root 
 {
-  --background--:#e0c9a5;
-  --header--:hsl(38, 99%, 70%);
-  --headerScroll--:hsla(37, 63%, 64%, 0.726);
-  --white--: #ffffff;
-  --green--: #4CAF50;
-  --borderGreen--: rgb(42, 139, 3);
-  --shadowGreen--: rgba(5, 201, 64, 0.5);
-  --grey--: #6e6e6e;
-  --gold--: #ddb067;
-} 
-*
-{
-  font-family: 'Rockwell', serif;
+  --background: #e0c9a5;
+  --orange: #fec767;
+  --orangeTransparent: hsla(37, 63%, 64%, 0.726);
+  --white: #ffffff;
+  --green: #4CAF50;
+  --borderGreen: #2a8b03;
+  --shadowGreen: rgba(5, 201, 64, 0.5);
+  --grey: #6e6e6e;
+  --gold: #ddb067;
+  --dark: #0F172B;
+  --font-1: "Poppins", sans-serif;
+  --font-2: 'system-ui';
+  --font-3: 'Rockwell', serif;
 }
+/************** scrollbar style ************/
+::-webkit-scrollbar 
+{
+  width: 8px;
+  background-color: var(--borderGreen);
+}
+::-webkit-scrollbar-thumb 
+{
+  background-color: var(--orange);
+  border-radius: 10px;
+}
+/***************************************************************************************************************************/
+/************** body style ************/
 body
 {
   width: 100%;
@@ -23,28 +38,18 @@ body
   padding-top: 0%;
   align-items: center;
   background-position: center;
-  background-color: var(--background--);
+  background-color: var(--background);
   background-size: cover;
   overflow-x: hidden;
 }
-::-webkit-scrollbar 
-{
-  width: 7px;
-  background-color: var(--header--);
-}
-::-webkit-scrollbar-thumb 
-{
-  background-color: var(--green--);
-  border-radius: 10px;
-}
+/************** all buttons ************/
 button
 {
   display: inline-block;
-  padding: 5% 10%;
-  margin-top: 2%;
-  background-color: var(--green--);
+  background-color: var(--dark);
   font-size: 15px;
-  color: var(--white--);
+  font-family: var(--font-2);
+  color: var(--white);
   border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
@@ -56,20 +61,23 @@ button:hover
   opacity: 1;
   border-radius: 15px;
   transform: scale(1);
-  border-bottom: 2px solid var(--borderGreen--);
-  box-shadow: 0 5px 5px var(--shadowGreen--);
+  font-size: 15.5px;
 }
-#dynamicImageCover
+/************** scrolling Images ************/
+#dynamicImageCover 
 {
   top: 0%;
-  left: 0%;
+  left: 0;
   width: 101%;
   height: 100%;
   background-position: center;
   background-size: cover;
-  position: absolute;
-  z-index: -1;
+  position: fixed;
+  z-index: -99;
+  filter: brightness(0.7) contrast(120%);
 }
+/***************************************************************************************************************************/
+/************** header Style ************/
 header 
 {
   position: fixed;
@@ -81,9 +89,10 @@ header
   left: 0%;
   height: 10%;
   padding: 0 20px;
-  background-color: var(--header--);
+  background-color: var(--orange);
   z-index: 1;
 }
+/************** section of logo ************/
 .sectionGauche
 {
   display: inline-flex;
@@ -93,9 +102,10 @@ header
 {
   width: 40%;
   height: 70%;
-  margin-left: 10%;
-  margin-top: 4%;
+  margin-left: 2%;
+  margin-top: 1%;
 }
+/************** section of menu ************/
 .menu ul
 {
   display: inline-flex;
@@ -105,38 +115,79 @@ header
 }
 .menu ul li
 {
-  margin: 4%;
+  margin: 5%;
 }
 .menu ul li a
 {
   text-decoration: none;
-  color: var(--green--);
-  opacity: 0.7;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  font-size: 17px;
+  color: var(--borderGreen);
+  opacity: 0.9;
+  font-family: var(--font-2);
+  font-size: 18px;
 }
 .menu ul li a:hover
 {
-  border-bottom: 2px solid black;
-  font-size: 20px;
+  font-weight: bold;
   opacity: 1;
 }
-.menu button p
-{
-  font-size: 15px;
-  font-weight: bold;
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
+/***************************************************************************************************************************/
+/************** paragraph explore in the middle ************/
 .exploreWilaya
 {
-  margin-top: 15%;
-  margin-left: 10%;
+  margin-top: 10%;
+  margin-left: 7%;
+  font-family: var(--font-3);
 }
-.exploreWilaya h2
+.exploreWilaya::after 
+{
+  content: "";
+  position: absolute;
+  top: 23%;
+  left: 35%;  
+  width: 56%;
+  height: 2px; 
+  background-color: var(--orange); 
+}
+.exploreWilaya h2 b
 {
   font-size: 40px;
-  font-style: italic;
+  font-style: normal;
+  color: var(--orange);
 }
+.exploreWilaya h2 
+{
+  font-style: italic;
+  font-size: 35px;
+  color: var(--green);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.exploreWilaya p
+{
+  color: var(--dark);
+  background-color: var(--orangeTransparent);
+  font-size: 20px;
+  margin: -38% 50% 5% 5%;
+  padding: 2%;
+  box-shadow: 0 20px 20px 20px rgba(0, 0, 0, 0.2);
+}
+/************** photo slider explore in the middle ************/
+.photoSlider 
+{
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  margin: 0% 10% 3% 50%;
+  border-radius: 5px;
+  height: 520px;
+}
+.photoSlider img 
+{
+  width: 100%;
+  height: 300px;
+  margin-bottom: 2%;
+}
+/***************************************************************************************************************************/
+/************** packs in the packs section ************/
 .packs
 {
   display: flex;
@@ -144,7 +195,7 @@ header
   align-items: center;
   flex-wrap: wrap;
   width: 80%;
-  margin-top: -20%;
+  margin-top: -40%;
   margin-left: 10%;
   box-shadow: 0 5px 12px 2px rgba(0, 0, 0, 0.2);
   border-radius: 10px;
@@ -158,7 +209,7 @@ header
   height: 300px;
   margin-bottom: 5%;
   border-radius: 20px;
-  background-color: var(--white--);
+  background-color: var(--white);
   cursor: pointer;
   overflow: hidden;
   transition: all 0.2s ease-in-out;
@@ -183,7 +234,7 @@ header
   bottom: 0;
   padding: 20px;
   text-align: center;
-  background-color: var(--header--);
+  background-color: var(--orange);
   border-top-right-radius: 50px;
   opacity: 0.9;
 }
@@ -192,8 +243,9 @@ header
   font-size: 25px;
   font-weight: 700;
   margin: 0;
+  font-family: var(--font-2);
   font-weight: bold;
-  color: var(--grey--);
+  color: var(--dark);
   text-transform: uppercase;
   opacity: 1;
 }
@@ -201,8 +253,9 @@ header
 {
   font-size: 15px;
   font-weight: 500;
+  font-family: var(--font-3);
   margin: 0;
-  color: var(--grey--);
+  color: var(--dark);
   text-transform: uppercase;
 }
 .pack .packInfo
@@ -211,14 +264,15 @@ header
   width: 100%;
   bottom: 0;
   padding: 30%;
-  background-color: var(--header--);
+  background-color: var(--orange);
   transition: all 0.5s ease-in-out;
   opacity: 0;
 }
 .packDescription 
 {
   position: absolute;
-  color: var(--grey--);
+  color: var(--dark);
+  font-family: var(--font-2);
 }
 .packDescription h4
 {
@@ -229,11 +283,12 @@ header
 .packDescription h6
 {
   font-size: 15px;
-  margin-top: -10%;
+  margin-top: -15%;
 }
 .packDescription p
 {
-  margin-top: -91%;
+  position: absolute;
+  top: -20%;
   margin-left: 95%;
 }
 .pack:hover .packInfo 
@@ -241,15 +296,17 @@ header
   opacity: 1;
   transform: translateY(0%);
 }
+/************** button pack in the packs section ************/
 .buttonPack
 {
   position: absolute;
   margin-left: 15%;
   margin-top: 8%;
   padding: 2% 3%;
-  background-color: var(--green--);
+  background-color: var(--green);
   font-size: 15px;
-  color: var(--white--);
+  font-family: var(--font-1);
+  color: var(--white);
   border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
@@ -259,105 +316,128 @@ header
 {
   opacity: 1;
   transform: scale(1);
-  border-bottom: 2px solid var(--borderGreen--);
-  box-shadow: 0 5px 5px var(--shadowGreen--);
+  border-bottom: 2px solid var(--borderGreen);
+  box-shadow: 0 5px 5px var(--shadowGreen);
 }
-.place 
+/***************************************************************************************************************************/
+/************** cards: places ************/
+.cards
 {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   width: 80%;
+  margin-top: -25%;
   margin-left: 10%;
-  box-shadow: 0 5px 12px 2px rgba(0, 0, 0, 0.2);
-  border-radius: 20px;
+  box-shadow: 0 10px 20px 20px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
 }
-.place-card
+.card
 {
   position: relative;
-  flex: 17%;
-  margin: 5%;
-  background-color: var(--gold);
+  flex: 25%;
+  margin: 2%;
+  background-color: var(--orange);
   box-shadow: 0 5px 5px rgba(0,0,0,0.5);
   border-radius: 20px;
 }
-.place-card:hover 
+.card img 
 {
-  border-radius: 10px;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgb(0, 0, 0);
-}
-.place-card img 
-{
-  width: 100%;
+  width: 50%;
   height: 50%;
   object-fit: cover;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 36px));
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
 }
-/***************************************************************************************************************************/
-.attraction-card
-{
-  position: relative;
-  flex: 17%;
-  margin: 5%;
-  background-color: var(--gold);
-  box-shadow: 0 5px 5px rgba(0,0,0,0.5);
-  border-radius: 20px;
-}
-.attraction-card img 
-{
-  width: 100%;
-  height: 50%;
-  object-fit: cover;
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 36px));
-}
-/***************************************************************************************************************************/
-.placeInfo
+.cardInfo
 {
   padding: 5%;
   text-align: center;
 }
-.placeInfo h3 
+.cardInfo a
 {
-  margin: 0%;
+  text-decoration: none;
+} 
+.cardInfo h3 
+{
+  margin-top: -35%;
+  margin-left: 50%;
   font-weight: bold;
   letter-spacing: 0.5px;
   font-size: 20px;
+  font-family: var(--font-2);
   color: var(--white);
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-  text-decoration: none;
-  border-bottom: none;
 }
-.placeInfo .border-line
+.cardInfo .border-line
 {
-  border-bottom: 1px solid var(--green);
+  position: relative;
+  border-bottom: 2px solid var(--green);
   border-width: 3px;
-  width: 40%;  
-  margin: 2% 30%;
+  width: 30%;  
+  margin: 8% 0% 20% 60%;
 }
-.placeInfo .place-text
+.cardInfo .card-text
 {
-  color: var(--grey);  
-  font-size: 15px;
-  letter-spacing: 0.5px;
-  margin-bottom: 5%;
+  color: var(--dark);  
+  font-size: 17px;
+  margin-bottom: 1%;
 }
-.placeInfo button a
+.cardInfo button a
 {
   text-decoration: none;
   color: var(--white);
   font-size: 15px;
 }
-footer
+/************** cards: transport/hebergement/restaurant  ************/
+#transport { margin-top: -55%; } 
+#hebergement { margin-top: 5%; } 
+#restaurant { margin-top: 2%; }
+.card h1
 {
-  position: absolute;
-  display: inline-flex;
-  justify-content: space-between;
+  background-color: var(--orangeTransparent);
+  padding: 2%;
+  margin-top: 5%;
+  margin-left: 5%;
+  width: 40%;
+  height: 20%;
+  font-size: 50px;
+  font-family: var(--font-3);
+  color: var(--borderGreen);
+  text-align: center;
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+#transport .cardInfo .card-text,
+#hebergement .cardInfo .card-text,
+#restaurant .cardInfo .card-text
+{
+  margin-top: -15%;
+  margin-bottom: 2%;
+}
+#transport .cardInfo .card-text li,
+#hebergement .cardInfo .card-text li,
+#restaurant .cardInfo .card-text li 
+{
+  display: flex;
+  flex-direction: row;
   align-items: center;
-  margin-top: 19%;
-  width: 101%;
-  left: 0%;
-  height: 10%;
-  background-color: var(--header--);
-  z-index: 1;
+  margin-bottom: -15%;
+  font-family: var(--font-2);
+  font-size: 15px;
+}
+#transport .cardInfo .card-text li h6,
+#hebergement .cardInfo .card-text li h6,
+#restaurant .cardInfo .card-text li h6 
+{
+  margin-right: 5%;
+  font-size: 18px;
+}
+#restaurant .card h1
+{
+  margin-top: 5%;
+}
+#restaurant .card h3
+{
+  margin-top: -45%;
 }
