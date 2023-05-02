@@ -177,7 +177,7 @@
 			<div class="place-card">
 				<img src="images/alger-qasabah.jpg" id="algerImages">
 				<div class="placeInfo">
-					<h3>ALGER</h3>
+					<h3>ALGIERS</h3>
 					<div class="border-line"></div>
 					<p class="place-text">The capital city of Algeria, Alger, is a vibrant and bustling metropolis that 
 						offers visitors a mix of modern amenities and historic charm</p>
@@ -185,7 +185,7 @@
 				</div>
 			</div>
 			<div class="place-card">
-				<img src="images/tlemcen4.jpg" id="tlemcenImages">
+				<img src="images/tlemcen4.jpeg" id="tlemcenImages">
 				<div class="placeInfo">
 					<h3>TLEMCEN</h3>
 					<div class="border-line"></div>
@@ -204,7 +204,7 @@
 				</div>
 			</div>
 			<div class="place-card">
-				<img src="images/bejaia2.jpg" id="bejaiaImages">
+				<img src="images/bejaia.jpg" id="bejaiaImages">
 				<div class="placeInfo">
 					<h3>BEJAIA</h3>
 					<div class="border-line"></div>
@@ -220,7 +220,8 @@
 					<div class="border-line"></div>
 					<p class="place-text">Constantine is a city located in the northeastern part of Algeria, 
 						known for its stunning natural beauty and rich history. The city is perched on a hill overlooking 
-						a deep gorge, and is home to several historic landmarks.</p>
+						a deep gorge, and is home to several historic landmarks.	
+					</p>
 					<button><a href="constantine.html" class="buttonPlace">Voir Details</a></button>
 				</div>
 			</div>
