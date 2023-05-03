@@ -242,7 +242,7 @@
 		<h1 class="title" id="topAttractions">TOP ATTRACTIONS</h1>
 		<div class="attraction">
 			<div class="attraction-card">
-				<img src="images/tassili.jpg">
+				<img src="images/tassili1.jpg">
 				<div class="attractionInfo">
 					<a href=""><h3>Tassili n'Ajjer</h3></a>
 					<div class="border-line"></div>
