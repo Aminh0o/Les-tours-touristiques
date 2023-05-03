@@ -438,3 +438,22 @@ header
 {
   margin-top: -45%;
 }
+/************** rating hebergement ************/
+.avis-rating
+{
+  position: relative;
+  color: var(--dark);
+  font-size: 20px;
+  font-family: var(--font-3);
+  top: 10%;
+}
+.avis-rating label
+{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("icons/star-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
