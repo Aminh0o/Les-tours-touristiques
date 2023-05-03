@@ -3,46 +3,36 @@
     $nom_bdd="essai";
     $user="root";
     $password="";
-    $nom = $_POST["nomUtilisateur"];
-    $prenom = $_POST["prenomUtilisateur"];
-    $date = $_POST["dateNaissance"];
-    $telephone = $_POST["telephone"];
-    $email = $_POST["email"];
-    $mdps1 = $_POST["mot_de_passe1"];
-    $mdps2 = $_POST["mot_de_passe2"];
-    $compteur = 1;
-session_start();
+    session_start();
 
-try
-{
-if($nom && $prenom && $date && $telephone && $email && $mdps1 && $mdps2 )
-{
-  
-    if($mdps1 == $mdps2)
+    if (isset($_POST["submit"]))
     {
-    $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
+      $nom = $_POST["nomUtilisateur"];
+      $prenom = $_POST["prenomUtilisateur"];
+      $date = $_POST["dateNaissance"];
+      $telephone = $_POST["telephone"];
+      $email = $_POST["email"];
+      $mdps1 = $_POST["mot_de_passe1"];
+      $mdps2 = $_POST["mot_de_passe2"];
 
-
-
-$requette="INSERT INTO UTILISATEUR (`NOM`,`PRENOM`,`EMAIL`,`DATE_DE_NAISSANCE`,`TELEPHONE`,`MOT_DE_PASSE`) 
-    VALUES('$nom','$prenom','$email','$date','$telephone','$mdps2')";
-
-
-    /*$requette="INSERT INTO UTILISATEUR (`ID_UTILISATEUR`,`ID_EMETTEUR`,`NOM`,`PRENOM`,`EMAIL`,`DATE_DE_NAISSANCE`,`TELEPHONE`,`MOT_DE_PASSE`) 
-    VALUES('','1','$nom','$prenom','$email','$date','$telephone','$mdps2')";*/
-    $resultat = $connexion->exec($requette); 
-    
-    header("Location: login.php");
+      try
+      {
+        if($nom && $prenom && $date && $telephone && $email && $mdps1 && $mdps2 )
+        {
+          if($mdps1 == $mdps2)
+          {
+            $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
+            $requette=" INSERT INTO UTILISATEUR (`NOM`,`PRENOM`,`EMAIL`,`DATE_DE_NAISSANCE`,`TELEPHONE`,`MOT_DE_PASSE`) 
+                        VALUES('$nom','$prenom','$email','$date','$telephone','$mdps2')";           
+            $resultat = $connexion->exec($requette); 
+            header("Location: login.php");
+          }
+        }
+      }
+      catch (PDOException $e) { echo "Erreur ! " . $e->getMessage() . "<br/>"; }
     }
-    else echo "saged l mot de passe";
-}
-else echo"invalide";
-}
-catch (PDOException $e) 
-{
-    echo "Erreur ! " . $e->getMessage() . "<br/>";
-}
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,13 +42,13 @@ catch (PDOException $e)
   <link rel="stylesheet" href="signupClient.css">
 </head>
 <body>
-<header>
+  <header>
     <div class="sectionGauche">
-      <a href="InterfaceClient.php"><img src="icons/logoo.png" id="logo"></a>
+      <a href="InterfaceClient.php"><img src="icons/logoo2.png" id="logo"></a>
     </div>
     <h1>SIGN UP</h1>
   </header>
-  
+
   <div>
     <form method="POST" class="form">
       <label>First Name :</label>
@@ -76,11 +66,11 @@ catch (PDOException $e)
       <label>E-mail :</label>
       <input type="email" name="email" placeholder="Enter your email address" required><br>
       
-      <label>Mot de passe :</label>
+      <label>Password :</label>
       <input type="password" size="30" id="mot_de_passe1" name="mot_de_passe1" placeholder="Enter your password" oninput="verifier_mot_passe()" required><br>
       <input type="password" size="30" id="mot_de_passe2" name="mot_de_passe2" placeholder="Re-enter your password" oninput="verifier_mot_passe()" required><br>
 
-      <button id="submit">Submit</button>
+      <input type="submit" value="submit" name="submit" id="submit">
     </form>
   </div>
 
@@ -106,4 +96,3 @@ catch (PDOException $e)
 	</script>
 </body>
 </html>
-
