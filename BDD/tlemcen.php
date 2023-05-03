@@ -3,36 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALGIERS</title>
+    <title>TLEMCEN</title>
     <link rel="stylesheet" href="places.css">
     <style>
         .exploreWilaya p { margin-top: -30%;}
+        .exploreWilaya h2 { margin-left: -2%;}
         .photoSlider { height: 420px; }
-        .packs { margin-top: -38%;}
-        .packDescription p { top: -41%;}
-        .cardInfo p { margin-top: -10%;}
-        .card-text p { margin-top: 3%;}
-        #transport { margin-top: -40%; }
+        .packs { margin-top: -35%;}
+        .packDescription p { top: -200%; }
+        #Card .cardInfo p { margin-top: -15%;}
+        #transport { margin-top: -67%; }
         #hebergement { margin-top: 4%; }
-        #restaurant { margin-top: 0%; }
- 
-#rating
-{
-  position: relative;
-  color: var(--dark);
-  font-size: 20px;
-  font-family: var(--font-3);
-  top: 10%;
-}
-
+        #restaurant { margin-top: 2%; }
     </style>
 </head>
 <body>
     <div>
-        <img id="dynamicImageCover" src="images/alger10.png">
+        <img id="dynamicImageCover" src="images/tlemcen-mansourah4.jpeg">
         <header>
             <div class="sectionGauche">
-                <a href="InterfaceClient.php"><img src="icons/Logoo1.png" id="logo"></a>
+                <a href="InterfaceClient.php"><img src="icons/logoo1.png" id="logo"></a>
 		    </div>
 		    <nav class="menu">
                 <ul>
@@ -45,7 +35,6 @@
                 </ul>
             </nav>
         </header>
-
         <?php 
             function afficher_Pack_royal()
             {
@@ -58,7 +47,7 @@
                 try
                 {
                     $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                    $req = "SELECT * FROM PACK where CATEGORIE='royal' AND WILAYA='ALGER' ";
+                    $req = "SELECT * FROM PACK where CATEGORIE='royal' AND WILAYA='TLEMCEN' ";
                     $res =  $connexion->query($req);
                     while($tuple = $res->fetch(PDO::FETCH_ASSOC)){
                         $_SESSION['categorieRoyal'] = $tuple['CATEGORIE']; 
@@ -92,7 +81,7 @@
                 try
                 {
                     $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                    $req = "SELECT * FROM PACK where CATEGORIE='special' AND WILAYA='ALGER' ";
+                    $req = "SELECT * FROM PACK where CATEGORIE='special' AND WILAYA='TLEMCEN' ";
                     $res =  $connexion->query($req);
                     while($tuple = $res->fetch(PDO::FETCH_ASSOC) ){
                         $_SESSION['categorieSpecial'] = $tuple['CATEGORIE'];
@@ -128,7 +117,7 @@
                 try
                 {
                     $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                    $req = "SELECT * FROM PACK where CATEGORIE='normal' AND WILAYA='ALGER' ";
+                    $req = "SELECT * FROM PACK where CATEGORIE='normal' AND WILAYA='TLEMCEN' ";
                     $res =  $connexion->query($req);
                     while($tuple = $res->fetch(PDO::FETCH_ASSOC)){
                         $_SESSION['categorieNormal'] = $tuple['CATEGORIE'];
@@ -158,33 +147,29 @@
         <main>
             <section id="home">
                 <div class="exploreWilaya">
-                    <h2><b>EXPLORE</b> ALGIERS!</h2>
+                    <h2><b>EXPLORE</b> TLEMCEN!</h2>
                     <div class="photoSlider">
-                        <img src="images/Alger.jpg" alt="Slide 1">
-                        <img src="images/alger11.png" alt="Slide 2">
-                        <img src="images/alger-DameAfrique.jpg" alt="Slide 3">
-                        <img src="images/alger-Jama3Kbir.jpg" alt="Slide 4">
-                        <img src="images/alger2.jpg" alt="Slide 5">
-                        <img src="images/alger3.jpg" alt="Slide 6">
+                        <img src="images/tlemcen-lala-setti.jpeg" alt="Slide 1">
+                        <img src="images/tlemcen-mansourah2.jpeg" alt="Slide 2">
+                        <img src="images/tlemcen4.jpeg" alt="Slide 3">
+                        <img src="images/tlemcen-ourit.jpeg" alt="Slide 4">
                     </div>
                     <p>
-                        Algiers is the capital of Algeria, covering an area of approximately 1,191 square kilometers
-                        and with a population of over 3.4 million people. It is a vibrant city known for its 
-                        Mediterranean climate, beautiful architecture, and lively markets. Some notable 
-                        attractions in the city include the Casbah, the Grand Mosque, The Memorial of the Martyrs, 
-                        The Notre-Dame d'Afrique, Dar Ahmed Bey, The National Museum.<br>
-                        Overall, Algiers is a fascinating and dynamic place that offers visitors a unique and unforgettable 
-                        experience.
+                        Tlemcen is a city located in western Algeria near the border with Morocco. It covers an area of 
+                        approximately 118 square kilometers and has a population of over 140,000 people. 
+                        The city is known for its rich history, culture, and architecture. Notable attractions include 
+                        the Lalla Setti plateau, Mansourah, El Mechouar, El Ourit, Sidi Boumediene, Ghar Boumaaza, Porsey,
+                        and The Beni Aad Caves.<br>
+                        Tlemcen is a fascinating city that offers visitors a glimpse into Algeria's rich history and culture.
                     </p>
                 </div>
             </section>
 
             <section id="pack">
                 <div class="packs">
-
-                   <?php afficher_Pack_royal(); ?>
-                    <?php afficher_Pack_special();?>
-                    <?php afficher_Pack_normal(); ?>    
+                <?php afficher_Pack_royal(); ?>
+                <?php afficher_Pack_special();?>
+                <?php afficher_Pack_normal(); ?> 
                 </div>
             </section>
 
@@ -192,82 +177,104 @@
                 <section>
                     <div class="cards">
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/tlemcen-lalasetti3.jpeg">
                             <div class="cardInfo">
-                                <a href=""><h3>Casbah</h3></a>
+                                <a href=""><h3>Lalla Setti</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    The Casbah of Algiers is a historic citadel that dates back to the 17th century 
-                                    and is a UNESCO World Heritage site.
+                                    A historic shrine located in Tlemcen, Algeria, dedicated to a woman known as Sitt al-Badawiyya, 
+                                    who is revered as a saint.
                                 </p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/tlemcen-mansourah3.jpeg">
                             <div class="cardInfo">
-                                <a href=""><h3>The Grand Mosque</h3></a>
+                                <a href=""><h3>Mansourah</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    The Grand Mosque of Algiers is an iconic Islamic landmark 
-                                    and one of the largest mosques in Africa.
+                                    A medieval ruined city and UNESCO World Heritage site located in Tlemcen, Algeria, 
+                                    founded by the Almohad caliph Yaqub al-Mansur.
                                 </p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/tlemcen-mechouar.jpg">
                             <div class="cardInfo">
-                                <a href=""><h3>The Memorial of the Martyrs</h3></a>
+                                <a href=""><h3>El Mechouar</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    The Memorial of the Martyrs is a monument dedicated to 
-                                    the Algerian soldiers who died during the war of independence against France.
+                                    A fortified palace built during the 18th century, located in Tlemcen, Algeria,
+                                    which served as the residence of the rulers of the Tlemcen Kingdom.
                                 </p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/tlemcen-porsey.jpg">
                             <div class="cardInfo">
-                                <a href=""><h3>The Notre-Dame d'Afrique</h3></a>
+                                <a href=""><h3>Porsey</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    The Notre-Dame d'Afrique is a Catholic basilica that overlooks the city of Algiers 
-                                    and is a popular tourist attraction.
+                                    A coastal town located in the Tlemcen Province of Algeria, known for its beautiful 
+                                    beaches and scenic views.
                                 </p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/tlemcen-ourit2.jpeg">
                             <div class="cardInfo">
-                                <a href=""><h3>Dar Ahmed Bey</h3></a>
+                                <a href=""><h3>El Ourit</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    Dar Ahmed Bey is a historical palace in Algiers that now serves as a museum of 
-                                    traditional Algerian arts and crafts.
+                                    A historic neighborhood located in Tlemcen, Algeria, known for its traditional 
+                                    architecture and narrow streets.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card" id="Card">
+                            <img src="images/tlemcen-gharBoumaaza.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>Boumaaza-Cave</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    A natural cave located in Tlemcen, Algeria, with archaeological evidence of human 
+                                    presence dating back to the Neolithic era.
                                 </p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/tlemcen-sidiBoumedienne.jpg">
                             <div class="cardInfo">
-                                <a href=""><h3>The National Museum</h3></a>
+                                <a href=""><h3>Sidi Boumediene</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    The National Museum of Algeria is a cultural institution that showcases the country's
-                                    rich history and diverse heritage through its vast collection of artifacts and artworks.
+                                    A mausoleum located in Tlemcen, Algeria, dedicated to Sidi Boumediene, 
+                                    a revered Sufi saint who played a key role in spreading Islam in North Africa.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="images/tlemcen-beniAdd.jpg">
+                            <div class="cardInfo">
+                                <a href=""><h3>Beni-Aad Caves</h3></a>
+                                <div class="border-line"></div>
+                                <p class="card-text">
+                                    are a network of natural caves located in the Tlemcen region of northern Algeria, 
+                                    known for their unique geological formations and historical significance.
                                 </p>
                             </div>
                         </div>
                     </div> 
             </section>
             <?php 
-            function TransportAlger(){
+            function TransportTlm(){
             $server="localhost";
             $nom_bdd="essai";
             $user="root";
             $password="";
             try{
                 $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                $req = "SELECT * FROM TRANSPORT WHERE ADRESSE='ALGER' ";
+                $req = "SELECT * FROM TRANSPORT WHERE ADRESSE='TLEMCEN' ";
                 $res =  $connexion->query($req);
                 while($tuple = $res->fetch(PDO::FETCH_ASSOC)){
                     echo "<div class='card'>
@@ -297,20 +304,20 @@
 
             <section id="transport">
                 <section>
-                    <div class="cards">
-                        <?php TransportAlger();?>   
+                    <div class="cards"> 
+                    <?php TransportTlm();?> 
                     </div> 
             </section>
 
             <?php 
-            function HebergementAlger(){
+            function HebergementTlm(){
             $server="localhost";
             $nom_bdd="essai";
             $user="root";
             $password="";
             try{
                 $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                $req = "SELECT * FROM HEBERGEMENT WHERE ADRESSE='ALGER' ";
+                $req = "SELECT * FROM HEBERGEMENT WHERE ADRESSE='TLEMCEN' ";
                 $res =  $connexion->query($req);
                 while($tuple = $res->fetch(PDO::FETCH_ASSOC)){
                     echo "<div class='card'>
@@ -350,19 +357,19 @@
             <section id="hebergement">
                 <section>
                     <div class="cards">
-                    <?php HebergementAlger();?>    
+                    <?php HebergementTlm();?>    
                     </div> 
             </section>
 
             <?php 
-            function RestaurationAlger(){
+            function RestaurationTlm(){
             $server="localhost";
             $nom_bdd="essai";
             $user="root";
             $password="";
             try{
                 $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                $req = "SELECT * FROM RESTAURATION WHERE ADRESSE='ALGER' ";
+                $req = "SELECT * FROM RESTAURATION WHERE ADRESSE='TLEMCEN' ";
                 $res =  $connexion->query($req);
                 while($tuple = $res->fetch(PDO::FETCH_ASSOC)){
                     echo "<div class='card'>
@@ -382,17 +389,17 @@
                 }
             } 
             catch (PDOException $e) { echo "Erreur ! " . $e->getMessage() . "<br/>"; }
-        }
-            
+            }   
             ?>
+
             <section id="restaurant">
                 <section>
                     <div class="cards">
-                    <?php RestaurationAlger();?>
+                    <?php RestaurationTlm();?>
                     </div> 
             </section>
         </main>
-
+        
         <script>
             function ScrollNav(link)
             {

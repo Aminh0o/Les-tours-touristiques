@@ -3,36 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALGIERS</title>
+    <title>BEJAIA</title>
     <link rel="stylesheet" href="places.css">
     <style>
         .exploreWilaya p { margin-top: -30%;}
         .photoSlider { height: 420px; }
         .packs { margin-top: -38%;}
-        .packDescription p { top: -41%;}
+        .packDescription p { top: -51%;}
         .cardInfo p { margin-top: -10%;}
         .card-text p { margin-top: 3%;}
         #transport { margin-top: -40%; }
         #hebergement { margin-top: 4%; }
         #restaurant { margin-top: 0%; }
- 
-#rating
-{
-  position: relative;
-  color: var(--dark);
-  font-size: 20px;
-  font-family: var(--font-3);
-  top: 10%;
-}
-
     </style>
 </head>
 <body>
     <div>
-        <img id="dynamicImageCover" src="images/alger10.png">
+        <img id="dynamicImageCover" src="images/bejaia.jpg">
         <header>
             <div class="sectionGauche">
-                <a href="InterfaceClient.php"><img src="icons/Logoo1.png" id="logo"></a>
+                <a href="InterfaceClient.php"><img src="icons/logoo1.png" id="logo"></a>
 		    </div>
 		    <nav class="menu">
                 <ul>
@@ -58,7 +48,7 @@
                 try
                 {
                     $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                    $req = "SELECT * FROM PACK where CATEGORIE='royal' AND WILAYA='ALGER' ";
+                    $req = "SELECT * FROM PACK where CATEGORIE='royal' AND WILAYA='BEJAIA' ";
                     $res =  $connexion->query($req);
                     while($tuple = $res->fetch(PDO::FETCH_ASSOC)){
                         $_SESSION['categorieRoyal'] = $tuple['CATEGORIE']; 
@@ -92,7 +82,7 @@
                 try
                 {
                     $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                    $req = "SELECT * FROM PACK where CATEGORIE='special' AND WILAYA='ALGER' ";
+                    $req = "SELECT * FROM PACK where CATEGORIE='special' AND WILAYA='BEJAIA' ";
                     $res =  $connexion->query($req);
                     while($tuple = $res->fetch(PDO::FETCH_ASSOC) ){
                         $_SESSION['categorieSpecial'] = $tuple['CATEGORIE'];
@@ -128,7 +118,7 @@
                 try
                 {
                     $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                    $req = "SELECT * FROM PACK where CATEGORIE='normal' AND WILAYA='ALGER' ";
+                    $req = "SELECT * FROM PACK where CATEGORIE='normal' AND WILAYA='BEJAIA' ";
                     $res =  $connexion->query($req);
                     while($tuple = $res->fetch(PDO::FETCH_ASSOC)){
                         $_SESSION['categorieNormal'] = $tuple['CATEGORIE'];
@@ -155,36 +145,32 @@
             }
             ?>
 
+
         <main>
             <section id="home">
                 <div class="exploreWilaya">
-                    <h2><b>EXPLORE</b> ALGIERS!</h2>
+                    <h2><b>EXPLORE</b> BEJAIA!</h2>
                     <div class="photoSlider">
-                        <img src="images/Alger.jpg" alt="Slide 1">
-                        <img src="images/alger11.png" alt="Slide 2">
-                        <img src="images/alger-DameAfrique.jpg" alt="Slide 3">
-                        <img src="images/alger-Jama3Kbir.jpg" alt="Slide 4">
-                        <img src="images/alger2.jpg" alt="Slide 5">
-                        <img src="images/alger3.jpg" alt="Slide 6">
+                        <img src="images/bejaia-beniAbbas.jpg" alt="Slide 1">
+                        <img src="images/bejaia3.jpg" alt="Slide 2">
+                        <img src="images/bejaia2.jpg" alt="Slide 3">
                     </div>
                     <p>
-                        Algiers is the capital of Algeria, covering an area of approximately 1,191 square kilometers
-                        and with a population of over 3.4 million people. It is a vibrant city known for its 
-                        Mediterranean climate, beautiful architecture, and lively markets. Some notable 
-                        attractions in the city include the Casbah, the Grand Mosque, The Memorial of the Martyrs, 
-                        The Notre-Dame d'Afrique, Dar Ahmed Bey, The National Museum.<br>
-                        Overall, Algiers is a fascinating and dynamic place that offers visitors a unique and unforgettable 
-                        experience.
+                        Béjaïa is a coastal city in Algeria with a population of over 180,000 people. 
+                        It's known for its beautiful coastline, natural scenery, and cultural heritage. 
+                        Visitors can explore the Yemma Gouraya mountain peak and the scenic seaside promenade La Brise de Mer. 
+                        The village of Beni Abbas offer stunning views, while the The Bordj Moussa Museum showcases 
+                        the region's history and culture. The Congrès de la Soummam is a historic 
+                        site, and the Ruines Romaines - Ifrane - are a set of Roman ruins located outside the city.
                     </p>
                 </div>
             </section>
 
             <section id="pack">
                 <div class="packs">
-
-                   <?php afficher_Pack_royal(); ?>
-                    <?php afficher_Pack_special();?>
-                    <?php afficher_Pack_normal(); ?>    
+                <?php afficher_Pack_royal(); ?>
+                <?php afficher_Pack_special();?>
+                <?php afficher_Pack_normal(); ?> 
                 </div>
             </section>
 
@@ -192,82 +178,83 @@
                 <section>
                     <div class="cards">
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/bejaia-yemmaGouraya.jpg">
                             <div class="cardInfo">
-                                <a href=""><h3>Casbah</h3></a>
+                                <a href=""><h3>Yemma Gouraya</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    The Casbah of Algiers is a historic citadel that dates back to the 17th century 
-                                    and is a UNESCO World Heritage site.
+                                    Yemma Gouraya is a mountain peak and popular tourist destination in Bejaia, Algeria, 
+                                    known for its stunning views of the Mediterranean Sea.
                                 </p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/bejaia-BeniAbbas1.jpg">
                             <div class="cardInfo">
-                                <a href=""><h3>The Grand Mosque</h3></a>
+                                <a href=""><h3>Village Beni-Abbas</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    The Grand Mosque of Algiers is an iconic Islamic landmark 
-                                    and one of the largest mosques in Africa.
+                                    Beni Abbas is a picturesque village located in the mountains of Bejaia, Algeria, 
+                                    famous for its traditional architecture and beautiful natural scenery.
                                 </p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/bejaia-bordjMoussa.jpg">
                             <div class="cardInfo">
-                                <a href=""><h3>The Memorial of the Martyrs</h3></a>
+                                <a href=""><h3>Bordj Moussa Museum</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    The Memorial of the Martyrs is a monument dedicated to 
-                                    the Algerian soldiers who died during the war of independence against France.
+                                    The Bordj Moussa Museum is a historical museum located in Bejaia, Algeria,
+                                    that showcases the region's rich history and cultural heritage.
                                 </p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/bejaia1.jpeg">
                             <div class="cardInfo">
-                                <a href=""><h3>The Notre-Dame d'Afrique</h3></a>
+                                <a href=""><h3>The Congress of the Soummam</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    The Notre-Dame d'Afrique is a Catholic basilica that overlooks the city of Algiers 
-                                    and is a popular tourist attraction.
+                                    The Congress of the Soummam is a historical site in Bejaia, Algeria, 
+                                    where the Algerian War of Independence was planned and launched in 1956.
                                 </p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/bejaia-ruineRomaine.jpg">
                             <div class="cardInfo">
-                                <a href=""><h3>Dar Ahmed Bey</h3></a>
+                                <a href=""><h3>Ruines Romaines</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    Dar Ahmed Bey is a historical palace in Algiers that now serves as a museum of 
-                                    traditional Algerian arts and crafts.
+                                    The Roman ruins of Ifrane are ancient archaeological sites located in Bejaia, Algeria, 
+                                    that date back to the 2nd century AD and offer a glimpse into the region's rich Roman history.
                                 </p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/bejaia-briseMer.jpg">
                             <div class="cardInfo">
-                                <a href=""><h3>The National Museum</h3></a>
+                                <a href=""><h3>La Brise de Mer</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    The National Museum of Algeria is a cultural institution that showcases the country's
-                                    rich history and diverse heritage through its vast collection of artifacts and artworks.
+                                    La Brise de Mer is a beautiful seaside promenade in Bejaia, Algeria, 
+                                    that offers stunning views of the Mediterranean Sea and is a popular spot for locals and tourists alike.
                                 </p>
                             </div>
                         </div>
                     </div> 
             </section>
+
             <?php 
-            function TransportAlger(){
+            function TransportBejaia(){
             $server="localhost";
             $nom_bdd="essai";
             $user="root";
             $password="";
             try{
                 $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                $req = "SELECT * FROM TRANSPORT WHERE ADRESSE='ALGER' ";
+                $req = "SELECT * FROM TRANSPORT WHERE ADRESSE='BEJAIA' ";
                 $res =  $connexion->query($req);
                 while($tuple = $res->fetch(PDO::FETCH_ASSOC)){
                     echo "<div class='card'>
@@ -298,19 +285,19 @@
             <section id="transport">
                 <section>
                     <div class="cards">
-                        <?php TransportAlger();?>   
+                    <?php TransportBejaia();?>
                     </div> 
             </section>
 
             <?php 
-            function HebergementAlger(){
+            function HebergementBejaia(){
             $server="localhost";
             $nom_bdd="essai";
             $user="root";
             $password="";
             try{
                 $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                $req = "SELECT * FROM HEBERGEMENT WHERE ADRESSE='ALGER' ";
+                $req = "SELECT * FROM HEBERGEMENT WHERE ADRESSE='BEJAIA' ";
                 $res =  $connexion->query($req);
                 while($tuple = $res->fetch(PDO::FETCH_ASSOC)){
                     echo "<div class='card'>
@@ -344,25 +331,24 @@
             } 
             catch (PDOException $e) { echo "Erreur ! " . $e->getMessage() . "<br/>"; }
         }
-            
             ?>
 
             <section id="hebergement">
                 <section>
                     <div class="cards">
-                    <?php HebergementAlger();?>    
+                    <?php HebergementBejaia();?>  
                     </div> 
             </section>
 
             <?php 
-            function RestaurationAlger(){
+            function RestaurationBejaia(){
             $server="localhost";
             $nom_bdd="essai";
             $user="root";
             $password="";
             try{
                 $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                $req = "SELECT * FROM RESTAURATION WHERE ADRESSE='ALGER' ";
+                $req = "SELECT * FROM RESTAURATION WHERE ADRESSE='BEJAIA' ";
                 $res =  $connexion->query($req);
                 while($tuple = $res->fetch(PDO::FETCH_ASSOC)){
                     echo "<div class='card'>
@@ -382,13 +368,13 @@
                 }
             } 
             catch (PDOException $e) { echo "Erreur ! " . $e->getMessage() . "<br/>"; }
-        }
-            
+            }   
             ?>
+
             <section id="restaurant">
                 <section>
                     <div class="cards">
-                    <?php RestaurationAlger();?>
+                    <?php RestaurationBejaia();?>
                     </div> 
             </section>
         </main>
