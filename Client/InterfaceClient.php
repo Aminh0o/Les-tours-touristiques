@@ -95,10 +95,10 @@
 						try
 						{
 							$connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-							$req = "SELECT NOM FROM UTILISATEUR where EMAIL = '$login'";
+							$req = "SELECT * FROM UTILISATEUR where EMAIL = '$login'";
 							$res =  $connexion->query($req);
 							$tuple = $res->fetch(PDO::FETCH_ASSOC);
-							
+							$_SESSION["id_user"] = $tuple["ID_UTILISATEUR"];
 							echo "<h2>".$tuple['NOM']."</h2>";	
 						}
 						catch (PDOException $e) { echo "Erreur ! " . $e->getMessage() . "<br/>"; }
@@ -177,7 +177,7 @@
 			<div class="place-card">
 				<img src="images/alger-qasabah.jpg" id="algerImages">
 				<div class="placeInfo">
-					<h3>ALGER</h3>
+					<h3>ALGIERS</h3>
 					<div class="border-line"></div>
 					<p class="place-text">The capital city of Algeria, Alger, is a vibrant and bustling metropolis that 
 						offers visitors a mix of modern amenities and historic charm</p>
@@ -185,7 +185,7 @@
 				</div>
 			</div>
 			<div class="place-card">
-				<img src="images/tlemcen4.jpg" id="tlemcenImages">
+				<img src="images/tlemcen4.jpeg" id="tlemcenImages">
 				<div class="placeInfo">
 					<h3>TLEMCEN</h3>
 					<div class="border-line"></div>
@@ -204,7 +204,7 @@
 				</div>
 			</div>
 			<div class="place-card">
-				<img src="images/bejaia2.jpg" id="bejaiaImages">
+				<img src="images/bejaia.jpg" id="bejaiaImages">
 				<div class="placeInfo">
 					<h3>BEJAIA</h3>
 					<div class="border-line"></div>
@@ -220,7 +220,8 @@
 					<div class="border-line"></div>
 					<p class="place-text">Constantine is a city located in the northeastern part of Algeria, 
 						known for its stunning natural beauty and rich history. The city is perched on a hill overlooking 
-						a deep gorge, and is home to several historic landmarks.</p>
+						a deep gorge, and is home to several historic landmarks.	
+					</p>
 					<button><a href="constantine.html" class="buttonPlace">Voir Details</a></button>
 				</div>
 			</div>
@@ -241,7 +242,7 @@
 		<h1 class="title" id="topAttractions">TOP ATTRACTIONS</h1>
 		<div class="attraction">
 			<div class="attraction-card">
-				<img src="images/tassili.jpg">
+				<img src="images/tassili1.jpg">
 				<div class="attractionInfo">
 					<a href=""><h3>Tassili n'Ajjer</h3></a>
 					<div class="border-line"></div>
@@ -302,80 +303,106 @@
 	<section>
 		<h1 class="title" id="avis">AVIS</h1>
 		<div class="avis">
-			<div class="avis-card-placement">
+		
+		    <div class="avis-card-placement">
+			<?php 
+			
+			    $server="localhost";
+    		    $nom_bdd="essai";
+    		    $user="root";
+    		    $password="";
+		
+			    $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
 				
-				<div class="avis-card">
-					<div class="avis-icon-top">
-						<span class="fi-sr-message-quote"></span>
-					</div>
-					<div class="avis-text">
-						<p>				We are a team of passionate individuals dedicated to promoting tourism in Algeria. 
-							Our goal is to provide visitors with an unforgettable experience while discovering 
-							the diverse and rich culture of our country.</p>
-					</div>
-					<div class="avis-rating">
-						<label for="star1"></label>
-						<label for="star2"></label>
-						<label for="star3"></label>
-						<label for="star4"></label>
-						<label for="star5"></label>
-					</div>
-					<div class="avis-name">
-						<h3>Aminho</h3>
-					</div>
-					<div class="avis-icon-down">
-						<span class="fi-sr-message-quote"></span>
-					</div>
-				</div>
-
-				<div class="avis-card">
-					<div class="avis-icon-top">
-						<span class="fi-sr-message-quote"></span>
-					</div>
-					<div class="avis-text">
-						<p>gg</p>
-					</div>
-					<div class="avis-rating">
-						<label for="star1"></label>
-						<label for="star2"></label>
-						<label for="star3"></label>
-						<label for="star4"></label>
-						<label for="star5"></label>
-					</div>
-					<div class="avis-name">
-						<h3>Aminho</h3>
-					</div>
-					<div class="avis-icon-down">
-						<span class="fi-sr-message-quote"></span>
-					</div>
-				</div>
-
+				$req2 = "SELECT * FROM AVIS WHERE ETAT = 'publie' ";
+				$res2 = $connexion->query($req2);
+        
+				while($tuple2 = $res2->fetch(PDO::FETCH_ASSOC))
+				{
+					echo " <div class='avis-card'>
+                                <div class='avis-icon-top'>
+                                    <span class='fi-sr-message-quote'></span>
+                                </div>
+                                <div class='avis-text'>
+                                    <p>".$tuple2["MESSAGE_AVIS"]."</p>
+                                </div>
+				            <div class='avis-rating'>";
+                    for($i = 1 ; $i <= 5 ; $i++)
+                    {
+						if($i <=$tuple2["RATING"])
+						{ echo " <label for='star'".$i."></label>"; }
+					}
+					
+					$id_user = $tuple2["ID_USER"];
+					$req1 = "SELECT NOM FROM UTILISATEUR WHERE ID_UTILISATEUR='$id_user' ";
+					$res1 = $connexion->query($req1);
+					$tuple1 = $res1->fetch(PDO::FETCH_ASSOC);
+					
+					echo "  </div>
+					        <div class='avis-name'>
+							    <h3>".$tuple1["NOM"]."</h3>
+                            </div>
+							<div class='avis-icon-down'>
+							    <span class='fi-sr-message-quote'></span>
+							</div>
+							</div> ";
+				}
+			?>
 			</div>
 		</div>
-
 	</section>
+
+	<?php 
+	    $server="localhost";
+		$nom_bdd="essai";
+		$user="root";
+		$password="";
+		if(isset($_POST["nomComment"]) && isset($_POST["emailComment"]) && isset($_POST["messageComment"]) && isset($_POST["rating"]))
+		{
+			$connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
+			$nomComment = $_POST["nomComment"];
+			$emailComment = $_POST["emailComment"];
+			$subjectComment = $_POST["subjectComment"];
+			$rating = $_POST["rating"];
+			$messageComment = $_POST["messageComment"];
+
+			if($rating == "1") $rating = 1;
+			else if($rating == "2") $rating = 2;
+			else if($rating == "3") $rating = 3;
+			else if( $rating == "4") $rating = 4;
+			else if($rating == "5") $rating = 5;
+			
+			$id_user = $_SESSION["id_user"];
+			$req = "INSERT INTO AVIS(MESSAGE_AVIS, EMAIL, ID_USER, RATING) VALUES ('$messageComment','$emailComment','$id_user','$rating')";
+			$connexion->exec($req);
+		}
+	?>
 
 	<section>
 		<h1 class="title" id="contact">CONTACT US</h1>
 		<div class="contactUS">
-			<form class="contact-us" method="post" action="">
+			<form class="contact-us" method="post" >
 				<div class="inputContact">
-					<input type="text" name="nomComment" class="inputComment" id="nomComment" placeholder="Name"/>
-					<input type="email" name="emailComment" class="inputComment" id="emailComment" placeholder="Email"/>
+					<input type="text" name="nomComment" class="inputComment" id="nomComment" placeholder="Name" required/>
+					<input type="email" name="emailComment" class="inputComment" id="emailComment" placeholder="Email" required/>
 					<input type="text" name="subjectComment" class="inputComment" id="subjectComment" class="form" placeholder="Subject"/>
 					<input type="number" name="phoneComment" class="inputComment" id="phoneComment" placeholder="Phone"/>
 				<div class="ratingContact">
 					<span>Rate your experience :</span>
-					<input type="radio" name="rating" id="star1" value="1"/><label for="star1"></label>
-					<input type="radio" name="rating" id="star2" value="2"/><label for="star2"></label>
+					<input type="radio" name="rating" id="star1" value="5"/><label for="star1"></label>
+					<input type="radio" name="rating" id="star2" value="4"/><label for="star2"></label>
 					<input type="radio" name="rating" id="star3" value="3"/><label for="star3"></label>
-					<input type="radio" name="rating" id="star4" value="4"/><label for="star4"></label>
-					<input type="radio" name="rating" id="star5" value="5"/><label for="star5"></label>
+					<input type="radio" name="rating" id="star4" value="2"/><label for="star4"></label>
+					<input type="radio" name="rating" id="star5" value="1"/><label for="star5"></label>
 				</div>
 				</div>	
 				<div class="messageContact">	
-					<textarea name="messageComment" id="messageComment" placeholder="Message" pattern=".{0,100}"></textarea>
-					<button type="submit" id="buttonComment" name="buttonComment">
+					<textarea name="messageComment" id="messageComment" placeholder="Message" pattern=".{0,100}" required></textarea>
+					<button type="submit" id="buttonComment" name="buttonComment"
+					        onclick="<?php if(!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] !== true) { ?>
+							alert('Please login to add a comment.'); 
+						    window.location.href='login.php'; return false;
+					    <?php } ?>">
 						Send
 						<span class="fi-sr-paper-plane"></span>
 					</button> 
