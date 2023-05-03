@@ -3,36 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ALGIERS</title>
+    <title>ORAN</title>
     <link rel="stylesheet" href="places.css">
     <style>
         .exploreWilaya p { margin-top: -30%;}
+        .exploreWilaya h2 { margin-left: -2%;}
         .photoSlider { height: 420px; }
-        .packs { margin-top: -38%;}
-        .packDescription p { top: -41%;}
-        .cardInfo p { margin-top: -10%;}
-        .card-text p { margin-top: 3%;}
-        #transport { margin-top: -40%; }
+        .packs { margin-top: -35%;}
+        .packDescription p { top: -30%; }
+        #Card .cardInfo p { margin-top: -15%;}
+        #transport { margin-top: -45%; }
         #hebergement { margin-top: 4%; }
-        #restaurant { margin-top: 0%; }
- 
-#rating
-{
-  position: relative;
-  color: var(--dark);
-  font-size: 20px;
-  font-family: var(--font-3);
-  top: 10%;
-}
-
+        #restaurant { margin-top: 1%; }
     </style>
 </head>
 <body>
     <div>
-        <img id="dynamicImageCover" src="images/alger10.png">
+        <img id="dynamicImageCover" src="images/oran-santaCruz3.jpg">
         <header>
             <div class="sectionGauche">
-                <a href="InterfaceClient.php"><img src="icons/Logoo1.png" id="logo"></a>
+                <a href="InterfaceClient.php"><img src="icons/logoo1.png" id="logo"></a>
 		    </div>
 		    <nav class="menu">
                 <ul>
@@ -58,7 +48,7 @@
                 try
                 {
                     $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                    $req = "SELECT * FROM PACK where CATEGORIE='royal' AND WILAYA='ALGER' ";
+                    $req = "SELECT * FROM PACK where CATEGORIE='royal' AND WILAYA='ORAN' ";
                     $res =  $connexion->query($req);
                     while($tuple = $res->fetch(PDO::FETCH_ASSOC)){
                         $_SESSION['categorieRoyal'] = $tuple['CATEGORIE']; 
@@ -92,7 +82,7 @@
                 try
                 {
                     $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                    $req = "SELECT * FROM PACK where CATEGORIE='special' AND WILAYA='ALGER' ";
+                    $req = "SELECT * FROM PACK where CATEGORIE='special' AND WILAYA='ORAN' ";
                     $res =  $connexion->query($req);
                     while($tuple = $res->fetch(PDO::FETCH_ASSOC) ){
                         $_SESSION['categorieSpecial'] = $tuple['CATEGORIE'];
@@ -128,7 +118,7 @@
                 try
                 {
                     $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                    $req = "SELECT * FROM PACK where CATEGORIE='normal' AND WILAYA='ALGER' ";
+                    $req = "SELECT * FROM PACK where CATEGORIE='normal' AND WILAYA='ORAN' ";
                     $res =  $connexion->query($req);
                     while($tuple = $res->fetch(PDO::FETCH_ASSOC)){
                         $_SESSION['categorieNormal'] = $tuple['CATEGORIE'];
@@ -155,36 +145,34 @@
             }
             ?>
 
+
         <main>
             <section id="home">
                 <div class="exploreWilaya">
-                    <h2><b>EXPLORE</b> ALGIERS!</h2>
+                    <h2><b>EXPLORE</b> ORAN!</h2>
                     <div class="photoSlider">
-                        <img src="images/Alger.jpg" alt="Slide 1">
-                        <img src="images/alger11.png" alt="Slide 2">
-                        <img src="images/alger-DameAfrique.jpg" alt="Slide 3">
-                        <img src="images/alger-Jama3Kbir.jpg" alt="Slide 4">
-                        <img src="images/alger2.jpg" alt="Slide 5">
-                        <img src="images/alger3.jpg" alt="Slide 6">
+                        <img src="images/oran-frontDeMer.jpg" alt="Slide 1">
+                        <img src="images/oran-santaCruz3.jpg" alt="Slide 2">
+                        <img src="images/oran-theatre.jpg" alt="Slide 3">
+                        <img src="images/oran3.jpg" alt="Slide 4">
+                        <img src="images/oran-tourine.jpg" alt="Slide 5">
                     </div>
                     <p>
-                        Algiers is the capital of Algeria, covering an area of approximately 1,191 square kilometers
-                        and with a population of over 3.4 million people. It is a vibrant city known for its 
-                        Mediterranean climate, beautiful architecture, and lively markets. Some notable 
-                        attractions in the city include the Casbah, the Grand Mosque, The Memorial of the Martyrs, 
-                        The Notre-Dame d'Afrique, Dar Ahmed Bey, The National Museum.<br>
-                        Overall, Algiers is a fascinating and dynamic place that offers visitors a unique and unforgettable 
-                        experience.
+                        Oran is a bustling coastal city in northwestern Algeria with a population of over 1 million 
+                        people. The city is known for its stunning architecture, rich cultural heritage, 
+                        and lively atmosphere. Some of the notable attractions include the 16th-century 
+                        Fort Santa Cruz, the Front de Mer promenade, the Oran Theater, the historic bullfighting 
+                        The Tourine Arena, and the Ahmed Zabana Museum, which showcases the city's history 
+                        and traditions.
                     </p>
                 </div>
             </section>
 
             <section id="pack">
                 <div class="packs">
-
-                   <?php afficher_Pack_royal(); ?>
-                    <?php afficher_Pack_special();?>
-                    <?php afficher_Pack_normal(); ?>    
+                <?php afficher_Pack_royal(); ?>
+                <?php afficher_Pack_special();?>
+                <?php afficher_Pack_normal(); ?> 
                 </div>
             </section>
 
@@ -192,82 +180,68 @@
                 <section>
                     <div class="cards">
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/oran-santaCruz.jpg">
                             <div class="cardInfo">
-                                <a href=""><h3>Casbah</h3></a>
+                                <a href=""><h3>Fort Santa Cruz</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    The Casbah of Algiers is a historic citadel that dates back to the 17th century 
-                                    and is a UNESCO World Heritage site.
+                                    A historic fort located in Oran that dates back to the Spanish colonial era.
                                 </p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/oran-frontDeMer.jpg">
                             <div class="cardInfo">
-                                <a href=""><h3>The Grand Mosque</h3></a>
+                                <a href=""><h3>Front de Mer</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    The Grand Mosque of Algiers is an iconic Islamic landmark 
-                                    and one of the largest mosques in Africa.
+                                    A scenic waterfront promenade in Oran that offers stunning views of the Mediterranean Sea.
                                 </p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/oran-theatre2.webp">
                             <div class="cardInfo">
-                                <a href=""><h3>The Memorial of the Martyrs</h3></a>
+                                <a href=""><h3>Oran Theater</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    The Memorial of the Martyrs is a monument dedicated to 
-                                    the Algerian soldiers who died during the war of independence against France.
+                                    A cultural center and theater in Oran that hosts various artistic performances and events.
                                 </p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/oran-tourine.jpg">
                             <div class="cardInfo">
-                                <a href=""><h3>The Notre-Dame d'Afrique</h3></a>
+                                <a href=""><h3>The Tourine Arena</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    The Notre-Dame d'Afrique is a Catholic basilica that overlooks the city of Algiers 
-                                    and is a popular tourist attraction.
+                                    A popular open-air amphitheater in Oran that is known for its spectacular panoramic views.
                                 </p>
                             </div>
                         </div>
                         <div class="card">
-                            <img src="images/tassili.jpg">
+                            <img src="images/oran-zabana.jpg">
                             <div class="cardInfo">
-                                <a href=""><h3>Dar Ahmed Bey</h3></a>
+                                <a href=""><h3>Ahmed Zabana Museum</h3></a>
                                 <div class="border-line"></div>
                                 <p class="card-text">
-                                    Dar Ahmed Bey is a historical palace in Algiers that now serves as a museum of 
-                                    traditional Algerian arts and crafts.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="card">
-                            <img src="images/tassili.jpg">
-                            <div class="cardInfo">
-                                <a href=""><h3>The National Museum</h3></a>
-                                <div class="border-line"></div>
-                                <p class="card-text">
-                                    The National Museum of Algeria is a cultural institution that showcases the country's
-                                    rich history and diverse heritage through its vast collection of artifacts and artworks.
+                                    A museum in Oran dedicated to the life and legacy of Ahmed Zabana,
+                                    a prominent Algerian revolutionary figure.
                                 </p>
                             </div>
                         </div>
                     </div> 
             </section>
+
             <?php 
-            function TransportAlger(){
+            function TransportOran(){
             $server="localhost";
             $nom_bdd="essai";
             $user="root";
             $password="";
             try{
                 $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                $req = "SELECT * FROM TRANSPORT WHERE ADRESSE='ALGER' ";
+                $req = "SELECT * FROM TRANSPORT WHERE ADRESSE='ORAN' ";
                 $res =  $connexion->query($req);
                 while($tuple = $res->fetch(PDO::FETCH_ASSOC)){
                     echo "<div class='card'>
@@ -298,19 +272,19 @@
             <section id="transport">
                 <section>
                     <div class="cards">
-                        <?php TransportAlger();?>   
+                    <?php TransportOran();?> 
                     </div> 
             </section>
 
             <?php 
-            function HebergementAlger(){
+            function HebergementOran(){
             $server="localhost";
             $nom_bdd="essai";
             $user="root";
             $password="";
             try{
                 $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                $req = "SELECT * FROM HEBERGEMENT WHERE ADRESSE='ALGER' ";
+                $req = "SELECT * FROM HEBERGEMENT WHERE ADRESSE='ORAN' ";
                 $res =  $connexion->query($req);
                 while($tuple = $res->fetch(PDO::FETCH_ASSOC)){
                     echo "<div class='card'>
@@ -344,25 +318,24 @@
             } 
             catch (PDOException $e) { echo "Erreur ! " . $e->getMessage() . "<br/>"; }
         }
-            
             ?>
 
             <section id="hebergement">
                 <section>
                     <div class="cards">
-                    <?php HebergementAlger();?>    
+                    <?php HebergementOran();?>  
                     </div> 
             </section>
 
             <?php 
-            function RestaurationAlger(){
+            function RestaurationOran(){
             $server="localhost";
             $nom_bdd="essai";
             $user="root";
             $password="";
             try{
                 $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
-                $req = "SELECT * FROM RESTAURATION WHERE ADRESSE='ALGER' ";
+                $req = "SELECT * FROM RESTAURATION WHERE ADRESSE='ORAN' ";
                 $res =  $connexion->query($req);
                 while($tuple = $res->fetch(PDO::FETCH_ASSOC)){
                     echo "<div class='card'>
@@ -382,17 +355,18 @@
                 }
             } 
             catch (PDOException $e) { echo "Erreur ! " . $e->getMessage() . "<br/>"; }
-        }
-            
+            }   
             ?>
+
+
             <section id="restaurant">
                 <section>
                     <div class="cards">
-                    <?php RestaurationAlger();?>
+                    <?php RestaurationOran();?>
                     </div> 
             </section>
         </main>
-
+        
         <script>
             function ScrollNav(link)
             {
