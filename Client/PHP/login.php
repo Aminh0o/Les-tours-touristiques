@@ -42,34 +42,29 @@
                     {
                         $resultat = $connexion->query("SELECT * FROM GUIDE WHERE LOGIN_GUIDE='$email' AND MOT_DE_PASSE='$mdps' LIMIT 1");
                         $guide = $resultat->fetch(PDO::FETCH_ASSOC);
-                    
-                    if($guide)
-                    {
-                        $_SESSION["GUIDE"] = $guide;
-                        $_SESSION["email"]= $guide['LOGIN_GUIDE'];
-                        header("Location: guide.html");
-                        exit();
-                    }
-                    else
-                    {
-                        echo "Email ou mot de passe incorrect.";
+                        
+                        if($guide)
+                        {
+                            $_SESSION["GUIDE"] = $guide;
+                            $_SESSION["email"]= $guide['LOGIN_GUIDE'];
+                            header("Location: guide.html");
+                            exit();
+                        }
+                        else
+                        {
+                            echo "  <script> 
+                                        alert('Make sure that you entered the corrected infos'); 
+                                        Location: login.php;
+                                    </script>"; 
+                        }
                     }
                 }
             }
         }
-        else
-        {
-            echo "Veuillez saisir votre email et mot de passe.";
-        }
     }
-}
-catch (PDOException $e) 
-{
-    echo "Erreur ! " . $e->getMessage() . "<br/>";
-}   
+    catch (PDOException $e) { echo "Erreur ! " . $e->getMessage() . "<br/>"; }   
 ?>
 
-?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,7 +76,7 @@ catch (PDOException $e)
 <body>
     <header>
         <div class="sectionGauche">
-            <a href="InterfaceClient.html"><img src="icons/logoo.png" id="logo"></a>
+            <a href="InterfaceClient.php"><img src="icons/logoo.png" id="logo"></a>
         </div>
         <h1>Login</h1>
     </header>
@@ -93,7 +88,7 @@ catch (PDOException $e)
         <input type="password" id="password" name="password" required><br><br>
         
         <input type="submit" value="Submit">
-        <p>Don't have an account ? <br>&nbsp;&nbsp;<a href="signupClient.html">Sign Up</a></p>
+        <p>Don't have an account ? <br>&nbsp;&nbsp;<a href="signupClient.php">Sign Up</a></p>
       </form>
 </body>
 </html>
