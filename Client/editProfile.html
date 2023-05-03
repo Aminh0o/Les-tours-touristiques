@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signupClient.css">
+    <title>Edit Profile</title>
+</head>
+<body>
+    <header>
+        <div class="sectionGauche">
+          <a href="InterfaceClient.html"><img src="icons/logoo2.png" id="logo"></a>
+        </div>
+        <h1>Edit Profile</h1>
+    </header>
+    
+    <form method="POST" class="form" action="editProfile.php">
+        <label>First Name :</label>
+        <input type="text" size="20" name="nomUtilisateur" placeholder="Enter your new first name"><br>
+  
+        <label>Last Name :</label>
+        <input type="text" size="20" name="prenomUtilisateur" placeholder="Enter your new last name"><br>
+  
+        <label>Birth Date :</label>
+        <input type="date" name="dateNaissance"><br>
+
+        <label>Phone Number :</label>
+        <input type="number" name="telephone" size="10" placeholder="Enter your new telephone number"><br>
+  
+        <label>E-mail :</label>
+        <input type="email" name="email" placeholder="Enter your new email address" ><br>
+        
+        <label for="password">New Password:</label>
+        <input type="password" size="30" id="mot_de_passe1" name="password" placeholder="Enter your new password" oninput="verifier_mot_passe()"><br>
+        
+        <label for="confirm_password">Confirm Password:</label>
+        <input type="password" size="30" id="mot_de_passe2" name="confirm-password" placeholder="Confirm your new password" oninput="verifier_mot_passe()"><br>
+        
+        <input type="submit" value="update" name="update" id="submit">
+    </form>
+
+    <script>
+		function verifier_mot_passe()
+		{
+			var x,y; 
+			x = document.getElementById("mot_de_passe1").value ; 
+			y = document.getElementById("mot_de_passe2").value ; 
+			if ((x == "" || y == "") || (x != y)) 
+			{
+				document.getElementById("mot_de_passe1").style.color="red";
+				document.getElementById("mot_de_passe2").style.color="red";
+				document.getElementById("submit").disabled=true;
+			}
+			else 
+			{ 
+				document.getElementById("mot_de_passe1").style.color="green"; 
+				document.getElementById("mot_de_passe2").style.color="green";
+				document.getElementById("submit").disabled=false;
+			}	
+		}
+	</script>
+    
+</body>
+</html>

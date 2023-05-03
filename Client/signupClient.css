@@ -1,18 +1,22 @@
-:root{
-    --background:#e0c9a5;
-    --header:hsl(38, 99%, 70%);
-    --headerScroll:hsla(37, 63%, 64%, 0.726);
-    --white: #ffffff;
-    --green: #4CAF50;
-    --borderGreen: rgb(42, 139, 3);
-    --shadowGreen: rgba(5, 201, 64, 0.5);
-    --grey: rgba(255, 255, 255, 0.5);
-    --gold: #ddb067;
-}
-*
+/***************************************************************************************************************************/
+/************** define colors and font ************/
+:root 
 {
-    font-family: 'Rockwell', 'serif';
+  --background: #e0c9a5;
+  --orange: #fec767;
+  --orangeTransparent: hsla(37, 63%, 64%, 0.726);
+  --white: #ffffff;
+  --green: #4CAF50;
+  --borderGreen: #2a8b03;
+  --shadowGreen: rgba(5, 201, 64, 0.5);
+  --grey: #6e6e6e;
+  --gold: #ddb067;
+  --dark: #0F172B;
+  --font-1: "Poppins", sans-serif;
+  --font-2: 'system-ui';
+  --font-3: 'Rockwell', serif;
 }
+/************** body style ************/
 body 
 {
     align-items: center;
@@ -22,13 +26,15 @@ body
     background-position: center;
     background-size: cover;
     overflow:hidden;
+    font-family: var(--font-2);
 }
+/************** header style ************/
 header
 {
     display: flex;
     justify-content: center;
     margin-left: -36%;
-    color: var(--header);
+    color: var(--orange);
     text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
 }
 .sectionGauche
@@ -42,17 +48,18 @@ header
     height: 70%;
     margin-left: -20%;
 }
+/************** form style ************/
 .form 
 {
     
     align-items: center;
     width: 60%;
-    padding: 20px 0px 20px 0px;
-    color: var(--header);
+    padding: 10px;
+    color: var(--orange);
     background-color: var(--grey);
     border-radius: 20px;
-    border-color: var(--header);
-    border: 3px solid var(--header);
+    border-color: var(--orange);
+    border: 3px solid var(--orange);
     margin-left: 20%;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
@@ -60,6 +67,7 @@ label
 {
     display: block;
     margin-left: 10%;
+    margin-bottom: 1%;
 }
 input
 {
@@ -79,15 +87,17 @@ input:focus, input:hover
     opacity: 1;
     width: 61%;
 }
+/************** button style ************/
 #submit 
 {
-    margin-top: 5%;
-    margin-left: 45%;
-    padding: 10px 20px;
+    margin-top: 3%;
+    margin-left: 42%;
+    padding: 1%;
+    width: 20%;
     font-size: 15px;
     font-weight: bold;
-    color: var(--white);
-    background-color:var(--green);
+    color: var(--orange);
+    background-color:var(--dark);
     border: none;
     border-radius: 10px;
     cursor: pointer;
@@ -97,8 +107,6 @@ input:focus, input:hover
 {
     opacity: 1;
     transform: scale(1);
-    border-bottom: 2px solid var(--borderGreen);
-    box-shadow: 0 5px 5px var(--shadowGreen);
     font-size: 16px;
 }
 
