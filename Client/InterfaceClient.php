@@ -6,7 +6,6 @@
     <title>Gestion Des Tours</title>
     <link rel="stylesheet" href="InterfaceClient.css">
 	<link rel="stylesheet" href="icons/icons/css/icons.css">
-	<link rel="stylesheet" href="icons/icons/css/font awesome.css">
 	<script src="JS/loginClient.js"></script>
 	<script src="JS/client.js"></script>
 </head>
@@ -115,7 +114,7 @@
 				    <?php afficherName(); ?>
 				</div>
 				<hr>
-				<a href="" class="menuProfile">
+				<?php echo "<a href='editProfile.php?id=".$_SESSION["id_user"]."' class='menuProfile'>"; ?>
 					<span class="fi fi-sr-settings" class="iconProfile">
 					<p>Edit Profile</p>
 				</a>
@@ -164,7 +163,7 @@
 					        alert('Please login to make a reservation.'); 
 							window.location.href='login.php'; return false; 
 						<?php } ?>">
-						<a href="reserverPack.html">Let's Go</a>
+						<a href="reserverPack.php">Let's Go</a>
 					</button>
 				</form>
 			</div>
@@ -181,7 +180,7 @@
 					<div class="border-line"></div>
 					<p class="place-text">The capital city of Algeria, Alger, is a vibrant and bustling metropolis that 
 						offers visitors a mix of modern amenities and historic charm</p>
-					<button><a href="alger.html" class="buttonPlace">Voir Details</a></button>
+					<button><a href="alger.php" class="buttonPlace">Voir Details</a></button>
 				</div>
 			</div>
 			<div class="place-card">
@@ -190,7 +189,7 @@
 					<h3>TLEMCEN</h3>
 					<div class="border-line"></div>
 					<p class="place-text">Tlemcen is a city in northwestern Algeria with a rich cultural heritage and historic</p>
-					<button><a href="tlemcen.html" class="buttonPlace">Voir Details</a></button>
+					<button><a href="tlemcen.php" class="buttonPlace">Voir Details</a></button>
 				</div>
 			</div>
 			<div class="place-card">
@@ -200,7 +199,7 @@
 					<div class="border-line"></div>
 					<p class="place-text">Oran is a coastal city located in the northwestern part of Algeria, 
 						known for its vibrant music scene, stunning beaches, and historic landmarks</p>
-					<button><a href="oran.html" class="buttonPlace">Voir Details</a></button>
+					<button><a href="oran.php" class="buttonPlace">Voir Details</a></button>
 				</div>
 			</div>
 			<div class="place-card">
@@ -210,7 +209,7 @@
 					<div class="border-line"></div>
 					<p class="place-text">Bejaia is a coastal city located in the northeastern part of Algeria, 
 						known for its stunning beaches, rugged cliffs, and historic landmarks</p>
-					<button><a href="bejaia.html" class="buttonPlace">Voir Details</a></button>
+					<button><a href="bejaia.php" class="buttonPlace">Voir Details</a></button>
 				</div>
 			</div>
 			<div class="place-card">
@@ -222,7 +221,7 @@
 						known for its stunning natural beauty and rich history. The city is perched on a hill overlooking 
 						a deep gorge, and is home to several historic landmarks.	
 					</p>
-					<button><a href="constantine.html" class="buttonPlace">Voir Details</a></button>
+					<button><a href="constantine.php" class="buttonPlace">Voir Details</a></button>
 				</div>
 			</div>
 			<div class="place-card">
@@ -232,7 +231,7 @@
 					<div class="border-line"></div>
 					<p class="place-text">The Sahara Algerien is a vast desert located in the southern part of Algeria, 
 						known for its stunning landscapes, diverse wildlife, and rich cultural heritage</p>
-					<button><a href="sahara.html" class="buttonPlace">Voir Details</a></button>
+					<button><a href="sahara.php" class="buttonPlace">Voir Details</a></button>
 				</div>
 			</div>
 		</div>  
@@ -345,7 +344,7 @@
 							<div class='avis-icon-down'>
 							    <span class='fi-sr-message-quote'></span>
 							</div>
-							</div> ";
+						</div> ";
 				}
 			?>
 			</div>
@@ -428,9 +427,9 @@
 				<img src="icons/logoo1.png" id="logoFooter">
 			</a>
 			<ul class="social-icons">
-				<li><a href="#"><img src="icons/facebook.png" class="icons-footer"></a></li>
-				<li><a href="#"><img src="icons/twitter.png" class="icons-footer"></a></li>
-				<li><a href="#"><img src="icons/instagram.png" class="icons-footer"></a></li>
+				<li><a href="https://www.facebook.com"><img src="icons/facebook.png" class="icons-footer"></a></li>
+				<li><a href="https://www.twitter.com"><img src="icons/twitter.png" class="icons-footer"></a></li>
+				<li><a href="https://www.instagram.com"><img src="icons/instagram.png" class="icons-footer"></a></li>
 			</ul>
 		</div>
 		<div class="sectionDroiteFooter">
@@ -438,7 +437,7 @@
 				<h3>Contact</h3>
 				<p><span class="fi-sr-marker"></span>Université-Abou-Bekr-Belkaid <b>Tlemcen</b></p>
 				<p><span class="fi-sr-circle-envelope"></span>discover_algeria@gmail.com</p>
-				<p><span class="fi-sr-circle-phone"></span>+213 552 45 41 34</p>
+				<p><span class="fi-sr-circle-phone"></span>+213 43 21 63 70</p>
 			</div>
 		</div>
 	</footer>
