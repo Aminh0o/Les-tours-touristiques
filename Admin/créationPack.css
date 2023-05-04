@@ -1,25 +1,42 @@
-:root{
-    --background--:#e0c9a5;
-    --header--:hsl(38, 99%, 70%);
-    --headerScroll--:hsla(37, 63%, 64%, 0.726);
-    --white--: #ffffff;
-    --green--: #4CAF50;
-    --borderGreen--: rgb(42, 139, 3);
-    --shadowGreen--: rgba(5, 201, 64, 0.5);
-    --grey--: rgba(255, 255, 255, 0.5);
-    --gold--: #ddb067;
+:root 
+{
+  --background: #e0c9a5;
+  --orange: #fec767;
+  --orangeTransparent: hsla(37, 63%, 64%, 0.726);
+  --white: #ffffff;
+  --green: #4CAF50;
+  --borderGreen: #2a8b03;
+  --shadowGreen: rgba(5, 201, 64, 0.5);
+  --grey: #6e6e6e;
+  --gold: #ddb067;
+  --dark: #0F172B;
+  --font-1: "Poppins", sans-serif;
+  --font-2: 'system-ui';
+  --font-3: 'Rockwell', serif;
+}
+::-webkit-scrollbar 
+{
+    width: 7px;
+    scrollbar-color: var(--header);
+}
+::-webkit-scrollbar-thumb 
+{
+    background-color: var(--green);
+    border-radius: 10px;
 }
 body 
 {
     font-family: 'Rockwell', 'serif';
     align-items: center;
+    
     background-image: url(images/timgad.jpg);
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    overflow:hidden;
+   
 }
+
 header
 {
     display: flex;
@@ -82,6 +99,10 @@ input:focus, input:hover
     opacity: 1;
     width: 65%;
 }
+input[type="radio"]
+{
+    display: inline-block;
+}
 #submit
 {
  margin-top: 5%;
@@ -90,7 +111,7 @@ input:focus, input:hover
  font-size: 15px;
  font-weight: bold;
  color:white;
- background-color:var(--green--);
+ background-color:var(--green);
  border: none;
  border-radius: 10px;
  cursor: pointer;

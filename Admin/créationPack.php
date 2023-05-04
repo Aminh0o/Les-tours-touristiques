@@ -38,8 +38,10 @@ try{
     if(isset($_POST["transport"]) ){$_SESSION["transpo"] = "Included";$_SESSION["nomPack"] = $_POST["nomPack"];  }
     if(isset($_POST["feeding"]) ){$_SESSION["food"] = "Included";$_SESSION["nomPack"] = $_POST["nomPack"];  }
     if(isset($_POST["guide"]) ){$_SESSION["guide"] = "Included";$_SESSION["nomPack"] = $_POST["nomPack"];  }
-   
-
+   if(isset($_POST["dateExpiration"]))
+    {
+      $_SESSION["DateExpiration"] = $_POST["dateExpiration"];
+    }
     $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
 
     /*$ID_user = "SELECT ID_UTILISATEUR FROM UTILISATEUR WHERE EMAIL = 'amine.bhr@gmail.com' ";
@@ -111,7 +113,7 @@ catch (PDOException $e)
             <option value="25"> CONSTANTINE</option>
             <option value="06">BEJAIA</option>
             <option value="sahara">SAHARA</option>
-      </select>
+         </select>
 
         <label>Type Pack</label>
         <input type="radio" name="typePack" value="ADULT" checked>  ADULT
@@ -136,23 +138,6 @@ catch (PDOException $e)
    
       </div>
       
-      <script>
-       /* var compteur = 1;
-    function ajouterInput()
-    {
-        var nvInput = document.createElement("input");
-        var frere = document.getElementById("AddPlace");
-            nvInput.type = "text";
-            nvInput.placeholder = "Enter other places";
-            nvInput.name = "place" + compteur;
-             compteur++;
-
-        var nvPlace = document.getElementById("form");
-        nvPlace.appendChild(nvInput);
-        nvPlace.insertBefore(nvInput,frere);
-     
-    }*/
-      </script>
 </body>
 </html>
 

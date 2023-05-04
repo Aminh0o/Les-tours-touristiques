@@ -3,7 +3,6 @@
     $nom_bdd="essai";
     $user="root";
     $password="";
-    $numeroPack = $_POST["NumeroPack"];
     session_start();
     if(isset($_GET["id"]))
 {

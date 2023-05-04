@@ -1,27 +1,15 @@
 <?php
-
-
-
+session_start();
+$server="localhost";
+        $nom_bdd="essai";
+        $user="root";
+        $password="";
+if(isset($_GET["id"]))
+{
+        $id_avis = $_GET["id"];
+        $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
+        $req  = "UPDATE AVIS SET ETAT='publie' WHERE ID_AVIS = '$id_avis'";
+        $connexion->query($req);
+      header("location:gestionAvis.php");
+}
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="suppressionPack.css">
-    <title>Avis - Publication</title>
-</head>
-<body>
-    <header>
-        <h1>Suppression d'avis</h1>
-      </header>
-        <div>
-            <form class="form" method="post" action="suppressionPack.php">
-              <label>ID Avis</label>
-              <input type="number" size="20" name="NumeroPack" placeholder="Enter ID de avis à publier"><br>
-        
-              <input type="submit"  value="publier" name="submit" id="submit">
-            </form>
-        </div>
-</body>
-</html>

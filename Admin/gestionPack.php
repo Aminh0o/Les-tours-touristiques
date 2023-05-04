@@ -27,7 +27,7 @@
 			echo "<td>" . $tuple["CATEGORIE"] . "</td>";
 			echo "<td>" . $tuple["WILAYA"] . " </td>";
 			echo "<td>" . $tuple["TYPE_PACK"] . " </td>";
-			echo "<td>" . $tuple["DATE_CREATION"] . " </td>";
+			echo "<td>" . $tuple["DATE_CREATION"] . "</td>";
 			echo "<td>" . $tuple["PRIX"] . " DA</td>";
 			
 			if(isset($_SESSION["heberg"]) && $_SESSION["nomPack"]==$tuple["NOMPACK"]) 
@@ -50,22 +50,32 @@
 			else
 			{$guide = "Not Included";echo "<td>" . $guide. " </td>";}
 
-            echo "<td><a href='modificationPack.php?id=".$tuple["NUMEROPACK"]."'><button>Modifier</button></a></td>";
+            echo "<td><a href='modificationPack.php?id=".$tuple["NUMEROPACK"]."'><button id>Modifier</button></a></td>";
 			echo "<td><a href='suppressionPack.php?id=".$tuple["NUMEROPACK"]."'><button>Supprimer</button></a></td>";
 			echo "</tr>";
+			if(isset($_SESSION["DateExpiration"]))
+			{
+				$date = $_SESSION["DateExpiration"];
+				if($date == date('Y-m-d'))
+				{
+					$req = "DELETE FROM PACK ";
+					$connexion->exec($req);
+				}
+			}
     		}
 		
 		   
 	   }
-	   catch (PDOException $e) 
-   {
-	   echo "Erreur ! " . $e->getMessage() . "<br/>";
-   }
-			
-		
+	    catch (PDOException $e) 
+   		{
+	  		 echo "Erreur ! " . $e->getMessage() . "<br/>";
+   		}
+				
     }
 	?>
     <h1>Liste des packs</h1>
+        <a href="AdminPrincipal.php"><img src="icons/logoo1.png" id="logo"></a>
+    
 	<table>
 		<thead>
 			<tr>
@@ -80,8 +90,8 @@
 				<th>With transport</th>
 				<th>With food</th>
 				<th>With guide</th>
-				<th>Modifier</th>
-				<th>supprimer</th>
+				<th>Modification</th>
+				<th>suppression</th>
 				
 			</tr>
 		</thead>
