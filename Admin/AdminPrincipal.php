@@ -4,8 +4,8 @@
           $nom_bdd = "essai";
           $user = "root";
           $password = "";
-            if(isset($_SESSION["login"])){
-              $email = $_SESSION["login"];
+            if(isset($_SESSION["email"])){
+              $email = $_SESSION["email"];
              
             try {
               $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd", $user, $password);
@@ -46,30 +46,26 @@ foreach ($categories as $categorie) {
     <meta charset="UTF-8" />
     <title>Admin Dashboard</title>
     <link rel="stylesheet" href="AdminPrincipal.css" />
-    <link href="icons/icons/css/icons.css" rel="stylesheet">
-    <script src="JS/chart.js" ></script>
-    <script src="JS/helpers.esm.min.js"></script>
+    <link href="img/icons/css/icons.css" rel="stylesheet">
+    <script src="chart.js" ></script>
+    <script src="helpers.esm.min.js"></script>
   </head>
   <body>
   
     <header class="header">
       <div class="sectionGauche">
-        <a href="InterfaceClient.html"><img src="img/logoo.png" id="logo"></a>
+        <a href="InterfaceClient.php"><img src="icons/logoo1.png" id="logo"></a>
       </div>
-      <div class="sectionDroite">
-        <form>
-          <input type="text" placeholder="Type to search...">
-          <button type="submit">Search</button>
-        </form>
-      </div>
+      
     </header>
 
     <nav id="navBar">
+      
       <ul>
         <li class="nav-logo" >
           <a href="#NavGestion1" onclick="ScrollNav(this)">
             <span class="fi-sr-user" class="img-item">
-            <?php echo "<span class='nav-item' id='admin'>".$tuple["NOM"]."</span></a>"; ?>
+            <?php echo "<span class='nav-item' id='admin'>".$tuple["NOM"]."</span>"; ?>
           </a>
         </li>
 
@@ -79,12 +75,7 @@ foreach ($categories as $categorie) {
             <span class="nav-item">HOME</span>
           </a>
         </li>
-        <li>
-          <a href="#message" onclick="ScrollNav(this)">
-            <span class="fi-sr-envelope" class="img-item">
-            <span class="nav-item">MESSAGE</span>
-          </a>
-        </li>
+        
         <li>
           <a href="#notifications" onclick="ScrollNav(this)">
             <span class="fi-sr-bell-ring" class="img-item">
@@ -112,8 +103,114 @@ foreach ($categories as $categorie) {
       </ul>
     </nav>
 
-    <section  id="NavGestion1"></section>
-    <section  id="NavGestion2"></section>
+    <section  id="NavGestion1">
+      
+    </section>
+    <section  id="NavGestion2">
+    <aside>
+    <a href="InterfaceClient.php"><button>Interface Client</button></a>
+    <a href="InterfaceClient.php"><button>Interface Guide</button></a>
+    <a href="adminHeberg.php"><button>Interface Admin-heberg</button></a>
+    <a href="InterfaceClient.php"><button>Interface Admin-resto</button></a>
+    <a href="InterfaceClient.php"><button>Interface Admin-Transpo</button></a>
+   </aside>
+
+   <?php 
+    function listeClients()
+    {
+          $server = "localhost";
+          $nom_bdd = "essai";
+          $user = "root";
+          $password = "";
+          try {
+            $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd", $user, $password);
+            $req = "SELECT NOM,EMAIL FROM UTILISATEUR";
+            $resultat = $connexion->query($req);
+            while( $tuple = $resultat->fetch(PDO::FETCH_ASSOC)){
+              echo "
+              <tr>
+              <td>".$tuple["NOM"]."</td>
+             <td>".$tuple["EMAIL"]."</td>
+               </tr>
+              
+              ";
+            }
+          }
+           catch (PDOException $e) {
+     
+            echo "Erreur ! " . $e->getMessage() . "<br/>";
+          }
+
+    }
+   
+   ?>
+
+   <main>
+   <div id='list-client'>
+    <h3>liste des clients</h3>
+   <table>
+		<thead>
+			<tr>
+				<th>NOM</th>
+				<th>EMAIL</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php listeClients(); ?>
+		</tbody>
+	</table>
+   </div>
+
+   <?php
+      $server = "localhost";
+      $nom_bdd = "essai";
+      $user = "root";
+      $password = "";
+      $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd", $user, $password);
+            $req1 = "SELECT count(*) as 'nombre_guide'  FROM GUIDE";
+            $resultat1 = $connexion->query($req1);
+            $nombre_guide = $resultat1->fetch(PDO::FETCH_ASSOC);
+
+            $req2 = "SELECT count(*) as 'nombre_admin_transpo'  FROM ADMIN_TRANSPORT";
+            $resultat2 = $connexion->query($req2);
+            $nombre_admin_transpo = $resultat2->fetch(PDO::FETCH_ASSOC);
+
+            $req3 = "SELECT count(*) as 'nombre_admin_hebergement'  FROM ADMIN_HEBERGEMENT";
+            $resultat3 = $connexion->query($req3);
+            $nombre_admin_heberg = $resultat3->fetch(PDO::FETCH_ASSOC);
+
+            $req4 = "SELECT count(*) as 'nombre_admin_resto'  FROM ADMIN_RESTAURATION";
+            $resultat4 = $connexion->query($req4);
+            $nombre_admin_resto = $resultat4->fetch(PDO::FETCH_ASSOC);
+    ?>
+        
+         <div id="nombre_guides">
+          <h3>Nombres des Guides ajouter</h3>
+          <?php  echo "<p>".$nombre_guide["nombre_guide"]."</p>"; ?>
+         </div>
+
+         <div id="nombre_admin_heberg">
+          <h3>Nombres des Admin-heberg</h3>
+          <?php  echo "<p>".$nombre_admin_heberg["nombre_admin_hebergement"]."</p>"; ?>
+         </div>
+
+         <div id="nombre_admin_transpo">
+          <h3>Nombres des Admins-transpo</h3>
+          <?php  echo "<p>".$nombre_admin_transpo["nombre_admin_transpo"]."</p>"; ?>
+         </div>
+
+         <div id="nombre_admin_resto">
+          <h3>Nombres des Admins-resto</h3>
+          <?php  echo "<p>".$nombre_admin_resto["nombre_admin_resto"]."</p>"; ?>
+         </div>
+       
+   
+
+   </main>
+
+
+
+    </section>
 
     <section class="gestion" id="stats">
           <div>
@@ -178,7 +275,7 @@ foreach ($categories as $categorie) {
         }
         
       }
-      ScrollNav(document.querySelector('a[href="#NavGestion3"]'));
+      ScrollNav(document.querySelector('a[href="#NavGestion2"]'));
       //*********************************************************//
       var graphe1 = document.getElementById("graphe1").getContext("2d");
       var myChart1 = new Chart(graphe1, {
