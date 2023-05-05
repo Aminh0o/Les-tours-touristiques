@@ -1,0 +1,124 @@
+:root 
+{
+  --background: #e0c9a5;
+  --header: hsl(38, 99%, 70%);
+  --headerScroll: hsla(37, 63%, 64%, 0.726);
+  --white: #ffffff;
+  --green: #4CAF50;
+  --borderGreen: rgb(42, 139, 3);
+  --shadowGreen: rgba(5, 201, 64, 0.5);
+  --grey: #6e6e6e;
+  --gold: #ddb067;
+  --dark: #0F172B;
+  --font-1: "Poppins", sans-serif;
+  --font-2: 'system-ui';
+  --font-3: 'Rockwell', serif;
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-1);
+}
+html,body{
+  display: grid;
+  height: 100%;
+  width: 100%;
+  place-items: center;
+  background: linear-gradient(-135deg, var(--header), var(--shadowGreen));
+}
+::selection{
+  background: var(--dark);
+  color: var(--white);
+}
+.wrapper{
+  width: 50%;
+  background: var(--white);
+  border-radius: 15px;
+  box-shadow: 0px 15px 20px rgba(0,0,0,0.1);
+}
+.wrapper .title{
+  font-size: 35px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 100px;
+  color: var(--white);
+  user-select: none;
+  border-radius: 15px 15px 0 0;
+  background: linear-gradient(-135deg, var(--shadowGreen), var(--header));
+}
+.wrapper form{
+  padding: 10px 30px 50px 30px;
+}
+.wrapper form .field{
+  height: 50px;
+  width: 100%;
+  margin-top: 20px;
+  position: relative;
+}
+.wrapper form .field input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+.wrapper form .field input:focus,
+form .field input:valid{
+  border-color:var(--dark);
+}
+.wrapper form .field label{
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  color: #999999;
+  font-weight: 400;
+  font-size: 17px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  transition: all 0.3s ease;
+}
+form .field input:focus ~ label,
+form .field input:valid ~ label{
+  top: 0%;
+  font-size: 16px;
+  color: var(--dark);
+  background: var(--white);
+  transform: translateY(-50%);
+}
+form .field input[type="submit"]{
+  color: var(--white);
+  border: none;
+  padding-left: 0;
+  margin-top: 5%;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  background: linear-gradient(-135deg, var(--shadowGreen), var(--header));
+  transition: all 0.3s ease;
+}
+form .field input[type="submit"]:active{
+  transform: scale(0.95);
+}
+.wrapper form .field textarea{
+  height: 180%;
+  width: 100%;
+  outline: none;
+  font-size: 17px;
+  padding: 7px;
+  padding-left: 20px;
+  border: 1px solid lightgrey;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+form .field textarea:focus ~ label,
+form .field textarea:valid ~ label{
+  top: 0%;
+  font-size: 16px;
+  color: var(--dark);
+  background: var(--white);
+  transform: translateY(-50%);
+}

@@ -46,12 +46,11 @@ header
 {
     width: 40%;
     height: 70%;
-    margin-left: -20%;
+    margin-left: -10%;
 }
 /************** form style ************/
-.form 
+form 
 {
-    
     align-items: center;
     width: 60%;
     padding: 10px;
@@ -69,7 +68,7 @@ label
     margin-left: 10%;
     margin-bottom: 1%;
 }
-input
+input, textarea
 {
     align-items: center;
     width: 60%;
@@ -82,7 +81,7 @@ input
     opacity: 0.8;
     outline: none;
 }
-input:focus, input:hover
+input:focus, input:hover, textarea:focus, textarea:hover
 {
     opacity: 1;
     width: 61%;
@@ -109,4 +108,3 @@ input:focus, input:hover
     transform: scale(1);
     font-size: 16px;
 }
-
