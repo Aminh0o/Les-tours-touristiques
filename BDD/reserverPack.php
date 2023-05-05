@@ -159,6 +159,21 @@
                     <option value="transportation">Transportation</option>
                     <option value="feeding">Feeding</option>
                 </select>
+
+                <?php
+                    if (isset($_GET['wilaya'])) 
+                    {
+                        $wilaya = $_GET['wilaya'];
+                        echo "  <script>
+                                    document.getElementById('wilaya').disabled = true;
+                                    document.getElementById('categorie').disabled = true;
+                                    document.getElementById('type').disabled = true;
+                                    document.getElementById('wilaya').value = ".$wilaya.";
+                                </script>";
+
+                    }
+                ?>
+
             </div>     
 
             <div id="accompagnerChoice" class="accompagnerChoice">
