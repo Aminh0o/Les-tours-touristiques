@@ -208,29 +208,29 @@ button:hover
   width: 20%;
   height: 250%;
   background-color: var(--orange);
-  border-radius: 15px;
+  border-radius: 5px;
   border: 2px solid var(--dark);
 }
-.profile button
+.profile button, .notification button
 {
   padding: 2% 4%;
   margin-top: 3%;
   margin-left: 85%;
 }
-.profile .nameProfile
+.profile .nameProfile, .notifications-card h1
 {
   display: flex;
   align-items: center;
   margin-top: -8%;
 }
-.profile .nameProfile h2
+.profile .nameProfile h2, .notifications-card h1
 {
   font-family: var(--font-3);
   font-size: 18px;
   color: var(--dark);
   margin-left: 40%;
 }
-.profile hr
+.profile hr, .notifications-card hr
 {
   border: 0;
   height: 2px;
@@ -272,6 +272,72 @@ button:hover
   position: fixed;
   margin-top: -1.5%;
   margin-left: 4%;
+}
+/************** div for notifications ************/
+.notification
+{
+  visibility: hidden;
+  position: absolute;
+  top: 105%;
+  right: 25%;
+  width: 20%;
+  height: 250%;
+  background-color: var(--orange);
+  border-radius: 5px;
+  border: 2px solid var(--dark);
+  overflow-y: scroll;
+  font-family: var(--font-2);
+}
+.notifications-card h1
+{
+  margin-left: 20%;
+}
+.notif-list 
+{
+  position: absolute;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  left: 60%;
+}
+.notif-item 
+{
+  display: inline-flex;
+  margin-bottom: 2%;
+  padding: 2%;
+  border: 1px solid var(--dark);
+  border-radius: 5px;
+  background-color: var(--white);
+}
+.notif-icon 
+{
+  font-size: 25px;
+  margin-right: 2%;
+}
+.notif-contenu
+{
+  max-width: 170px;
+
+}
+.notif-titre 
+{
+  margin-right: 10px;
+  overflow-wrap: break-word;
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 1px;
+}
+.notif-message 
+{
+  overflow-wrap: break-word;
+  margin-right: 10%;
+  font-size: 16px;
+}
+.notif-time 
+{
+  font-size: 14px;
+  color: var(--grey);
 }
 /***************************************************************************************************************************/
 /************** paragraph welcome in the middle ************/
@@ -856,7 +922,6 @@ button:hover
   margin-top: 5%;
   margin-left: 30%;
 }
-
 /************** stars style ************/
 .ratingContact label, .avis-rating label
 {
