@@ -37,30 +37,17 @@ function afficherProfile()
       profile.style.visibility = "hidden";
     }
 }
-/***********************************************************************************/
-function AvisLeftAndRightScroll() 
+/********************************************************************************** Show and hide Notification*/
+function afficherNotif() 
 {
-  const container = document.querySelector('.avis-card-placement');
-  const previousButton = document.querySelector('.previous');
-  const nextButton = document.querySelector('.next');
-  
-  let scrollPosition = 0;
-  
-  previousButton.addEventListener('click', () => {
-    scrollPosition -= container.offsetWidth * 2 ;
-    container.scroll({
-      left: scrollPosition,
-      behavior: 'smooth'
-    });
-  });
-  
-  nextButton.addEventListener('click', () => {
-    scrollPosition += container.offsetWidth * 2 ;
-    container.scroll({
-      left: scrollPosition,
-      behavior: 'smooth'
-    });
-  });
+    var profile = document.getElementById("notification");
+    profile.style.visibility = "visible";
+    
+    var quitBtn = document.getElementById("quitNotif");
+    quitBtn.onclick = function() 
+    {
+      profile.style.visibility = "hidden";
+    }
 }
 /********************************************************************************************** search function*/
 function searchSections(event) 
