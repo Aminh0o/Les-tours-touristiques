@@ -6,7 +6,6 @@
     <title>Gestion Des Tours</title>
     <link rel="stylesheet" href="InterfaceClient.css">
 	<link rel="stylesheet" href="icons/icons/css/icons.css">
-	<script src="JS/loginClient.js"></script>
 	<script src="JS/client.js"></script>
 </head>
 
@@ -62,9 +61,12 @@
                 {
                     echo "  <li>
 					            <span class='fi-sr-bell-ring' class='img-item'>
-						            <a href='' id='navNotif'><p>Notifications</p></a>
-					            </span>
+						        <a id='navNotif' onclick='afficherNotif()'>
+							        <p>Notifications</p>
+						        </a>
+					        </span>
 				            </li>
+
 				            <li>
 					            <span class='fi-sr-user' class='img-item'>
 						            <a id='navProfil' onclick='afficherProfile()'>
@@ -118,10 +120,49 @@
 					<span class="fi fi-sr-settings" class="iconProfile">
 					<p>Edit Profile</p>
 				</a>
-				<a href="logoutClient.php" class="menuProfile">
+				<a href="logout.php" class="menuProfile">
 					<span class="fi fi-sr-sign-out-alt" class="iconProfile">
 					<p>Logout</p>
 				</a>
+			</div>
+
+			<div id="notification" class="notification">
+				<button>
+					<span class="fi fi-sr-x" id="quitNotif"></span>
+				</button>
+				<div class="notifications-card">
+					<h1>Notifications List</h1>
+					<hr>
+					<ul class="notif-list">
+						<li class="notif-item">
+							<div class="notif-icon">
+								<span class="fi-sr-bell-ring"></span>
+							</div>
+							<div class="notif-contenu">
+								<p class="notif-titre">aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</p>
+								<p class="notif-message">You have received a new message from <b>aminho</b></p>
+							</div>
+						</li>
+						<li class="notif-item">
+							<div class="notif-icon">
+								<span class="fi-sr-bell-ring"></span>
+							</div>
+							<div class="notif-contenu">
+								<p class="notif-titre">New Message</p>
+								<p class="notif-message">You have received a new message from <b>aminho</b></p>
+							</div>
+						</li>
+						<li class="notif-item">
+							<div class="notif-icon">
+								<span class="fi-sr-bell-ring"></span>
+							</div>
+							<div class="notif-contenu">
+								<p class="notif-titre">New Message</p>
+								<p class="notif-message">You have received a new message from <b>aminho</b></p>
+							</div>
+						</li>
+					</ul>
+				  </div>
 			</div>
 		</nav>
 
