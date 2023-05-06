@@ -15,7 +15,7 @@
 		//Création de la table UTILISATEUR
 		$requete_sql_utilisateur = "CREATE TABLE IF NOT EXISTS UTILISATEUR (
             ID_UTILISATEUR       INT AUTO_INCREMENT PRIMARY KEY,
-            ID_EMETTEUR          int(10) not null,
+            ID_NOTIF             int(10) not null,
             NOM                  text,
             PRENOM               text,
 	        EMAIL                varchar(20),
@@ -33,7 +33,7 @@
 	        ID_ADMIN             INT AUTO_INCREMENT PRIMARY KEY,
             ID_RESERVATION       int(10) not null,
             ID_RECRUTEMENT       int(10) not null,
-            ID_EMETTEUR          int(10) not null,
+            ID_NOTIF             int(10) not null,
             ID_AVIS              int not null,
             NUMEROPACK           int not null,
             ID_COMPTE            int(10) not null,
@@ -51,7 +51,7 @@
 		$requete_sql_admin_heberg = "CREATE TABLE IF NOT EXISTS ADMIN_HEBERGEMENT (
             ID_ADMIN_HEBERG      INT AUTO_INCREMENT PRIMARY KEY,
             ID_HEBERGEMENT       int(10) not null,
-            ID_EMETTEUR          int(10) not null,
+            ID_NOTIF             int(10) not null,
             NOM                  text,
             PRENOM               text,
             LOGIN_ADMIN_HEBERG   varchar(20) not null,
@@ -66,7 +66,7 @@
 		$requete_sql_admin_rest = "CREATE TABLE IF NOT EXISTS ADMIN_RESTAURATION (
             ID_ADMIN_REST        INT AUTO_INCREMENT PRIMARY KEY,
             ID_RESTAURATION      int(10) not null,
-            ID_EMETTEUR          int(10) not null,
+            ID_NOTIF             int(10) not null,
             NOM                  text,
             PRENOM               text,
             LOGIN_ADMIN_REST     varchar(20) not null,
@@ -81,7 +81,7 @@
 		$requete_sql_admin_transp = "CREATE TABLE IF NOT EXISTS ADMIN_TRANSPORT (
             ID_ADMIN_TRANSP      INT AUTO_INCREMENT PRIMARY KEY,
 	        ID_TRANSPORT         int(10) not null,
-	        ID_EMETTEUR          int(10) not null,
+	        ID_NOTIF             int(10) not null,
 	        NOM                  text,
 	        PRENOM               text,
 	        LOGIN_ADMIN_TRANSP   varchar(20) not null,
@@ -95,7 +95,7 @@
 		//Création de la table GUIDE
 		$requete_sql_guide = "CREATE TABLE IF NOT EXISTS GUIDE (
 	        ID_GUIDE             INT AUTO_INCREMENT PRIMARY KEY,
-	        ID_EMETTEUR          int(10) not null,
+	        ID_NOTIF             int(10) not null,
 	        NOM                  text,
 	        PRENOM               text,
 	        LOGIN_GUIDE          varchar(20) not null,
@@ -120,7 +120,8 @@
         /**********************************************************/
 		//Création de la table NOTIFICATION
 		$requete_sql_notif = "CREATE TABLE IF NOT EXISTS NOTIF (
-	        ID_EMETTEUR          INT AUTO_INCREMENT PRIMARY KEY,
+			ID_NOTIF             INT AUTO_INCREMENT PRIMARY KEY,
+	        ID_EMETTEUR          int(10),
 	        ID_RECEPTEUR         int(10),
 	        MESSAGE_NOTIF        text,
 	        ETAT                 text
@@ -232,7 +233,8 @@
 	        MESSAGE_AVIS         text not null,
 	        EMAIL                varchar(20) not null,
 	        ID_USER              int(10) not null,
-	        RATING               numeric(5,0)
+	        RATING               numeric(5,0),
+			ETAT                 varchar(15)
 		)";
 		 
 		$connexion->exec($requete_sql_avis);
@@ -366,8 +368,8 @@
 		$connexion->exec($requete_sql_ADMINISTRATEUR5);
 		echo "Table ADMINISTRATEUR modifier avec succès.<br>";
 		
-		$requete_sql_ADMINISTRATEUR6 = "alter table ADMINISTRATEUR add constraint FK_RECEVER1 foreign key (ID_EMETTEUR)
-		references NOTIF (ID_EMETTEUR) on delete restrict on update restrict";	  
+		$requete_sql_ADMINISTRATEUR6 = "alter table ADMINISTRATEUR add constraint FK_RECEVER1 foreign key (ID_NOTIF)
+		references NOTIF (ID_NOTIF) on delete restrict on update restrict";	  
 		
 		$connexion->exec($requete_sql_ADMINISTRATEUR6);
 		echo "Table ADMINISTRATEUR modifier avec succès.<br>";
@@ -375,13 +377,13 @@
 		/**********************************************************/
 		//Modification de la table ADMIN_HEBERGEMENT
 		$requete_sql_ADMIN_HEBERGEMENT = "alter table ADMIN_HEBERGEMENT add constraint FK_GERER7 foreign key (ID_HEBERGEMENT)
-		references HEBEGEMENT (ID_HEBERGEMENT) on delete restrict on update restrict";
+		references HEBERGEMENT (ID_HEBERGEMENT) on delete restrict on update restrict";
 
 		$connexion->exec($requete_sql_ADMIN_HEBERGEMENT);
 		echo "Table ADMIN_HEBERGEMENT modifier avec succès.<br>";
 				
-		$requete_sql_ADMIN_HEBERGEMENT2 = "alter table ADMIN_HEBERGEMENT add constraint FK_RECEVER5 foreign key (ID_EMETTEUR)
-		references NOTIF (ID_EMETTEUR) on delete restrict on update restrict";
+		$requete_sql_ADMIN_HEBERGEMENT2 = "alter table ADMIN_HEBERGEMENT add constraint FK_RECEVER5 foreign key (ID_NOTIF)
+		references NOTIF (ID_NOTIF) on delete restrict on update restrict";
 				
 		$connexion->exec($requete_sql_ADMIN_HEBERGEMENT2);
 		echo "Table ADMIN_HEBERGEMENT modifier avec succès.<br>";
@@ -394,8 +396,8 @@
 		$connexion->exec($requete_sql_RESTAURATION);
 		echo "Table ADMIN_RESTAURATION modifier avec succès.<br>";
 			
-		$requete_sql_RESTAURATION2 = "alter table ADMIN_RESTAURATION add constraint FK_RECEVER4 foreign key (ID_EMETTEUR)
-		references NOTIF (ID_EMETTEUR) on delete restrict on update restrict";
+		$requete_sql_RESTAURATION2 = "alter table ADMIN_RESTAURATION add constraint FK_RECEVER4 foreign key (ID_NOTIF)
+		references NOTIF (ID_NOTIF) on delete restrict on update restrict";
 		
 		$connexion->exec($requete_sql_RESTAURATION2);
 		echo "Table ADMIN_RESTAURATION modifier avec succès.<br>";
@@ -408,16 +410,16 @@
 		$connexion->exec($requete_sql_TRANSPORT);
 		echo "Table ADMIN_TRANSPORT modifier avec succès.<br>";
 			
-		$requete_sql_TRANSPORT2 = "alter table ADMIN_TRANSPORT add constraint FK_RECEVER2 foreign key (ID_EMETTEUR)
-		references NOTIF (ID_EMETTEUR) on delete restrict on update restrict";
+		$requete_sql_TRANSPORT2 = "alter table ADMIN_TRANSPORT add constraint FK_RECEVER2 foreign key (ID_NOTIF)
+		references NOTIF (ID_NOTIF) on delete restrict on update restrict";
 					
 		$connexion->exec($requete_sql_TRANSPORT2);
 		echo "Table ADMIN_TRANSPORT modifier avec succès.<br>";
 
 		/**********************************************************/
 		//Modification de la table GUIDE	
-		$requete_sql_GUIDE = "alter table GUIDE add constraint FK_RECEVER3 foreign key (ID_EMETTEUR)
-		references NOTIF (ID_EMETTEUR) on delete restrict on update restrict";
+		$requete_sql_GUIDE = "alter table GUIDE add constraint FK_RECEVER3 foreign key (ID_NOTIF)
+		references NOTIF (ID_NOTIF) on delete restrict on update restrict";
 		   
 		$connexion->exec($requete_sql_GUIDE);
 		echo "Table GUIDE modifier avec succès.<br>";
@@ -425,8 +427,8 @@
 		/**********************************************************/
 	    //Modification de la table UTILISATEUR
 		
-		$requete_sql_UTILISATEUR= "alter table UTILISATEUR add constraint FK_RECEVER foreign key (ID_EMETTEUR)
-		references NOTIF (ID_EMETTEUR) on delete restrict on update restrict";
+		$requete_sql_UTILISATEUR= "alter table UTILISATEUR add constraint FK_RECEVER foreign key (ID_NOTIF)
+		references NOTIF (ID_NOTIF) on delete restrict on update restrict";
 			
 		$connexion->exec($requete_sql_UTILISATEUR);
 		echo "Table UTILISATEUR modifier avec succès.<br>";
@@ -566,7 +568,7 @@
 		echo "Table CONTENIR modifiée avec succès.<br>";
 
         $requete_sql_CONTENIR6 = "alter table CONTENIR add constraint FK_CONTENIR6 foreign key (ID_HEBERGEMENT)
-        references HEBEGEMENT (ID_HEBERGEMENT) on delete restrict on update restrict";
+        references HEBERGEMENT (ID_HEBERGEMENT) on delete restrict on update restrict";
 
         $connexion->exec($requete_sql_CONTENIR6);
 		echo "Table CONTENIR modifiée avec succès.<br>";
@@ -598,7 +600,7 @@
         ('transport_urbain','bus','bejaia','034114640')";
         
         $requete_sql_Transport_data9 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('trans_tamanrasset','bus','tamanrasset','029344767')";
+        ('trans_tamanrasset','bus','sahara','029344767')";
         
         $requete_sql_Transport_data10 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
         ('téléphérique_alger','telepherique','alger','NULL')";
@@ -631,7 +633,7 @@
         ('air_algerie_bejaia','avion','bejaia','034211336')";
         
         $requete_sql_Transport_data20 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES 
-        ('air_algerie_tamanrasset','avion','tamanrasset','029344499')";
+        ('air_algerie_tamanrasset','avion','sahara','029344499')";
         
         $connexion->exec($requete_sql_Transport_data1);
         $connexion->exec($requete_sql_Transport_data2);
@@ -770,22 +772,22 @@
 		('location_daoud','residence','4','bejaia','0561548829')";
 
 		$requete_sql_Hebergement_data38 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('raja','hotel','2','tamanrasset','021614545')";
+		('raja','hotel','2','sahara','021614545')";
 
 		$requete_sql_Hebergement_data39 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('takialt','hotel','3','adrar','049367800')";
+		('takialt','hotel','3','sahara','049367800')";
 
 		$requete_sql_Hebergement_data40 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('tahat','hotel','3','tamanrasset','029312355')";
+		('tahat','hotel','3','sahara','029312355')";
 
 		$requete_sql_Hebergement_data41 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('touat','hotel','4','adrar','049369821')";
+		('touat','hotel','4','sahara','049369821')";
 
 		$requete_sql_Hebergement_data42 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('mraguen','residence','2','adrar','049967793')";
+		('mraguen','residence','2','sahara','049967793')";
 
 		$requete_sql_Hebergement_data43 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('khodja','residence','4','tamanrasset','0663445010')";
+		('khodja','residence','4','sahara','0663445010')";
 
 		
 				
@@ -924,13 +926,13 @@
 		('essalem','bejaia','034114536')";
 
 		$requete_sql_Restauration_data30 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('hotel_tahat','tamanrasset','029312121')";
+		('hotel_tahat','sahara','029312121')";
 
 		$requete_sql_Restauration_data31 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('edhabi','tamanrasset','029321092')";
+		('edhabi','sahara','029321092')";
 
 		$requete_sql_Restauration_data32 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('adriane','tamanrasset','0676421796')";
+		('adriane','sahara','0676421796')";
 			
 		$connexion->exec($requete_sql_Restauration_data1);
 		$connexion->exec($requete_sql_Restauration_data2);
@@ -965,6 +967,46 @@
 		$connexion->exec($requete_sql_Restauration_data31);
 		$connexion->exec($requete_sql_Restauration_data32);
 		echo "Insertion réussie au niveau de la table RESTAURATION.<br>";
+
+		/**********************************************************/
+		//Insertion de données pour la table ADMINISTRATEUR
+		$requete_sql_Administrateur_data1 = "INSERT INTO ADMINISTRATEUR (NOM, PRENOM, LOGIN_ADMIN, MOT_DE_PASSE) VALUES 
+		('bourek','mohammed','mohammed2023','2023')";
+		
+		$connexion->exec($requete_sql_Administrateur_data1);
+		echo "Insertion réussie au niveau de la table ADMINISTRATEUR.<br>";
+
+		/**********************************************************/
+		//Insertion de données pour la table ADMIN_TRANSPORT
+		$requete_sql_Admin_Transp_data1 = "INSERT INTO ADMIN_TRANSPORT (NOM, PRENOM, LOGIN_ADMIN_TRANSP, MOT_DE_PASSE) VALUES 
+		('bouchaour','amine','amine1444','1444')";
+		
+		$connexion->exec($requete_sql_Admin_Transp_data1);
+		echo "Insertion réussie au niveau de la table ADMIN_TRANSPORT.<br>";
+
+		/**********************************************************/
+		//Insertion de données pour la table ADMIN_HEBERGEMENT
+		$requete_sql_Admin_Heberg_data1 = "INSERT INTO ADMIN_HEBERGEMENT (NOM, PRENOM, LOGIN_ADMIN_HEBERG, MOT_DE_PASSE) VALUES 
+		('bourek','mohammed','mohammed1444','1444')";
+		
+		$connexion->exec($requete_sql_Admin_Heberg_data1);
+		echo "Insertion réussie au niveau de la table ADMIN_HEBERGEMENT.<br>";
+
+		/**********************************************************/
+		//Insertion de données pour la table ADMIN_RESTAURATION
+		$requete_sql_Admin_Rest_data1 = "INSERT INTO ADMIN_RESTAURATION (NOM, PRENOM, LOGIN_ADMIN_REST, MOT_DE_PASSE) VALUES 
+		('bouguern','diaa','sifou1444','1444')";
+		
+		$connexion->exec($requete_sql_Admin_Rest_data1);
+		echo "Insertion réussie au niveau de la table ADMIN_RESTAURATION.<br>";
+
+		/**********************************************************/
+		//Insertion de données pour la table GUIDE
+		$requete_sql_guide_data1 = "INSERT INTO GUIDE (NOM, PRENOM, LOGIN_GUIDE, MOT_DE_PASSE) VALUES 
+		('bouguern','diaa','sifou2023','2023')";
+		
+		$connexion->exec($requete_sql_guide_data1);
+		echo "Insertion réussie au niveau de la table GUIDE.<br>";
 		
 		//Clôture de la connexion
 		$connexion = null;
