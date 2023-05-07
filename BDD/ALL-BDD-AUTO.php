@@ -970,32 +970,32 @@
 
 		/**********************************************************/
 		//Insertion de données pour la table ADMINISTRATEUR
-		$requete_sql_Administrateur_data1 = "INSERT INTO ADMINISTRATEUR (NOM, PRENOM, LOGIN_ADMIN, MOT_DE_PASSE) VALUES 
-		('bourek','mohammed','mohammed2023','2023')";
+		$requete_sql_Administrateur_data1 = "INSERT INTO ADMINISTRATEUR (ID_ADMIN, NOM, PRENOM, LOGIN_ADMIN, MOT_DE_PASSE) VALUES 
+		(99,'bourek','mohammed','mohammed2023','2023')";
 		
 		$connexion->exec($requete_sql_Administrateur_data1);
 		echo "Insertion réussie au niveau de la table ADMINISTRATEUR.<br>";
 
 		/**********************************************************/
 		//Insertion de données pour la table ADMIN_TRANSPORT
-		$requete_sql_Admin_Transp_data1 = "INSERT INTO ADMIN_TRANSPORT (NOM, PRENOM, LOGIN_ADMIN_TRANSP, MOT_DE_PASSE) VALUES 
-		('bouchaour','amine','amine1444','1444')";
+		$requete_sql_Admin_Transp_data1 = "INSERT INTO ADMIN_TRANSPORT (ID_ADMIN_TRANSP, NOM, PRENOM, LOGIN_ADMIN_TRANSP, MOT_DE_PASSE) VALUES 
+		(199, 'bouchaour','amine','amine1444','1444')";
 		
 		$connexion->exec($requete_sql_Admin_Transp_data1);
 		echo "Insertion réussie au niveau de la table ADMIN_TRANSPORT.<br>";
 
 		/**********************************************************/
 		//Insertion de données pour la table ADMIN_HEBERGEMENT
-		$requete_sql_Admin_Heberg_data1 = "INSERT INTO ADMIN_HEBERGEMENT (NOM, PRENOM, LOGIN_ADMIN_HEBERG, MOT_DE_PASSE) VALUES 
-		('bourek','mohammed','mohammed1444','1444')";
+		$requete_sql_Admin_Heberg_data1 = "INSERT INTO ADMIN_HEBERGEMENT (ID_ADMIN_HEBERG, NOM, PRENOM, LOGIN_ADMIN_HEBERG, MOT_DE_PASSE) VALUES 
+		(299, 'bourek','mohammed','mohammed1444','1444')";
 		
 		$connexion->exec($requete_sql_Admin_Heberg_data1);
 		echo "Insertion réussie au niveau de la table ADMIN_HEBERGEMENT.<br>";
 
 		/**********************************************************/
 		//Insertion de données pour la table ADMIN_RESTAURATION
-		$requete_sql_Admin_Rest_data1 = "INSERT INTO ADMIN_RESTAURATION (NOM, PRENOM, LOGIN_ADMIN_REST, MOT_DE_PASSE) VALUES 
-		('bouguern','diaa','sifou1444','1444')";
+		$requete_sql_Admin_Rest_data1 = "INSERT INTO ADMIN_RESTAURATION (ID_ADMIN_REST, NOM, PRENOM, LOGIN_ADMIN_REST, MOT_DE_PASSE) VALUES 
+		(399, 'bouguern','diaa','sifou1444','1444')";
 		
 		$connexion->exec($requete_sql_Admin_Rest_data1);
 		echo "Insertion réussie au niveau de la table ADMIN_RESTAURATION.<br>";
