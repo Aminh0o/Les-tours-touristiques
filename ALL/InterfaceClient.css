@@ -1,0 +1,1073 @@
+/***************************************************************************************************************************/
+/************** define colors and font ************/
+:root 
+{
+  --background: #e0c9a5;
+  --orange: #fec767;
+  --orangeTransparent: hsla(37, 63%, 64%, 0.726);
+  --white: #ffffff;
+  --green: #4CAF50;
+  --borderGreen: #2a8b03;
+  --shadowGreen: rgba(5, 201, 64, 0.5);
+  --grey: #6e6e6e;
+  --gold: #ddb067;
+  --dark: #0F172B;
+  --font-1: "Poppins", sans-serif;
+  --font-2: 'system-ui';
+  --font-3: 'Rockwell', serif;
+}
+/************** scrollbar style ************/
+::-webkit-scrollbar 
+{
+  width: 8px;
+  background-color: var(--dark);
+}
+::-webkit-scrollbar-thumb 
+{
+  background-color: var(--orange);
+  border-radius: 10px;
+}
+/***************************************************************************************************************************/
+/************** body style ************/
+body
+{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background-color: var(--background);
+  background-size: cover;
+  overflow-x: hidden;
+  transition: all 0.5s ease-in-out;
+}
+/************** scrolling Images ************/
+#dynamicImageCover 
+{
+  top: 10%;
+  left: 0;
+  width: 101%;
+  height: 80%;
+  background-size: cover;
+  position: absolute;
+  z-index: -99;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.5);
+  filter: brightness(0.7) contrast(120%);
+}
+/************** button for going back to top ************/
+#scrollButton 
+{
+  position: fixed;
+  display: none;
+  border: none;
+  padding: 1%;
+  bottom: 5%;
+  right: 1%;
+  font-size: 100%;
+  background-color: var(--dark);
+  color: var(--orange);
+  cursor: pointer;
+  z-index: 999;
+}
+/************** all buttons ************/
+button
+{
+  display: inline-block;
+  background-color: var(--dark);
+  font-size: 15px;
+  font-family: var(--font-2);
+  color: var(--white);
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  border: none;
+  opacity: 0.8;
+}
+button:hover  
+{
+  opacity: 1;
+  border-radius: 15px;
+  transform: scale(1);
+  font-size: 15.5px;
+}
+/************ when scrolling *********/
+#header.scrolled 
+{
+  background-color: var(--dark);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+#header.scrolled .menu ul li span, #header.scrolled .menu ul li a, #header.scrolled .menu-responsive-button button
+{
+  color: var(--orange);
+}
+#header.scrolled .sectionDroiteHeader button
+{
+  background-color: var(--orange);
+  color: var(--dark);
+}
+/***************************************************************************************************************************/
+/************** header Style ************/
+#header 
+{
+  position: fixed;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 99.9%;
+  top:0%;
+  left: 0%;
+  height: 10%;
+  padding: 0 20px;
+  background-color: var(--orange);
+  z-index: 1;
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 1s ease-in-out;
+}
+/************** section of logo ************/
+.sectionGaucheHeader
+{
+  display: flex;
+  align-items: center;
+}
+#logoHeader
+{
+  width: 40%;
+  height: 65%;
+  padding: 1% 1%;
+}
+/************** section of menu ************/
+.menu-responsive-button
+{
+  display: none;
+}
+.menu ul 
+{
+  display: flex;
+  list-style: none;
+  align-items: center;
+  margin-left: -50%;
+}
+.menu ul li 
+{
+  margin: 2%;
+}
+.menu ul li span, .menu ul li a 
+{
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  color: var(--dark);
+  opacity: 0.9;
+  font-size: 19px;
+}
+.menu ul li span 
+{
+  min-width: 30px;
+  height: 30px;
+}
+.menu ul li a 
+{
+  margin-left: 5%;
+}
+.menu ul li a:hover, .menu ul li span:hover 
+{
+  font-size: 20px;
+  opacity: 1;
+}
+/************** section for search ************/
+.sectionDroiteHeader form
+{
+  display: flex;
+  align-items: center;
+  margin-left: -40%;
+}
+.sectionDroiteHeader input
+{
+  background-image: url(icons/search.png);
+  background-repeat: no-repeat;
+  background-position: 99%;
+  background-size: 20%;
+  border: none;
+  padding: 3% 6%;
+  background-color: var(--white);
+  border-radius: 10px;
+  outline: none;
+  opacity: 0.8;
+}
+.sectionDroiteHeader button
+{
+  padding: 3% 3%;
+  top: 0;
+  margin-left: 2%
+}
+/************** div for profil ************/
+.profile
+{
+  visibility: hidden;
+  position: absolute;
+  top: 105%;
+  right: 3.1%;
+  width: 20%;
+  height: 280%;
+  background-color: var(--orange);
+  border-radius: 5px;
+  border: 2px solid var(--dark);
+}
+.profile button, .notification button
+{
+  padding: 2% 4%;
+  margin-top: 3%;
+  margin-left: 85%;
+}
+.profile .nameProfile, .notifications-card h1
+{
+  display: flex;
+  align-items: center;
+  margin-top: -10%;
+}
+.profile .nameProfile h2, .notifications-card h1
+{
+  font-family: var(--font-3);
+  font-size: 18px;
+  color: var(--dark);
+  margin-left: 40%;
+}
+.profile hr, .notifications-card hr
+{
+  border: 0;
+  height: 2px;
+  width: 80%;
+  background: var(--dark);
+}
+.profile .menuProfile
+{
+  display: flex;
+  align-items: center;
+  width: 60%;
+  height: 20%;
+  margin: 5% 0% 5% 20%;
+  text-decoration: none;
+  color: var(--dark);
+  font-family: var(--font-1);
+  font-weight: bold;
+  font-size: 15px;
+}
+.profile .menuProfile:hover 
+{
+  background-color: var(--white);
+  border-radius: 10px;
+  padding: 1%;
+  font-size: 15px;
+}
+.profile .menuProfile .iconeProfile
+{
+  position: relative;
+  display: block;
+  margin-left: 20%;
+  min-width: 30px;
+  height: 50px;
+  line-height: 100px;
+}
+.profile .menuProfile p
+{
+  display: block;
+  position: fixed;
+  margin-top: -1.5%;
+  margin-left: 4%;
+}
+/************** div for notifications ************/
+.notification
+{
+  visibility: hidden;
+  position: absolute;
+  top: 105%;
+  right: 25%;
+  width: 20%;
+  height: 280%;
+  background-color: var(--orange);
+  border-radius: 5px;
+  border: 2px solid var(--dark);
+  overflow-y: scroll;
+  font-family: var(--font-2);
+}
+.notifications-card h1
+{
+  margin-left: 20%;
+}
+.notif-list 
+{
+  position: absolute;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  left: 60%;
+}
+.notif-item 
+{
+  display: inline-flex;
+  margin-bottom: 2%;
+  padding: 2%;
+  border: 1px solid var(--dark);
+  border-radius: 5px;
+  background-color: var(--white);
+}
+.notif-icon 
+{
+  font-size: 25px;
+  margin-right: 2%;
+}
+.notif-contenu
+{
+  max-width: 170px;
+}
+.notif-message 
+{
+  overflow-wrap: break-word;
+  margin-right: 10%;
+  font-size: 16px;
+}
+.notif-time 
+{
+  font-size: 14px;
+  color: var(--grey);
+}
+/********************************* notif number *******************/
+#notifBadge 
+{
+  position: absolute;
+  top: 60%;
+  right: 40.4%;
+  transform: translate(-50%, -50%);
+  color: var(--dark);
+  font-size: 12px;
+  font-weight: bold;
+  text-align: center;
+  width: 2px;
+  height: 20px;
+  border-radius: 50%;
+}
+.menu ul li a:hover ~ #notifBadge
+
+{
+
+font-size: 14px;
+}
+/***************************************************************************************************************************/
+/************** paragraph welcome in the middle ************/
+.paragraphWelcome 
+{
+  position: relative;
+  font-size: 16px;
+  font-family: var(--font-3);
+  color: var(--orange);
+  margin-top: 17.5%;
+  margin-left: 25%;
+  text-shadow: -1px 0 var(--white), 0 1px var(--white), 1px 0 var(--white), 0 -1px var(--white);
+}
+.paragraphWelcome h1
+{
+  margin-top: 20%;
+  font-size: 80px;
+  letter-spacing: 4px;
+}
+.paragraphWelcome h3
+{
+  font-size: 50px;
+  font-weight: bold;
+  margin-left: 40%;
+  margin-top: -3%;
+}
+/***************************************************************************************************************************/
+/************** for all titles ************/
+.title
+{
+  font-size: 35px;
+  font-family: var(--font-2);
+  color: var(--dark);
+}
+/************** section explore ************/
+#explore
+{
+  position: relative;
+  margin: 13.5% 10% 2% 10%;
+}
+#explore b
+{
+  color: var(--orange);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+#explore::after 
+{
+  content: "";
+  position: absolute; 
+  top: 70%;  
+  right: 0%;
+  width: 45%;
+  height: 2px; 
+  background-color: var(--dark); 
+}
+/************** paragraphe explore ************/
+.explore
+{
+  position: relative;
+  margin: 2% 0% 2% 17%;
+  width: 70%;
+  height: 530px;
+  font-size: 20px;
+  letter-spacing: 4px;
+  justify-content: space-between;
+  box-shadow: 0 5px 12px 2px rgba(0, 0, 0, 0.2);
+}
+.paragraphExplore
+{
+  position: absolute;
+  background-color: var(--gold);
+  width: 60%;
+  margin: 2% 20% 0% -10%;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.856);
+}
+.paragraphExplore p
+{
+  padding: 2% 2%;
+  font-family: var(--font-2);
+  text-align: center;
+  color: var(--dark);
+}
+/************** question of explore section ************/
+#paragraphExploreQuestion
+{
+  position: absolute;
+  text-align: center;
+  font-family: var(--font-2);
+  margin: 7% 10% 2% 60%;
+  color: var(--dark);
+}
+#paragraphExploreQuestion::before
+{
+  content: "";
+  position: absolute; 
+  top: 60%;  
+  right: 105%;
+  width: 20%;
+  height: 2px; 
+  background-color: var(--dark); 
+}
+#paragraphExploreQuestion::after
+{
+  content: "";
+  position: absolute; 
+  top: 60%;  
+  left: 100%;
+  width: 20%;
+  height: 2px; 
+  background-color: var(--dark); 
+}
+/************** title of begin travel and become a guide************/
+#beginTravelParagraph, #becomeGuideTitle
+{
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.856);
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+  font-family: var(--font-2);
+  margin: 5% 20% 5% 20%;
+  color: var(--orange);
+}
+/************** Section begin travel ************/
+.beginTravel
+{
+  position: absolute;
+  text-align: center;
+  padding: 0.5% 0.5%;
+  margin: 18% 0% 5% 54%;
+  width: 40%;
+  height: 35%;
+  border: 2px solid var(--orange);
+  background: var(--gold);
+  background-image: url(images/road.jpg);
+  background-size: 100% 100%;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.856);
+}
+.beginTravel button, .becomeGuide button 
+{
+  opacity: 0.9;
+  background-color: var(--dark);
+  padding: 1%;
+  margin-bottom: 2%;
+}
+.beginTravel button:hover, .becomeGuide button:hover
+{
+  opacity: 1;
+  border-bottom: 2px solid var(--background);
+  box-shadow: 0 3px 3px var(--grey);
+  font-size: 21px;
+}
+.beginTravel button a, .becomeGuide button a
+{
+  padding: 2%;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 20px;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+/***************************************************************************************************************************/
+/************** places title ************/
+#topPlaces
+{
+  position: relative;
+  margin: 0 10% 3% 65%;
+}
+#topPlaces::before 
+{
+  content: "";
+  position: absolute; 
+  top: 70%;  
+  right: 120%;
+  width: 180%;
+  height: 2px; 
+  background-color: var(--dark); 
+}
+/************** Section for places ************/
+.place 
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 80%;
+  margin-left: 10%;
+  box-shadow: 0 0px 10px 10px rgba(0, 0, 0, 0.2);
+}
+.place-card
+{
+  position: relative;
+  flex: 17%;
+  margin: 2%;
+  background-color: var(--dark);
+  border-top-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  box-shadow: 0 5px 5px rgba(0,0,0,0.5);
+  overflow-y: scroll;
+  padding-bottom: 2%;
+}
+.place-card:hover 
+{
+  border-radius: 5px;
+  transform: translate(1px);
+  box-shadow: 0 20px 40px rgb(0, 0, 0);
+}
+.place-card img 
+{
+  width: 100%;
+  height: 50%;
+  object-fit: cover;
+  box-sizing: border-box;
+  border-top-left-radius: 15px;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 calc(100% - 36px));
+}
+.placeInfo
+{
+  padding: 5%;
+  text-align: center;
+}
+.placeInfo p .place-text 
+{
+  margin-bottom: 0;
+}
+.placeInfo h3 
+{
+  margin: 0%;
+  font-family: var(--font-3);
+  font-size: 22px;
+  color: var(--orange);
+  text-decoration: none;
+  border-bottom: none;
+}
+.placeInfo .border-line
+{
+  border-bottom: 1px solid var(--orange);
+  border-width: 3px;
+  width: 40%;  
+  margin: 2% 30%;
+}
+.placeInfo .place-text
+{
+  color: var(--white);
+  font-family: var(--font-2);  
+  font-size: 15px;
+  margin-bottom: 5%;
+}
+.placeInfo button
+{
+  position: absolute;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 3% 8%;
+  background-color: var(--orange);
+}
+.placeInfo button a
+{
+  text-decoration: none;
+  color: var(--dark);
+  font-size: 15px;
+}
+/***************************************************************************************************************************/
+/************** attractions title ************/
+#topAttractions
+{
+  position: relative;
+  margin: 3% 0% 3% 15%;
+}
+#topAttractions::after 
+{
+  content: "";
+  position: absolute; 
+  top: 70%;  
+  right: 20%;
+  width: 45%;
+  height: 2px; 
+  background-color: var(--dark); 
+}
+/************** Section for top attractions ************/
+.attraction 
+{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 76%;
+  padding: 2% 2%;
+  margin-left: 10%;
+  box-shadow: 0 0px 10px 10px rgba(0, 0, 0, 0.2);
+}
+.attraction-card 
+{
+  position: relative;
+  display: flex; 
+  align-items: center; 
+  width: 80%;
+  margin: 3% 0% 0% 10%; 
+  border-radius: 10px;
+  background-color: var(--gold);
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 0px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.attraction-card:hover 
+{
+  transform: none;
+  z-index: 2;
+}
+.attraction-card img 
+{
+  width: 25%;
+  height: 80%;
+  transition: 0.3s linear;
+  border-radius: 5px;
+  transform: rotate(-10deg) scale(1.4);
+}
+.attraction-card:hover > img 
+{
+  transform: rotate(10deg) scale(1.4);
+}
+.attractionInfo 
+{
+  padding: 8%;
+  text-align: left;
+  flex: 1; 
+}
+.attractionInfo a
+{
+  text-decoration: none;
+}
+.attractionInfo h3 
+{
+  margin: 0%;
+  font-family: var(--font-3);
+  font-size: 22px;
+  color: var(--dark);
+  text-shadow: -1px 0 var(--white), 0 1px var(--white), 1px 0 var(--white), 0 -1px var(--white);
+}
+.attractionInfo .border-line 
+{
+  width: 70%;
+  margin: -2% 30% 5%;
+  border-bottom: 1px solid var(--dark);
+  border-width: 3px;
+}
+.attractionInfo .attraction-text 
+{
+  color: var(--dark);
+  font-family: var(--font-2);  
+  font-size: 17px;
+  margin-left: 5%;
+  margin-bottom: 1%;
+}
+/***************************************************************************************************************************/
+/************** about title ************/
+#about
+{
+  position: relative;
+  margin: 2% 10% 3% 70%;
+}
+#about::before 
+{
+  content: "";
+  position: absolute; 
+  top: 70%;  
+  right: 140%;
+  width: 220%;
+  height: 2px; 
+  background-color: var(--dark); 
+}
+/************** Section for about ************/
+.about
+{
+  margin-top: 3%;
+  margin-left: 20%;
+  width: 60%;
+  padding: 2%;
+  font-size: 20px;
+  font-family: var(--font-2);
+  color: var(--orange);
+  box-shadow: 0 0px 10px 10px rgba(0, 0, 0, 0.2);
+}
+#becomeGuideParagraph
+{
+  text-align: center;
+  margin: 0% 5% 3% 5%;
+  padding: 2%;
+  background-color: var(--dark);
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.856);
+}
+.becomeGuide
+{
+  text-align: center;
+  margin: 0% 30% 1% 30%;
+  background-image: url(images/guide.jpg);
+  background-size: 100% 100%;
+  border: 2px solid var(--dark);
+  box-shadow: 0px 4px 20px rgb(0 0 0 / 20%);
+}
+/***************************************************************************************************************************/
+/************** avis title ************/
+#avis
+{
+  position: relative;
+  margin: 2% 0% 3% 20%;
+}
+#avis::after 
+{
+  content: "";
+  position: absolute; 
+  top: 70%;  
+  right: 18%;
+  width: 65%;
+  height: 2px; 
+  background-color: var(--dark); 
+}
+/************** Section for avis ************/
+.avis 
+{
+  margin: 1% 0% 2% 10%;
+  width: 80%;
+  box-shadow: 0 0px 10px 10px rgba(0, 0, 0, 0.2);
+}
+.avis-card-placement
+{
+  margin-left: 5%;
+  margin-right: 5%;
+  width: 85%;
+  padding: 2%;
+  display: flex;
+  flex-wrap: nowrap; 
+  justify-content: center;
+  justify-content: flex-start;
+  overflow-x: scroll;
+}
+.avis-card 
+{
+  position: relative;
+  flex: 1 0 40%;
+  margin: 3%;
+  width: 40%;
+  background-color: var(--gold);
+  border: 1px solid var(--orange);
+  border-radius: 15px;
+  text-align: center;
+  box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.2);
+}
+.avis-icon-top
+{
+  position: absolute;
+  color: var(--dark);
+  font-size: 50px;
+  top: -15%;
+  margin-left: 93%;
+  text-shadow: 1px 0 var(--orange), 0 -1px var(--orange);
+}
+.avis-icon-down
+{
+  position: absolute;
+  color: var(--dark);
+  font-size: 50px;
+  margin-top: -8%;
+  margin-left: -7%;
+  rotate: 180deg;
+  text-shadow: 1px 0 var(--orange), 0 -1px var(--orange);
+}
+.avis-text 
+{
+  position: relative;
+  top: 10%;
+  padding: 2%;
+  font-family: var(--font-3);
+  font-size: 15px;
+  color: var(--dark);
+}
+.avis-rating::before 
+{
+  content: "";
+  position: absolute; 
+  top: 55%;  
+  right: 10%;
+  width: 20%;
+  height: 2px; 
+  background-color: var(--dark); 
+}
+.avis-rating
+{
+  position: relative;
+  color: var(--dark);
+  font-size: 20px;
+  font-family: var(--font-3);
+  top: 10%;
+}
+.avis-rating::after 
+{
+  content: "";
+  position: absolute; 
+  top: 55%;  
+  left: 10%;
+  width: 20%;
+  height: 2px; 
+  background-color: var(--dark); 
+}
+.avis-name
+{
+  position: relative;
+  top: 5%;
+  left: 35%;
+  font-family: var(--font-2);
+  font-size: 20px;
+  color: var(--white);
+  text-shadow: -1px 0 var(--dark), 0 1px var(--dark), 1px 0 var(--dark), 0 -1px var(--dark);
+}
+/***************************************************************************************************************************/
+/************** contact title ************/
+#contact
+{
+  position: relative;
+  margin: 1% 10% 1% 70%;
+}
+#contact::before 
+{
+  content: "";
+  position: absolute; 
+  top: 70%;  
+  right: 140%;
+  width: 220%;
+  height: 2px; 
+  background-color: var(--dark); 
+}
+/************** Section for contactUS ************/
+.contactUS 
+{
+  margin: 2% 0% 5% 10%;
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 5px 12px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+}
+.contact-us
+{
+  display: flex;
+  width: 80%;
+  margin-top: 3%;
+  margin-left: 5%;
+}
+.inputComment, .messageContact textarea
+{
+  background-color: var(--white);
+  margin-bottom: 5%;
+  width: 100%;
+  padding: 2%;
+  border: none;
+  border-radius: 10px;
+  outline: none;
+  opacity: 0.7;
+  font-size: 15px;
+}
+.inputComment:focus, .ratingContact:focus
+{
+  opacity: 1;
+  width: 101%;
+}
+.messageContact textarea:focus
+{
+  width: 121%;
+}
+.messageContact textarea
+{
+  width: 120%;
+  height: 70%;
+  margin-left: 40%;
+}
+.messageContact button 
+{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15%;
+  margin-left: 40%;
+  padding: 10% 48%;
+  color: var(--orange);
+  font-family: var(--font-2);
+}
+.messageContact button span 
+{
+  margin-top: 5%;
+  margin-left: 30%;
+}
+
+/************** stars style ************/
+.ratingContact label, .avis-rating label
+{
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("icons/star-empty.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+/************** Section for rating ************/
+.ratingContact 
+{
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  width: 100%;
+  padding: 2%;
+  margin-bottom: 3%;
+  background-color: var(--white);
+  border-radius: 10px;
+  opacity: 0.7;
+}
+.ratingContact span 
+{
+  position: relative;
+  right: 60%;
+  margin-left: -10%;
+  font-size: 20px;
+  font-family: var(--font-2);
+}
+.ratingContact input[type="radio"] 
+{
+  position: absolute;
+  display: none;
+}
+.ratingContact input[type="radio"]:checked ~ label,
+.ratingContact input[type="radio"]:checked + label,
+.ratingContact label:focus,
+.ratingContact label:hover,
+.ratingContact label:hover ~ label 
+{
+  background-image: url("icons/star-filled.png");
+  opacity: 1;
+}
+/***************************************************************************************************************************/
+/************** Section for footer ************/
+footer
+{
+  position: absolute;
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 101%;
+  left: 0%;
+  background-color: var(--orange);
+  color: var(--dark);
+  font-family: var(--font-2);
+}
+ul 
+{
+  list-style: none;
+  padding: 2%;
+}
+ul li 
+{
+  margin-bottom: 2%;
+}
+ul li a 
+{
+  color: var(--dark);
+  text-decoration: none;
+}
+.footer-liens h3, .footer-contact h3
+{
+  font-size: 30px;
+}
+/************** middle section footer for logo ************/
+.sectionMilieuFooter
+{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+#logoFooter
+{
+  position: relative;
+  margin-top: 5%;
+  margin-left: 43%;
+  width: 60%;
+  height: 70%;
+}
+.social-icons
+{
+  display: inline-flex;
+  margin-left: 50%;
+}
+.icons-footer 
+{
+  width: 40px;
+  height: 40px;
+}
+/************** left section footer for quick links ************/
+.sectionGaucheFooter
+{
+  margin-left: 5%;
+  margin-top: 2%;
+}
+.footer-liens ul
+{
+  margin-top: -10%;
+  margin-left: 30%;
+}
+.footer-liens ul li
+{
+  margin-top: 5%;
+}
+/************** right section footer for social links ************/
+.sectionDroiteFooter
+{
+  margin-right: 7%;
+}
+.footer-contact p
+{
+  font-size: 15px;
+  margin-top: -3%;
+}
+.footer-contact p b
+{
+  margin-left: 30%;
+}
+.footer-contact p span
+{
+  margin-right: 2%;
+}

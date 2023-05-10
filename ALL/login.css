@@ -1,0 +1,116 @@
+:root{
+    --background:#e0c9a5;
+    --header:hsl(38, 99%, 70%);
+    --headerScroll:hsla(37, 63%, 64%, 0.726);
+    --white: #ffffff;
+    --green: #4CAF50;
+    --borderGreen: rgb(42, 139, 3);
+    --shadowGreen: rgba(5, 201, 64, 0.5);
+    --grey: rgba(255, 255, 255, 0.5);
+    --gold: #ddb067;
+}
+body 
+{
+    font-family: 'Rockwell', 'serif';
+    background-image: url(images/ruins2.jpg);
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    overflow: hidden;
+}
+header 
+{
+    display: flex;
+    justify-content: center;
+    margin-left: -36%;
+    color: var(--white);
+    margin-bottom: 3%;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+.sectionGauche
+{
+    display: inline-flex;
+    align-items: center;
+}
+#logo
+{
+    width: 40%;
+    height: 70%;
+    margin-left: -20%;
+}
+.form 
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin-left: 18%;
+    padding: 2%;
+    background-color: var(--grey);
+    border-radius: 20px;
+    border: 2px solid var(--white);
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+label 
+{
+    display: block;
+    margin: 2%;
+}
+input[type="text"],[type="password"] 
+{
+    width: 80%;
+    padding: 10px;
+    border-radius: 15px;
+    line-height: 1.5;
+    border: none;
+    outline: none;
+    background-color: var(--white);
+    opacity: 0.6;
+}
+input[type="text"]:focus,[type="password"]:focus,input[type="text"]:hover,[type="password"]:hover
+{
+    opacity: 1;
+    width: 81%;
+}
+input[type="submit"] 
+{
+    padding: 10px 20px;
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--white);
+    background-color: var(--green);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+input[type="submit"]:hover 
+{
+    opacity: 1;
+    transform: scale(1);
+    font-size: 16px;
+    border-bottom: 2px solid var(--borderGreen);
+    box-shadow: 0 5px 5px var(--shadowGreen);
+}
+p 
+{
+    color: black;
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+.form a  
+{
+    color: black;
+    text-decoration: underline;
+    font-size: 18px;
+    text-shadow: -1px 0 white, 0 1px white, 1px 0 white, 0 -1px white;
+}
+.form a:hover 
+{
+    border-bottom: 2px solid black;
+    font-size: 20px;
+}
+  
