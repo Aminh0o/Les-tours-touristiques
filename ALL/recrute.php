@@ -125,15 +125,34 @@
           <div class="column">
             <div class="custom-file-upload">
               <label for="mon_fichier">Send your CV :</label>
-              <input type="file" id="mon_fichier" name="CV" accept=".pdf,.docx,.png,.jpeg">
-
+              <input type="file" id="mon_fichier" name="CV" accept=".pdf,.docx,.png,.jpeg" onchange="afficherFichier(this)">
             </div>
+            <p id="selected-file"></p>
           </div>
+        </div>
         </div>
 
         <button name="submit">Submit</button>
       </form>
     </section>
   </body>
+  <script> 
+function afficherFichier(input) 
+{
+  var selectedFile = document.getElementById('selected-file');
+  if (input.files.length > 0) 
+  {
+    selectedFile.textContent = 'Selected file: ' + input.files[0].name;
+    selectedFile.style.marginLeft = '200px';
+    selectedFile.style.marginTop = '20px';
+  } 
+  else 
+  {
+    selectedFile.textContent = '';
+    selectedFile.style.marginLeft = '0';
+    selectedFile.style.marginTop = '0';
+  }
+}
+  </script>
 </html>
 
