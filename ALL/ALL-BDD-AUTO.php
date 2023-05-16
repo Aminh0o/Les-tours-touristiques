@@ -2,7 +2,7 @@
 
 	header('content-type: text/html; charset=utf-8');
 	
-	$nom_bdd = "essai";
+	$nom_bdd = "discoveralgeria";
 	$server = "localhost"; 
     $user = "root"; 
     $password = "";
@@ -577,64 +577,55 @@
         /**********************************************************/
         //Insertion de données pour la table TRANSPORT
         $requete_sql_Transport_data1 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('tramway_alger','tramway','alger','NULL')";
+        ('tramway alger','tramway','alger','NULL')";
         
         $requete_sql_Transport_data2 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('tramway_oran','tramway','oran','NULL')";
+        ('tramway oran','tramway','oran','NULL')";
         
         $requete_sql_Transport_data3 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('tramway_constantine','tramway','constantine','NULL')";
+        ('tramway constantine','tramway','constantine','NULL')";
         
         $requete_sql_Transport_data4 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('etusa_alger','bus','alger','021650598')";
+        ('etusa alger','bus','alger','021650598')";
         
         $requete_sql_Transport_data5 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('etusa_oran','bus','oran','021664468')";
+        ('etusa oran','bus','oran','021664468')";
         
         $requete_sql_Transport_data6 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('etus_tlemcen','bus','tlemcen','021669218')";
+        ('etus tlemcen','bus','tlemcen','021669218')";
         
         $requete_sql_Transport_data7 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('etus_constantine','bus','constantine','021655758')";
+        ('etus constantine','bus','constantine','021655758')";
         
         $requete_sql_Transport_data8 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('transport_urbain','bus','bejaia','034114640')";
+        ('transport urbain','bus','bejaia','034114640')";
         
         $requete_sql_Transport_data9 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('trans_tamanrasset','bus','sahara','029344767')";
-        
-        $requete_sql_Transport_data10 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('téléphérique_alger','telepherique','alger','NULL')";
-        
-        $requete_sql_Transport_data11 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('téléphérique_oran','telepherique','oran','NULL')";
+        ('trans tamanrasset','bus','sahara','029344767')";
         
         $requete_sql_Transport_data12 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('téléphérique_tlemcen','telepherique','tlemcen','NULL')";
-        
-        $requete_sql_Transport_data13 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('téléphérique_constantine','telepherique','constantine','NULL')";
+        ('téléphérique tlemcen','telepherique','tlemcen','NULL')";
         
         $requete_sql_Transport_data14 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('téléphérique_bejaia','telepherique','bejaia','NULL')";
+        ('téléphérique bejaia','telepherique','bejaia','NULL')";
 
         $requete_sql_Transport_data15 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('air_algerie_alger','avion','alger','021986363')";
+        ('air algerie alger','avion','alger','021986363')";
         
         $requete_sql_Transport_data16 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('air_algerie_oran','avion','oran','041334726')";
+        ('air algerie oran','avion','oran','041334726')";
         
         $requete_sql_Transport_data17 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('air_algerie_tlemcen','avion','tlemcen','043264521')";
+        ('air algerie tlemcen','avion','tlemcen','043264521')";
         
         $requete_sql_Transport_data18 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('air_algerie_constantine','avion','constantine','031930090')";
+        ('air algerie constantine','avion','constantine','031930090')";
         
         $requete_sql_Transport_data19 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES
-        ('air_algerie_bejaia','avion','bejaia','034211336')";
+        ('air algerie bejaia','avion','bejaia','034211336')";
         
         $requete_sql_Transport_data20 = "INSERT INTO TRANSPORT (NOMACCOMPAGNE, TYPE_TRANSPORT, ADRESSE, TELEPHONE) VALUES 
-        ('air_algerie_tamanrasset','avion','sahara','029344499')";
+        ('air algerie tamanrasset','avion','sahara','029344499')";
         
         $connexion->exec($requete_sql_Transport_data1);
         $connexion->exec($requete_sql_Transport_data2);
@@ -645,10 +636,7 @@
         $connexion->exec($requete_sql_Transport_data7);
         $connexion->exec($requete_sql_Transport_data8);
         $connexion->exec($requete_sql_Transport_data9);
-        $connexion->exec($requete_sql_Transport_data10);
-        $connexion->exec($requete_sql_Transport_data11); 
-        $connexion->exec($requete_sql_Transport_data12);
-        $connexion->exec($requete_sql_Transport_data13); 
+        $connexion->exec($requete_sql_Transport_data12); 
         $connexion->exec($requete_sql_Transport_data14); 
         $connexion->exec($requete_sql_Transport_data15); 
         $connexion->exec($requete_sql_Transport_data16); 
@@ -662,34 +650,34 @@
 		//Insertion de données pour la table HEBERGEMENT
 			
 		$requete_sql_Hebergement_data1 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES 
-		('ibis_alger','hotel','3','alger','0770134965')";
+		('ibis alger','hotel','3','alger','0770134965')";
 			
 		$requete_sql_Hebergement_data2 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES 
-		('sheraton_alger','hotel','5','alger','021377777')";
+		('sheraton alger','hotel','5','alger','021377777')";
 			
 		$requete_sql_Hebergement_data3 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES 
-		('el_djazair','hotel','5','alger','023481108')";
+		('el djazair','hotel','5','alger','023481108')";
 			
 		$requete_sql_Hebergement_data4 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES 
-		('dar_diaf','hotel','3','alger','023371010')";
+		('dar diaf','hotel','3','alger','023371010')";
 			
 		$requete_sql_Hebergement_data5 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES 
-		('nazel_el_yassamine','hotel','2','alger','044475003')";
+		('nazel el yassamine','hotel','2','alger','044475003')";
 
         $requete_sql_Hebergement_data6 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES 
-        ('dar_el_beida_aeroport','hotel','3','alger','023813739')";
+        ('dar el beida aeroport','hotel','3','alger','023813739')";
 
 		$requete_sql_Hebergement_data7 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES 
-        ('inn_by_marriott','residence','3','alger','023741333')";
+        ('inn by marriott','residence','3','alger','023741333')";
 
 		$requete_sql_Hebergement_data8 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES 
-        ('welcome_to_alger_dar_el_beida','residence','3','alger','NULL')";
+        ('welcome to alger dar el beida','residence','3','alger','NULL')";
         
         $requete_sql_Hebergement_data9 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-        ('renaissance_tlemcen','hotel','5','tlemcen','043401111')";
+        ('renaissance tlemcen','hotel','5','tlemcen','043401111')";
 
 		$requete_sql_Hebergement_data10 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('ibis-tlemcen','hotel','4','tlemcen','043981010')";
+		('ibis tlemcen','hotel','4','tlemcen','043981010')";
 		  
 		$requete_sql_Hebergement_data11 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
 		('zianide','hotel','4','tlemcen','043277102')";
@@ -707,22 +695,22 @@
 		('méridian','hotel','5','oran','041984000')";
   
 		$requete_sql_Hebergement_data16 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('sherato_oran','hotel','5','oran','041590100')";
+		('sherato oran','hotel','5','oran','041590100')";
   
 		$requete_sql_Hebergement_data17 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('ibis_oran','hotel','3','oran','041982300')";
+		('ibis oran','hotel','3','oran','041982300')";
   
 		$requete_sql_Hebergement_data18 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('best_western_colombe','hotel','3','oran','041746175')";
+		('best western_colombe','hotel','3','oran','041746175')";
   
 		$requete_sql_Hebergement_data19 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
 		('rodina','hotel','4','oran','0555557412')";
   
 		$requete_sql_Hebergement_data20 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('résidence_emir','residence','3','oran','0560993311')";
+		('résidence emir','residence','3','oran','0560993311')";
   
 		$requete_sql_Hebergement_data21 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('the_adress_residence_sm','residence','5','oran','0540049294')";
+		('the adress residence sm','residence','5','oran','0540049294')";
   
 		$requete_sql_Hebergement_data22 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
 		('chahinas','residence','4','tlemcen','0697225562')";
@@ -731,46 +719,46 @@
 		('résidence_anfel','residence','5','tlemcen',' 0697621306')";
   
 		$requete_sql_Hebergement_data24 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('marriott_constantine','hotel','5','constantine','031731073')";
+		('marriott constantine','hotel','5','constantine','031731073')";
   
 		$requete_sql_Hebergement_data25 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('el_khayem','hotel','4','constantine','031744220')";
+		('el khayem','hotel','4','constantine','031744220')";
   
 		$requete_sql_Hebergement_data26 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
 		('novotel','hotel','4','constantine',' 031992000')";
   
 		$requete_sql_Hebergement_data27 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('ibis_constantine','hotel','3','constantine',' 031992000')";
+		('ibis constantine','hotel','3','constantine',' 031992000')";
   
 		$requete_sql_Hebergement_data28 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('hocine_el_khroub','hotel','4','constantine','031750000')";
+		('hocine el khroub','hotel','4','constantine','031750000')";
   
 		$requete_sql_Hebergement_data29 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
 		('elbey','hotel','3','constantine','031649494')";
   
 		$requete_sql_Hebergement_data30 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('hotel_des_princes','hotel','3','constantine','031912770')";
+		('hotel des princes','hotel','3','constantine','031912770')";
   
 		$requete_sql_Hebergement_data31 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
 		('lantana','residence','5','constantine','0560243468')";
   
 		$requete_sql_Hebergement_data32 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('les_palmiers','residence','4','constantine','031819110')";
+		('les palmiers','residence','4','constantine','031819110')";
   
 		$requete_sql_Hebergement_data33 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('le_cristal','hotel','3','bejaia','034818585')";
+		('le cristal','hotel','3','bejaia','034818585')";
   
 		$requete_sql_Hebergement_data34 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
 		('altantis','hotel','4','bejaia','034180055')";
   
 		$requete_sql_Hebergement_data35 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('les_hammadites','hotel','4','bejaia','034816512')";
+		('les hammadites','hotel','4','bejaia','034816512')";
 
 		$requete_sql_Hebergement_data36 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
 		('immomalak','residence','5','bejaia','034129407')";
 
 		$requete_sql_Hebergement_data37 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
-		('location_daoud','residence','4','bejaia','0561548829')";
+		('location daoud','residence','4','bejaia','0561548829')";
 
 		$requete_sql_Hebergement_data38 = "INSERT INTO HEBERGEMENT (NOM, TYPE_HEBERG, RATING, ADRESSE, TELEPHONE) VALUES
 		('raja','hotel','2','sahara','021614545')";
@@ -840,34 +828,34 @@
         /**********************************************************/
 		//Insertion de données pour la table RESTAURATION
 		$requete_sql_Restauration_data1 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('la_grotte_des_saveurs','alger','0555337076')";
+		('la grotte des saveurs','alger','0555337076')";
 
 		$requete_sql_Restauration_data2 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('la_maison_couscouse','alger','0770346044')";
+		('la maison couscouse','alger','0770346044')";
 
 		$requete_sql_Restauration_data3 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('casbah_istanbul','alger','0554130625')";
+		('casbah istanbul','alger','0554130625')";
 
 		$requete_sql_Restauration_data4 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('le_roi_de_la_loubia','alger','021740291')";
+		('le roi de la loubia','alger','021740291')";
 
 		$requete_sql_Restauration_data5 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('la_baie_alger','alger','021738357')";
+		('la baie alger','alger','021738357')";
 
 		$requete_sql_Restauration_data6 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('taj_mahal','alger','021341824')";
+		('taj mahal','alger','021341824')";
 
 		$requete_sql_Restauration_data7 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
 		('etalon','alger','0661572950')";
 
 		$requete_sql_Restauration_data8 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('le_normand','alger','044199560')";
+		('le normand','alger','044199560')";
 
 		$requete_sql_Restauration_data9 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('le_marquise','oran','0671807878')";
+		('le marquise','oran','0671807878')";
 
 		$requete_sql_Restauration_data10 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('le_cintra','oran','0560000346')";
+		('le cintra','oran','0560000346')";
 
 		$requete_sql_Restauration_data11 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
 		('marrakech','oran','0669319213')";
@@ -876,7 +864,7 @@
 		('barbaroussa','oran','0799371612')";
 
 		$requete_sql_Restauration_data13 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('el_halabi','oran','0552586565')";
+		('el halabi','oran','0552586565')";
 
 		$requete_sql_Restauration_data14 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
 		('equinoxe','tlemcen','043417360')";
@@ -884,50 +872,44 @@
 		$requete_sql_Restauration_data15 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
 		('echapatoire','tlemcen','043213563')";
 
-		$requete_sql_Restauration_data16 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('latina','tlemcen','O552994245')";
-
 		$requete_sql_Restauration_data17 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('le_gourmet','tlemcen','0699453413')";
+		('le gourmet','tlemcen','0699453413')";
 
 		$requete_sql_Restauration_data18 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('dar_al_soltane','constantine','031642256')";
+		('dar al soltane','constantine','031642256')";
 
 		$requete_sql_Restauration_data19 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
 		('jannah','constantine','031731073')";
 
 		$requete_sql_Restauration_data20 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('siniet_el_bey','constantine','0776050404')";
+		('siniet el bey','constantine','0776050404')";
 
 		$requete_sql_Restauration_data21 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
 		('venezia','constantine','0557715363')";
 
 		$requete_sql_Restauration_data22 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('el_baik','constantine','0561836666')";
+		('el baik','constantine','0561836666')";
 
 		$requete_sql_Restauration_data23 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
 		('cirta','constantine','0798502726')";
 
-		$requete_sql_Restauration_data24 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('les_platannes','constantine','031928622')";
-
 		$requete_sql_Restauration_data25 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('la_citadelle','bejaia','0553905401')";
+		('la citadelle','bejaia','0553905401')";
 
 		$requete_sql_Restauration_data26 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('tacos_city','bejaia','0770550297')";
+		('tacos city','bejaia','0770550297')";
 
 		$requete_sql_Restauration_data27 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
 		('plaza','bejaia','0540442880')";
 
 		$requete_sql_Restauration_data28 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('le_petit_bateau','bejaia','0550601397')";
+		('le petit bateau','bejaia','0550601397')";
 
 		$requete_sql_Restauration_data29 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
 		('essalem','bejaia','034114536')";
 
 		$requete_sql_Restauration_data30 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
-		('hotel_tahat','sahara','029312121')";
+		('hotel tahat','sahara','029312121')";
 
 		$requete_sql_Restauration_data31 = "INSERT INTO RESTAURATION (NOM, ADRESSE, TELEPHONE) VALUES 
 		('edhabi','sahara','029321092')";
@@ -950,7 +932,6 @@
 		$connexion->exec($requete_sql_Restauration_data13);
 		$connexion->exec($requete_sql_Restauration_data14);
 		$connexion->exec($requete_sql_Restauration_data15);
-		$connexion->exec($requete_sql_Restauration_data16);
 		$connexion->exec($requete_sql_Restauration_data17);
 		$connexion->exec($requete_sql_Restauration_data18);
 		$connexion->exec($requete_sql_Restauration_data19);
@@ -958,7 +939,6 @@
 		$connexion->exec($requete_sql_Restauration_data21);
 		$connexion->exec($requete_sql_Restauration_data22);
 		$connexion->exec($requete_sql_Restauration_data23);
-		$connexion->exec($requete_sql_Restauration_data24);
 		$connexion->exec($requete_sql_Restauration_data25);
 		$connexion->exec($requete_sql_Restauration_data26);
 		$connexion->exec($requete_sql_Restauration_data27);

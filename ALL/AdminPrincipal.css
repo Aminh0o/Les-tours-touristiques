@@ -183,12 +183,12 @@ nav:hover ~ .affichage-donnes
 /**********swalh home*********************/
 .affichage-donnes
 {
-  position: relative;
+  position: absolute;
   display: block;
   justify-content: space-between;
   width: 20%;
-  height: 500px;
-  margin-top: 150%;
+  height: 450px;
+  margin-top: 10%;
   margin-left: 18%;
   padding: 2%;
   text-align: center;
@@ -210,20 +210,29 @@ nav:hover ~ .affichage-donnes
 {
   padding: 1%;
 }
-.list-client, .list-passager 
+.list-client
 {
-  margin-top: -30%;
+  position: absolute;
+  margin-top: 10%;
   margin-left: 45%;
   border-radius: 5px;
   width: 40%;
-  max-height: 250px;
+  max-height: 35%;
   background: var(--gold);
   overflow-y: scroll;
   transition: margin-left 1.5s;
 }
 .list-passager 
 {
-  margin-top: 2%;
+  position: absolute;
+  margin-top: 30%;
+  margin-left: 45%;
+  border-radius: 5px;
+  width: 40%;
+  max-height: 35%;
+  background: var(--gold);
+  overflow-y: scroll;
+  transition: margin-left 1.5s;
 }
 .list-client h3, .list-passager h3
 {
@@ -264,7 +273,7 @@ aside a button{
   flex-wrap: wrap;
   justify-content: space-between;
   position: absolute;
-  margin-top: -5%;
+  margin-top: 15%;
   margin-left: 15%;
   transition: margin-left 1.5s;
   width: 80%; 
@@ -303,8 +312,9 @@ nav:hover ~ .gestion, nav:hover ~ #notifications
 /************** section of notifications ************/
 .notifications
 {
+  position: absolute;
   transition: margin-left 1.5s;
-  margin-top: -8%;
+  margin-top: 15%;
   margin-left: 15%;
   width: 80%;
   color: var(--dark);

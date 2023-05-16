@@ -1,7 +1,7 @@
 <?php
           session_start();
           $server = "localhost";
-          $nom_bdd = "essai";
+          $nom_bdd = "discoveralgeria";
           $user = "root";
           $password = "";
             if(isset($_SESSION["email"])){
@@ -131,7 +131,7 @@
     <?php 
      
         $server = "localhost";
-        $nom_bdd = "essai";
+        $nom_bdd = "discoveralgeria";
         $user = "root";
         $password = "";
       
@@ -298,7 +298,7 @@
 
         <?php 
           $server = "localhost";
-          $nom_bdd = "essai";
+          $nom_bdd = "discoveralgeria";
           $user = "root";
           $password = "";
           
@@ -337,7 +337,7 @@
       function afficherRestaurationAlger()
       {
         $server = "localhost";
-        $nom_bdd = "essai";
+        $nom_bdd = "discoveralgeria";
         $user = "root";
         $password = "";
             try{
@@ -364,7 +364,7 @@
         function afficherRestaurationTlm()
       {
         $server = "localhost";
-        $nom_bdd = "essai";
+        $nom_bdd = "discoveralgeria";
         $user = "root";
         $password = "";
             try{
@@ -391,7 +391,7 @@
       function afficherRestaurationOran()
       {
         $server = "localhost";
-        $nom_bdd = "essai";
+        $nom_bdd = "discoveralgeria";
         $user = "root";
         $password = "";
             try{
@@ -418,7 +418,7 @@
         function afficherRestaurationBejaia()
         {
           $server = "localhost";
-          $nom_bdd = "essai";
+          $nom_bdd = "discoveralgeria";
           $user = "root";
           $password = "";
               try{
@@ -444,7 +444,7 @@
           function afficherRestaurationCos()
           {
             $server = "localhost";
-            $nom_bdd = "essai";
+            $nom_bdd = "discoveralgeria";
             $user = "root";
             $password = "";
                 try{
@@ -470,7 +470,7 @@
             function afficherRestaurationSahara()
             {
               $server = "localhost";
-              $nom_bdd = "essai";
+              $nom_bdd = "discoveralgeria";
               $user = "root";
               $password = "";
                   try{

@@ -141,9 +141,9 @@ header
 {
   content: "";
   position: absolute;
-  top: 23%;
-  left: 35%;  
-  width: 56%;
+  top: 25%;
+  left: 37%;  
+  width: 55%;
   height: 2px; 
   background-color: var(--orange); 
 }

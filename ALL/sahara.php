@@ -11,8 +11,8 @@
         .packs { margin-top: -30%;}
         .packDescription p { top: -130%; }
         #transport { margin-top: -45%; }
-        #hebergement { margin-top: 5%; }
-        #restaurant { margin-top: 1%; }
+        #hebergement { margin-top: -1%; }
+        #restaurant { margin-top: -70%; }
     </style>
 </head>
 <body>
@@ -38,7 +38,7 @@
             function afficher_Pack_royal()
             {
                 $server="localhost";
-                $nom_bdd="essai";
+                $nom_bdd="discoveralgeria";
                 $user="root";
                 $password="";
                 session_start();
@@ -74,7 +74,7 @@
             function afficher_Pack_special()
             {
                 $server="localhost";
-                $nom_bdd="essai";
+                $nom_bdd="discoveralgeria";
                 $user="root";
                 $password="";
                 try
@@ -110,7 +110,7 @@
             function afficher_Pack_normal()
             {
                 $server="localhost";
-                $nom_bdd="essai";
+                $nom_bdd="discoveralgeria";
                 $user="root";
                 $password="";
                 try
@@ -240,7 +240,7 @@
             <?php 
             function TransportSahara(){
             $server="localhost";
-            $nom_bdd="essai";
+            $nom_bdd= "discoveralgeria";
             $user="root";
             $password="";
             try{
@@ -284,7 +284,7 @@
             <?php 
             function HebergementSahara(){
             $server="localhost";
-            $nom_bdd="essai";
+            $nom_bdd="discoveralgeria";
             $user="root";
             $password="";
             try{
@@ -335,7 +335,7 @@
             <?php 
             function RestaurationSahara(){
             $server="localhost";
-            $nom_bdd="essai";
+            $nom_bdd="discoveralgeria";
             $user="root";
             $password="";
             try{

@@ -12,7 +12,7 @@
 	 {
     
 	 $server="localhost";
-     $nom_bdd="essai";
+     $nom_bdd="discoveralgeria";
      $user="root";
      $password="";
 		try{
@@ -39,7 +39,7 @@
     }
 	?>
     <h1>Liste des Comptes</h1>
-	<a href="AdminPrincipal.php"><img src="icons/logoo1.png" id="logo"></a>
+	<a href="AdminPrincipal.php#NavGestion2"><img src="icons/logoo1.png" id="logo"></a>
 	<table>
 		<thead>
 			<tr>

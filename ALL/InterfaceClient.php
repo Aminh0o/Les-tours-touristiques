@@ -88,7 +88,7 @@
 				function afficherName()
 				{
 					$server="localhost";
-					$nom_bdd="essai";
+					$nom_bdd="discoveralgeria";
 					$user="root";
 					$password="";
 					if ( isset($_SESSION["email"]))
@@ -137,7 +137,7 @@
 					<ul class="notif-list">
 						<?php 
 						    $server = "localhost";
-							$nom_bdd = "essai";
+							$nom_bdd = "discoveralgeria";
 							$user = "root";
 							$password = "";
 							
@@ -147,10 +147,10 @@
 							{
 								$connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);
 
-								$req = "SELECT * FROM NOTIF WHERE ID_RECEPTEUR='$id_user'";
+								$req = "SELECT * FROM NOTIF WHERE ID_RECEPTEUR='$id_user' ORDER BY ID_NOTIF DESC";
 								$info = $connexion->query($req);
 
-								$req_notif = "SELECT COUNT(*) 'nb_notifs' FROM NOTIF WHERE ID_RECEPTEUR='$id_user' ";
+								$req_notif = "SELECT COUNT(*) 'nb_notifs' FROM NOTIF WHERE ID_RECEPTEUR='$id_user'";
 								$info_notif = $connexion->query($req_notif);
 								$tuple3 = $info_notif->fetch(PDO::FETCH_ASSOC);
 								while($tuple = $info->fetch(PDO::FETCH_ASSOC))
@@ -238,7 +238,7 @@
 					<?php if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) { ?>
 					<button><a href="alger.php" class="buttonPlace">Voir Details</a></button>
 					<?php } else { ?>
-						<button disabled><a>Voir Details</a></button>
+						<button disabled style="pointer-events: none;"><a>Voir Details</a></button>
 					<?php } ?>
 
 				</div>
@@ -252,7 +252,7 @@
 					<?php if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) { ?>
 						<button><a href="tlemcen.php" class="buttonPlace">Voir Details</a></button>
 						<?php } else { ?>
-							<button disabled><a>Voir Details</a></button>
+							<button disabled style="pointer-events: none;"><a>Voir Details</a></button>
 						<?php } ?>
 				</div>
 			</div>
@@ -266,7 +266,7 @@
 					<?php if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) { ?>
 					<button><a href="oran.php" class="buttonPlace">Voir Details</a></button>
 					<?php } else { ?>
-						<button disabled><a>Voir Details</a></button>
+						<button disabled style="pointer-events: none;"><a>Voir Details</a></button>
 					<?php } ?>
 				</div>
 			</div>
@@ -280,7 +280,7 @@
 					<?php if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) { ?>
 					<button><a href="bejaia.php" class="buttonPlace">Voir Details</a></button>
 					<?php } else { ?>
-						<button disabled><a>Voir Details</a></button>
+						<button disabled style="pointer-events: none;"><a>Voir Details</a></button>
 					<?php } ?>
 				</div>
 			</div>
@@ -296,7 +296,7 @@
 					<?php if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) { ?>
 					<button><a href="constantine.php" class="buttonPlace">Voir Details</a></button>
 					<?php } else { ?>
-						<button disabled><a>Voir Details</a></button>
+						<button disabled style="pointer-events: none;"><a>Voir Details</a></button>
 					<?php } ?>
 				</div>
 			</div>
@@ -310,7 +310,7 @@
 					<?php if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] === true) { ?>
 					<button><a href="sahara.php" class="buttonPlace">Voir Details</a></button>
 					<?php } else { ?>
-						<button disabled><a>Voir Details</a></button>
+						<button disabled style="pointer-events: none;"><a>Voir Details</a></button>
 					<?php } ?>
 				</div>
 			</div>
@@ -387,7 +387,7 @@
 			<?php 
 			
 			    $server="localhost";
-    		    $nom_bdd="essai";
+    		    $nom_bdd="discoveralgeria";
     		    $user="root";
     		    $password="";
 		
@@ -433,7 +433,7 @@
 
 	<?php 
 	    $server="localhost";
-		$nom_bdd="essai";
+		$nom_bdd="discoveralgeria";
 		$user="root";
 		$password="";
 		if(isset($_POST["nomComment"]) && isset($_POST["emailComment"]) && isset($_POST["messageComment"]) && isset($_POST["rating"]))

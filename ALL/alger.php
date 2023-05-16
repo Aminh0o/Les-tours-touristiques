@@ -6,15 +6,15 @@
     <title>ALGIERS</title>
     <link rel="stylesheet" href="places.css">
     <style>
-        .exploreWilaya p { margin-top: -30%;}
+        .exploreWilaya p { margin-top: -35%;}
         .photoSlider { height: 420px; }
         .packs { margin-top: -38%;}
         .packDescription p { top: -41%;}
         .cardInfo p { margin-top: -10%;}
         .card-text p { margin-top: 3%;}
         #transport { margin-top: -50%; }
-        #hebergement { margin-top: -40%; }
-        #restaurant { margin-top: -50%; }
+        #hebergement { margin-top: -30%; }
+        #restaurant { margin-top: -95%; }
     </style>
 </head>
 <body>
@@ -40,7 +40,7 @@
             function afficher_Pack_royal()
             {
                 $server="localhost";
-                $nom_bdd="essai";
+                $nom_bdd="discoveralgeria";
                 $user="root";
                 $password="";
                 session_start();
@@ -76,7 +76,7 @@
             function afficher_Pack_special()
             {
                 $server="localhost";
-                $nom_bdd="essai";
+                $nom_bdd="discoveralgeria";
                 $user="root";
                 $password="";
                 try
@@ -112,7 +112,7 @@
             function afficher_Pack_normal()
             {
                 $server="localhost";
-                $nom_bdd="essai";
+                $nom_bdd="discoveralgeria";
                 $user="root";
                 $password="";
                 try
@@ -253,7 +253,7 @@
             <?php 
             function TransportAlger(){
             $server="localhost";
-            $nom_bdd="essai";
+            $nom_bdd="discoveralgeria";
             $user="root";
             $password="";
             try{
@@ -296,7 +296,7 @@
             <?php 
             function HebergementAlger(){
             $server="localhost";
-            $nom_bdd="essai";
+            $nom_bdd="discoveralgeria";
             $user="root";
             $password="";
             try{
@@ -348,7 +348,7 @@
             <?php 
             function RestaurationAlger(){
             $server="localhost";
-            $nom_bdd="essai";
+            $nom_bdd="discoveralgeria";
             $user="root";
             $password="";
             try{

@@ -12,7 +12,7 @@
 	 {
         
 	 $server="localhost";
-     $nom_bdd="essai";
+     $nom_bdd="discoveralgeria";
      $user="root";
      $password="";
 		try{

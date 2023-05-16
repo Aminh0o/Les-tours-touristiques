@@ -14,8 +14,8 @@
         .packDescription p { top: -142%; left: -30%;}
         #Card .cardInfo p { margin-top: -15%;}
         #transport { margin-top: -55%; }
-        #hebergement { margin-top: 4%; }
-        #restaurant { margin-top: 0%; }
+        #hebergement { margin-top: -7%; }
+        #restaurant { margin-top: -110%; }
     </style>
 </head>
 <body>
@@ -41,7 +41,7 @@
             function afficher_Pack_royal()
             {
                 $server="localhost";
-                $nom_bdd="essai";
+                $nom_bdd="discoveralgeria";
                 $user="root";
                 $password="";
                 session_start();
@@ -77,7 +77,7 @@
             function afficher_Pack_special()
             {
                 $server="localhost";
-                $nom_bdd="essai";
+                $nom_bdd="discoveralgeria";
                 $user="root";
                 $password="";
                 try
@@ -113,7 +113,7 @@
             function afficher_Pack_normal()
             {
                 $server="localhost";
-                $nom_bdd="essai";
+                $nom_bdd="discoveralgeria";
                 $user="root";
                 $password="";
                 try
@@ -251,7 +251,7 @@
             <?php 
             function TransportCostantine(){
             $server="localhost";
-            $nom_bdd="essai";
+            $nom_bdd="discoveralgeria";
             $user="root";
             $password="";
             try{
@@ -295,7 +295,7 @@
             <?php 
             function HebergementCostantine(){
             $server="localhost";
-            $nom_bdd="essai";
+            $nom_bdd="discoveralgeria";
             $user="root";
             $password="";
             try{
@@ -346,7 +346,7 @@
             <?php 
             function RestaurationCostantine(){
             $server="localhost";
-            $nom_bdd="essai";
+            $nom_bdd="discoveralgeria";
             $user="root";
             $password="";
             try{

@@ -1,6 +1,6 @@
 <?php
     $server="localhost";
-    $nom_bdd="essai";
+    $nom_bdd="discoveralgeria";
     $user="root";
     $password="";
     session_start();
@@ -31,11 +31,6 @@
             {
                 $update_query .= "TELEPHONE = ?, ";
                 $update_params[] = $_POST["telephone"];
-            }
-            if (isset($_POST["email"]) && !empty($_POST["email"])) 
-            {
-                $update_query .= "EMAIL = ?, ";
-                $update_params[] = $_POST["email"];
             }
             if (isset($_POST["confirm-password"]) && !empty($_POST["confirm-password"])) 
             {
@@ -83,10 +78,7 @@
 
         <label>Phone Number :</label>
         <input type="number" name="telephone" size="10" placeholder="Enter your new telephone number"><br>
-  
-        <label>E-mail :</label>
-        <input type="email" name="email" placeholder="Enter your new email address" ><br>
-        
+
         <label for="password">New Password:</label>
         <input type="password" size="30" id="mot_de_passe1" name="password" placeholder="Enter your new password" oninput="verifier_mot_passe()"><br>
         

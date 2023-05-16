@@ -182,7 +182,7 @@ nav:hover .nav-item
 }
 .nav-logout
 {
-  margin-top: 160px;
+  margin-top: 140px;
 }
 nav:hover ~ .THR, nav:hover ~ #notifications
 {
@@ -192,7 +192,7 @@ nav:hover ~ .THR, nav:hover ~ #notifications
 .THR
 {
   margin-top: 3%;
-  margin-left: 15%;
+  margin-left: 12%;
   position: absolute;
   transition: margin-left 1.5s;
 }
@@ -203,7 +203,9 @@ nav:hover ~ .THR, nav:hover ~ #notifications
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  width: 160%;
+  width: 140%;
+  max-height: 30px;
+  margin-top: 10%;
   transition: margin-left 1.5s;
   font-family: var(--font-2);
   text-align: center;
@@ -215,10 +217,10 @@ nav:hover ~ .THR, nav:hover ~ #notifications
 }
 .wilaya 
 {
-  margin: 2%;
+  margin: 1%;
   padding: 2%;
   width: 40%;
-  height: 80%;
+  height: 75%;
   background-color: var(--shadowGreen);
   border-radius: 5px;
   box-sizing: border-box;
@@ -339,7 +341,7 @@ table thead tr
 {
   position: absolute;
   transition: margin-left 1.5s;
-  margin-top: 10%;
+  margin-top: 15%;
   margin-left: 15%;
   width: 80%;
   color: var(--dark);

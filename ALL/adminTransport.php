@@ -1,7 +1,7 @@
 <?php
           session_start();
           $server = "localhost";
-          $nom_bdd = "essai";
+          $nom_bdd = "discoveralgeria";
           $user = "root";
           $password = "";
             if(isset( $_SESSION["email"])){
@@ -84,7 +84,7 @@
     <?php 
      
         $server = "localhost";
-        $nom_bdd = "essai";
+        $nom_bdd = "discoveralgeria";
         $user = "root";
         $password = "";
       
@@ -182,7 +182,7 @@
 
         <?php 
           $server = "localhost";
-          $nom_bdd = "essai";
+          $nom_bdd = "discoveralgeria";
           $user = "root";
           $password = "";
           
@@ -218,7 +218,7 @@
       function afficherTransportAlger()
       {
         $server = "localhost";
-        $nom_bdd = "essai";
+        $nom_bdd = "discoveralgeria";
         $user = "root";
         $password = "";
             try{
@@ -246,7 +246,7 @@
         function afficherTransportTlm()
         {
           $server = "localhost";
-          $nom_bdd = "essai";
+          $nom_bdd = "discoveralgeria";
           $user = "root";
           $password = "";
               try{
@@ -273,7 +273,7 @@
           function afficherTransportOran()
           {
             $server = "localhost";
-            $nom_bdd = "essai";
+            $nom_bdd = "discoveralgeria";
             $user = "root";
             $password = "";
                 try{
@@ -300,7 +300,7 @@
             function afficherTransportCos()
             {
               $server = "localhost";
-              $nom_bdd = "essai";
+              $nom_bdd = "discoveralgeria";
               $user = "root";
               $password = "";
                   try{
@@ -328,7 +328,7 @@
               function afficherTransportBejaia()
               {
                 $server = "localhost";
-                $nom_bdd = "essai";
+                $nom_bdd = "discoveralgeria";
                 $user = "root";
                 $password = "";
                     try{
@@ -356,7 +356,7 @@
                 function afficherTransportSahara()
                 {
                   $server = "localhost";
-                  $nom_bdd = "essai";
+                  $nom_bdd = "discoveralgeria";
                   $user = "root";
                   $password = "";
                       try{

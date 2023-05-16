@@ -167,7 +167,7 @@ button:hover
 {
   margin-left: 5%;
 }
-.menu ul li a:hover, .menu ul li span:hover 
+.menu ul li a:hover, .menu ul li span:hover
 {
   font-size: 20px;
   opacity: 1;
@@ -206,7 +206,7 @@ button:hover
   top: 105%;
   right: 3.1%;
   width: 20%;
-  height: 280%;
+  height: 285%;
   background-color: var(--orange);
   border-radius: 5px;
   border: 2px solid var(--dark);
@@ -221,7 +221,7 @@ button:hover
 {
   display: flex;
   align-items: center;
-  margin-top: -10%;
+  margin-top: -8%;
 }
 .profile .nameProfile h2, .notifications-card h1
 {
@@ -281,7 +281,7 @@ button:hover
   top: 105%;
   right: 25%;
   width: 20%;
-  height: 280%;
+  height: 285%;
   background-color: var(--orange);
   border-radius: 5px;
   border: 2px solid var(--dark);
@@ -334,8 +334,8 @@ button:hover
 #notifBadge 
 {
   position: absolute;
-  top: 60%;
-  right: 40.4%;
+  top: 60.7%;
+  right: 40.3%;
   transform: translate(-50%, -50%);
   color: var(--dark);
   font-size: 12px;
@@ -345,11 +345,9 @@ button:hover
   height: 20px;
   border-radius: 50%;
 }
-.menu ul li a:hover ~ #notifBadge
-
+.menu ul li a:hover ~ #notifBadge 
 {
-
-font-size: 14px;
+  font-size: 15px;
 }
 /***************************************************************************************************************************/
 /************** paragraph welcome in the middle ************/
@@ -388,7 +386,7 @@ font-size: 14px;
 #explore
 {
   position: relative;
-  margin: 13.5% 10% 2% 10%;
+  margin: 15% 10% 2% 10%;
 }
 #explore b
 {
@@ -401,7 +399,7 @@ font-size: 14px;
   position: absolute; 
   top: 70%;  
   right: 0%;
-  width: 45%;
+  width: 40%;
   height: 2px; 
   background-color: var(--dark); 
 }
@@ -478,7 +476,7 @@ font-size: 14px;
   padding: 0.5% 0.5%;
   margin: 18% 0% 5% 54%;
   width: 40%;
-  height: 35%;
+  height: 37%;
   border: 2px solid var(--orange);
   background: var(--gold);
   background-image: url(images/road.jpg);
@@ -749,7 +747,7 @@ font-size: 14px;
 #avis
 {
   position: relative;
-  margin: 2% 0% 3% 20%;
+  margin: 3% 0% 3% 20%;
 }
 #avis::after 
 {

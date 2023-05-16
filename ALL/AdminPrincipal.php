@@ -1,7 +1,7 @@
 <?php
           session_start();
           $server = "localhost";
-          $nom_bdd = "essai";
+          $nom_bdd = "discoveralgeria";
           $user = "root";
           $password = "";
             if(isset($_SESSION["email"])){
@@ -23,7 +23,7 @@
 
 <?php
 $data1 = array();
-$wilayas = array('ALGER', 'TLEMCEN', 'ORAN', 'COSTANTINE', 'BEJAIA', 'SAHARA');
+$wilayas = array('ALGER', 'TLEMCEN', 'ORAN', 'CONSTANTINE', 'BEJAIA', 'SAHARA');
 foreach ($wilayas as $wilaya) {
     $sql1 = "SELECT COUNT(*) FROM PACK WHERE WILAYA = :wilaya";
     $res1 = $connexion->prepare($sql1);
@@ -120,7 +120,7 @@ foreach ($categories as $categorie) {
     function listeClients()
     {
           $server = "localhost";
-          $nom_bdd = "essai";
+          $nom_bdd = "discoveralgeria";
           $user = "root";
           $password = "";
           try {
@@ -146,7 +146,7 @@ foreach ($categories as $categorie) {
 
     <?php
       $server = "localhost";
-      $nom_bdd = "essai";
+      $nom_bdd = "discoveralgeria";
       $user = "root";
       $password = "";
       $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd", $user, $password);
@@ -226,7 +226,7 @@ foreach ($categories as $categorie) {
     function listePassager()
     {
           $server = "localhost";
-          $nom_bdd = "essai";
+          $nom_bdd = "discoveralgeria";
           $user = "root";
           $password = "";
           try {
@@ -310,7 +310,7 @@ foreach ($categories as $categorie) {
         <?php 
      
      $server = "localhost";
-     $nom_bdd = "essai";
+     $nom_bdd = "discoveralgeria";
      $user = "root";
      $password = "";
 
@@ -438,7 +438,7 @@ foreach ($categories as $categorie) {
       var myChart1 = new Chart(graphe1, {
     type: 'bar',
     data: {
-        labels: ['ALGER', 'TLEMCEN', 'ORAN', 'COSTANTINE', 'BEJAIA', 'SAHARA'],
+        labels: ['ALGER', 'TLEMCEN', 'ORAN', 'CONSTANTINE', 'BEJAIA', 'SAHARA'],
         datasets: [{
             label: 'Nombre des Packs par Wilaya',
             data: <?php echo json_encode($data1); ?>,

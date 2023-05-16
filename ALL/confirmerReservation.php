@@ -1,7 +1,7 @@
 <?php
 
     $server="localhost";
-    $nom_bdd="essai";
+    $nom_bdd="discoveralgeria";
     $user="root";
     $password="";
     session_start();
@@ -163,8 +163,8 @@
                             $req_concerner = "INSERT INTO CONCERNER(NUMEROPACK,ID_RESERVATION) VALUES ('$id_pack','$id_reservation')";
                             $connexion->exec($req_concerner);
 
-                           $req_notif="INSERT INTO NOTIF(ID_EMETTEUR,ID_RECEPTEUR,MESSAGE_NOTIF) 
-                    VALUES ('$id_utilisateur',99,'Une réservation envoyée par utilisateur $id_utilisateur et concernant le pack $id_pack avec un prix de $prix DA et options :  $transportation ,$accommodation ,$feeding')";
+                            $req_notif="INSERT INTO NOTIF(ID_EMETTEUR,ID_RECEPTEUR,MESSAGE_NOTIF) 
+                                        VALUES ('$id_utilisateur',99,'Une réservation envoyée par utilisateur $id_utilisateur et concernant le pack $id_pack avec un prix de $prix DA et options :  $transportation ,$accommodation ,$feeding')";
                             $connexion->exec($req_notif);
             
                             header("Location: interfaceClient.php");
@@ -191,9 +191,9 @@
                             $connexion->exec($req_concerner);
 
                             $req_notif="INSERT INTO NOTIF(ID_EMETTEUR,ID_RECEPTEUR,MESSAGE_NOTIF) 
-                                        VALUES ('$id_utilisateur',99,'une réservation envoyer par user $id_utilisateur  concerné au pack $id_pack avec prix : $prix DA)";
+                                        VALUES ('$id_utilisateur',99,'une réservation envoyer par user $id_utilisateur et concernant le pack $id_pack avec prix de $prix DA et options : $transportation ,$accommodation ,$feeding')";
                             $connexion->exec($req_notif);
-                            
+
                             header("Location: interfaceClient.php");
                         } 
                     }

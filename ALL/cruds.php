@@ -8,7 +8,7 @@ try
       
       function showData(){
         $server="localhost";
-        $nom_bdd="essai";
+        $nom_bdd="discoveralgeria";
         $user="root";
         $password="";
         $connexion = new PDO("mysql:host=$server;dbname=$nom_bdd",$user,$password);

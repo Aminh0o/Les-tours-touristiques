@@ -1,7 +1,7 @@
 <?php
 session_start();
 $server="localhost";
-        $nom_bdd="essai";
+        $nom_bdd= "discoveralgeria";
         $user="root";
         $password="";
 if(isset($_GET["id"]))

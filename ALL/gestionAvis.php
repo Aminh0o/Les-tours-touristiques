@@ -11,7 +11,7 @@
 	 function afficherAvis()
 	 {
 	 $server="localhost";
-     $nom_bdd="essai";
+     $nom_bdd="discoveralgeria";
      $user="root";
      $password="";
 		
@@ -42,7 +42,7 @@ while($tuple = $res->fetch(PDO::FETCH_ASSOC)) {
     }
 	?>
     <h1>Liste des AVIS</h1>
-	<a href="AdminPrincipal.php"><img src="icons/logoo1.png" id="logo"></a>
+	<a href="AdminPrincipal.php#NavGestion2"><img src="icons/logoo1.png" id="logo"></a>
 	<table>
 		<thead>
 			<tr>

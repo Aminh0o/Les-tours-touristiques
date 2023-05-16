@@ -1,6 +1,6 @@
 <?php
 $server = "localhost";
-$nom_bdd = "essai";
+$nom_bdd = "discoveralgeria";
 $user = "root";
 $password = "";
 
@@ -116,7 +116,9 @@ if(isset($_POST["buttonSend"]))
                   <option value="">Choisir un message</option>
                   <option value="message1">reservation accepté</option>
                   <option value="message2">pour guide</option>
-                  <option value="message3">pour les sous_admins</option>
+                  <option value="message3">pour l'admin d'hebergement</option>
+                  <option value="message4">pour l'admin de nourriture</option>
+                  <option value="message5">pour l'admin de transport</option>
               
                </select>
             </div>
@@ -139,9 +141,15 @@ if(isset($_POST["buttonSend"]))
          {
             var selectedValue = choisirElement.value;
             if (selectedValue === 'message1') 
-            { textareaElement.value = 'Hello Mr () your reservation of Pack in { } is accepted, the guide : ( ) will send you the informations of your tour planning'; } 
-            else if (selectedValue === 'message2') { textareaElement.value = 'Hello Mr guide , here is the list that contains the user and these passengers :'; } 
-            else if (selectedValue === 'message3') { textareaElement.value = 'vérifier si cette () est disponible pour la reservation de pack () ';} 
+            { textareaElement.value = 'Hello Mr () your reservation of Pack in { } is accepted, the guide: ( ) will send you the informations of your tour planning'; } 
+            else if (selectedValue === 'message2') 
+            { textareaElement.value = 'Monsieur le guide (), voila les données de la réservation du pack () au wilaya (), votre groupe est :\n1-\n2-\n3-\n4-'; } 
+            else if (selectedValue === 'message3') 
+            { textareaElement.value = 'vérifier si les heberegements sont disponible pour la reservation de pack () au wilaya ()';} 
+            else if (selectedValue === 'message4') 
+            { textareaElement.value = 'vérifier si les restos sont disponible pour la reservation de pack () au wilaya ()';} 
+            else if (selectedValue === 'message5') 
+            { textareaElement.value = 'vérifier si les transports sont disponible pour la reservation de pack () au wilaya ()';} 
            
             else { textareaElement.value = ''; }
          });

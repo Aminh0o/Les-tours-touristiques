@@ -13,7 +13,7 @@
 	 {
 	session_start();
 	 $server="localhost";
-     $nom_bdd="essai";
+     $nom_bdd="discoveralgeria";
      $user="root";
      $password="";
 		try{
@@ -36,7 +36,7 @@
 			echo "<td>" . $tuple["DATE_CREATION"] . "</td>";
 			echo "<td>" . $tuple["DATE_EXPIRATION"]."</td>";
 			echo "<td>" . $tuple["PRIX"] . " DA</td>";
-            echo "<td><a href='modificationPack.php?id=".$tuple["NUMEROPACK"]."'><button id>Modifier</button></a></td>";
+            echo "<td><a href='modificationPack.php?id=".$tuple["NUMEROPACK"]."'><button>Modifier</button></a></td>";
 			echo "<td><a href='suppressionPack.php?id=".$tuple["NUMEROPACK"]."'><button>Supprimer</button></a></td>";
 			echo "</tr>";
 			
@@ -52,7 +52,7 @@
     }
 	?>
     <h1>Liste des packs</h1>
-        <a href="AdminPrincipal.php"><img src="icons/logoo1.png" id="logo"></a>
+        <a href="AdminPrincipal.php#NavGestion2"><img src="icons/logoo1.png" id="logo"></a>
     
 	<table>
 		<thead>

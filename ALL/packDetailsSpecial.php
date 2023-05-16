@@ -3,7 +3,7 @@
   session_start();
  
     $server="localhost";
-    $nom_bdd="essai";
+    $nom_bdd="discoveralgeria";
     $user="root";
     $password="";
 
@@ -110,7 +110,7 @@
                     <h2>Accommodation included: </h2>
                     <?php 
                       $server="localhost";
-                      $nom_bdd="essai";
+                      $nom_bdd="discoveralgeria";
                       $user="root";
                       $password="";
                       try
@@ -131,7 +131,7 @@
                     <h2>Transportation included: </h2>
                     <?php 
                       $server="localhost";
-                      $nom_bdd="essai";
+                      $nom_bdd="discoveralgeria";
                       $user="root";
                       $password="";
                       try
@@ -153,7 +153,7 @@
                     <h2>Feeding included: </h2>
                     <?php 
                       $server="localhost";
-                      $nom_bdd="essai";
+                      $nom_bdd="discoveralgeria";
                       $user="root";
                       $password="";
                       try

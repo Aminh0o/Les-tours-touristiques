@@ -13,8 +13,8 @@
         .packDescription p { top: -200%; }
         #Card .cardInfo p { margin-top: -15%;}
         #transport { margin-top: -67%; }
-        #hebergement { margin-top: 4%; }
-        #restaurant { margin-top: 2%; }
+        #hebergement { margin-top: -10%; }
+        #restaurant { margin-top: -100%; }
     </style>
 </head>
 <body>
@@ -39,7 +39,7 @@
             function afficher_Pack_royal()
             {
                 $server="localhost";
-                $nom_bdd="essai";
+                $nom_bdd="discoveralgeria";
                 $user="root";
                 $password="";
                 session_start();
@@ -75,7 +75,7 @@
             function afficher_Pack_special()
             {
                 $server="localhost";
-                $nom_bdd="essai";
+                $nom_bdd="discoveralgeria";
                 $user="root";
                 $password="";
                 try
@@ -111,7 +111,7 @@
             function afficher_Pack_normal()
             {
                 $server="localhost";
-                $nom_bdd="essai";
+                $nom_bdd="discoveralgeria";
                 $user="root";
                 $password="";
                 try
@@ -269,7 +269,7 @@
             <?php 
             function TransportTlm(){
             $server="localhost";
-            $nom_bdd="essai";
+            $nom_bdd="discoveralgeria";
             $user="root";
             $password="";
             try{
@@ -312,7 +312,7 @@
             <?php 
             function HebergementTlm(){
             $server="localhost";
-            $nom_bdd="essai";
+            $nom_bdd="discoveralgeria";
             $user="root";
             $password="";
             try{
@@ -364,7 +364,7 @@
             <?php 
             function RestaurationTlm(){
             $server="localhost";
-            $nom_bdd="essai";
+            $nom_bdd= "discoveralgeria";
             $user="root";
             $password="";
             try{
