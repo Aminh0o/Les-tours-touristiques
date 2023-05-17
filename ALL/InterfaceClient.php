@@ -565,18 +565,19 @@
 </script>
 <!----------------------------------------------------------------------->
 <script>
-
+  var notifbadge = document.getElementById('notifBadge');
   var notifIcon = document.querySelector('.notif-icon');
-  var sonner = document.querySelector('.fi-sr-bell-ring');
+  var bellRing = document.querySelector('.fi-sr-bell-ring');
 
   if (notifIcon.classList.contains('vibrate')) 
   {
-    sonner.classList.add('vibrate');
+    bellRing.classList.add('vibrate');
     navigator.vibrate(1000);
-  } 
-  else 
+    notifbadge.style.top = '85%';
+    notifbadge.style.right = '67%';
+  } else 
   {
-    sonner.classList.remove('vibrate');
+    bellRing.classList.remove('vibrate');
     navigator.vibrate(0);
   }
 </script>

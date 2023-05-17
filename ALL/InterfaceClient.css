@@ -345,8 +345,8 @@ button:hover
 #notifBadge 
 {
   position: absolute;
-  top: 85%;
-  right: 68%;
+  top: 71%;
+  right: 40%;
   transform: translate(-50%, -50%);
   color: var(--dark);
   font-size: 12px;
