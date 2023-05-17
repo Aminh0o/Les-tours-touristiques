@@ -159,7 +159,7 @@
 									$nb_notifs = $tuple3['nb_notifs'];
           
 									echo    "   <li class='notif-item'>
-									                <div class='notif-icon'>
+									                <div class='notif-icon ".($nb_notifs != 0 ? "vibrate":" ")."'>
 										                <span class='fi-sr-bell-ring'></span>
 									                </div>
 									                <div class='notif-contenu'>
@@ -562,5 +562,22 @@
 	{
 		notifBadge.classList.remove('show');
 	}
+</script>
+<!----------------------------------------------------------------------->
+<script>
+
+  var notifIcon = document.querySelector('.notif-icon');
+  var sonner = document.querySelector('.fi-sr-bell-ring');
+
+  if (notifIcon.classList.contains('vibrate')) 
+  {
+    sonner.classList.add('vibrate');
+    navigator.vibrate(1000);
+  } 
+  else 
+  {
+    sonner.classList.remove('vibrate');
+    navigator.vibrate(0);
+  }
 </script>
 </html>
