@@ -62,7 +62,7 @@
                                 $_SESSION["ADMIN_HEBERG"] = $admin_heberg;
                                 $_SESSION['loggedIn'] = true;
                                 $_SESSION["email"]= $admin_heberg['LOGIN_ADMIN_HEBERG'];
-                                header("Location: adminHeberg.php");
+                                header("Location: adminHeberg.php#hebergement");
                             }
                 
                             else
@@ -75,7 +75,7 @@
                                     $_SESSION["ADMIN_TRANSP"] = $admin_transp;
                                     $_SESSION['loggedIn'] = true;
                                     $_SESSION["email"]= $admin_transp['LOGIN_ADMIN_TRANSP'];
-                                    header("Location: adminTransport.php");
+                                    header("Location: adminTransport.php#transport");
                                 }
                            
                                 else
@@ -88,7 +88,7 @@
                                         $_SESSION["ADMIN_REST"] = $admin_resto;
                                         $_SESSION['loggedIn'] = true;
                                         $_SESSION["email"]= $admin_resto['LOGIN_ADMIN_REST'];
-                                        header("Location: adminFood.php");
+                                        header("Location: adminFood.php#RESTAURANTS");
                                     }
                                     else
                                     {
