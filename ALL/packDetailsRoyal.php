@@ -47,10 +47,10 @@
         <div class="packDescription">
             <h4>Full description :</h4>
             <p>
-                This is a high-end package that is designed for travelers who want to experience luxury and comfort. 
-                It typically includes 5-star accommodation, private transfers, fine dining, and exclusive activities 
-                such as helicopter tours, private yacht trips, and personalized services. This pack is ideal for honeymooners, 
-                VIPs, and travelers who want to indulge in the best that a destination has to offer.
+                This is a high-end package that is designed for travelers who want to experience luxury and comfort.
+                It typically includes 5-star accommodation, private transfers, fine dining, and exclusive activities
+                such personalized services. This pack is ideal for honeymooners, VIPs, and travelers who want to indulge
+                in the best that a destination has to offer.
             </p>
         </div>
 		<div class="info">
